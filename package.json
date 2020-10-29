@@ -1,5 +1,8 @@
 {
   "name": "app_name",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@prettier/plugin-ruby": "^0.20.1",
+    "prettier": "^2.1.2"
+  }
 }
