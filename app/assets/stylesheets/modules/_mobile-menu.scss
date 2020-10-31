@@ -1,0 +1,119 @@
+
+.mobile-menu{
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 300px;
+
+  &__cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+  }
+
+  &__btn{
+    outline: none !important;
+    border: none;
+    background-color: unset;
+
+    & > span{
+      height: 2px;
+      width: 35px;
+      display: block;
+      margin-bottom: 9px;
+      background-color: black;
+      transition: transform 0.7s;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__main{
+    padding: 0;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+
+  &__item{
+    list-style: none;
+    transform: translate3d(0,0,-1500px);
+    transition: transform 0.3s ;
+    opacity: 0;
+    padding: 0 60px;
+  }
+
+  & .logo{
+    padding: 0px 14px;
+    font-size: 35px;
+    opacity: 0;
+  }
+}
+
+.menu-open{
+  #container{
+    transform: translate(-300px,60px);
+    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+
+  }
+
+  & .mobile-menu{
+
+    &__cover{
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__item{
+      opacity: 1;
+      transform: none;
+      // transition: transform 0.3s;
+
+      @for $i from 1 through 3{
+        &:nth-child(#{$i}){
+          transition-delay: $i * 0.07s ;
+        }
+      }
+    }
+
+    &__btn{
+      cursor: pointer;
+      & > span{
+
+        &:nth-child(1){
+          transition-delay: 30ms;
+          transform: translateY(11px) rotate(-135deg);
+        }
+        &:nth-child(2){
+          transition-delay: 0ms;
+          transform: scale(0);
+        }
+        &:nth-child(3){
+          transition-delay: 300ms;
+          transform: translateY(-11px) rotate(135deg);
+        }
+      }
+    }
+  }
+  & .logo{
+    opacity: 1;
+    margin-bottom: 20px;
+  }
+}
+
+.main-title{
+  font-weight: 600;
+  font-size: 30px;
+  display: block;
+}
+.sub-title{
+  font-size: 18px;
+  color: #535353;
+  opacity: 0.8;
+}
