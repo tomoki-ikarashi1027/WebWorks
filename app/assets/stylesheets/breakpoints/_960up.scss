@@ -23,3 +23,13 @@
     display: none;
   }
 }
+
+.about{
+
+  &__inner{
+    padding: 50px 150px;
+  }
+  &__img{
+    height: 400px;
+}
+}

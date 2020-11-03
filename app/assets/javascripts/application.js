@@ -13,8 +13,12 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require_directory ./vendors
 //= require_tree .
 
 document.addEventListener("DOMContentLoaded", function () {
-  ta = new MobileMenu();
+  new MobileMenu();
+
+  const hero = new HeroSlider('.swiper-container');
+  hero.start();//引数(delay)を入れてスライドの速さを変更できる
 });
