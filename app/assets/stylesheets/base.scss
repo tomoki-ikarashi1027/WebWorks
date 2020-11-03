@@ -36,6 +36,17 @@ font-family: 'Lora','Noto Serif JP', serif;
   flex-direction: column;
 }
 
+.main-title{
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.sub-title{
+  @extend .font-sm;
+  color: #535353;
+  opacity: 0.8;
+}
+
 #container{
   height: 100vh;
   position: relative;
@@ -52,6 +63,7 @@ font-family: 'Lora','Noto Serif JP', serif;
   width: 100%;
   background-color: orange;
   align-items: center;
+  z-index: 100;
   // justify-content: flex-end;
 
   &__inner{

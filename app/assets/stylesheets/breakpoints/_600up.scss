@@ -1,0 +1,19 @@
+.flex{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.about{
+
+  &__inner{
+    padding: 50px;
+  }
+  &__img,
+  &__texts{
+    flex-basis: 47%;
+  }
+  &__texts{
+    display: flex;
+    align-items: center;
+  }
+}
