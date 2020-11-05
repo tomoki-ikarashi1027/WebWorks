@@ -1,0 +1,96 @@
+.cover-slide{ //スライドアニメーション
+  position: relative;
+  overflow: hidden;
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #eaebe6;
+    z-index: 10;
+    opacity: 0;
+  }
+  &.inview{
+    &::after{
+      opacity: 1;
+      @include animation(
+        $name: kf-cover-slide,
+        $duration: 1.5s,
+        $timing-function: ease-in
+      );
+    }
+  }
+}
+
+.img-zoom{ //hover時に拡大表示
+  opacity: 0;
+  .inview &{
+    opacity: 1;
+    transition: transform 0.3s ease;
+    @include animation(
+      $name: kf-img-show,
+      $duration: 1.5s,
+      $timing-function: ease-in,
+      $fill-mode:none
+    );
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+}
+
+.hover-darken{ //hover時に暗く表示
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    pointer-events: none; //マウスの操作を受け付けない
+
+  }
+  &:hover::before{
+    background-color: rgba(0,0,0,0.4);
+  }
+}
+
+
+@keyframes kf-cover-slide{ //transformプロパティを使用することでレンダリング速度を改善
+  0%{
+    transform-origin:left ;//起点を設定
+    transform: scaleX(0);//left:0; right:100%;と同義
+  }
+  50%{
+    transform-origin:left ;
+    transform: scaleX(0);
+  }
+  50.1%{
+    transform-origin:right ;
+    transform: scaleX(1);
+  }
+  100%{
+    transform-origin:right ;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes kf-img-show{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  50.1%{
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100%{
+    opacity: 1;
+  }
+}
