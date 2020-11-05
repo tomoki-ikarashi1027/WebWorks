@@ -17,3 +17,16 @@
     align-items: center;
   }
 }
+
+.company{
+  &__item{
+    margin-bottom: 40px !important;
+    flex-basis: 47%;
+    &:nth-child(odd){
+      margin-right: 6%;
+    }
+    & > p{
+      font-size: 25px;
+    }
+  }
+}
