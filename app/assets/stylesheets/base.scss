@@ -40,11 +40,25 @@ font-family: 'Lora','Noto Serif JP', serif;
   @extend .font-lg;
   font-weight: 600;
   margin-bottom: 0;
+  display: block;
 }
+
 .sub-title{
   @extend .font-sm;
   color: #535353;
   opacity: 0.8;
+}
+
+// button{
+//   flex-basis: 100%;
+// }
+
+.logo{
+  font-size: 33px;
+  display: flex;
+  & > img{
+    width: 0.7em;
+  }
 }
 
 #container{
@@ -64,17 +78,12 @@ font-family: 'Lora','Noto Serif JP', serif;
   background-color: orange;
   align-items: center;
   z-index: 100;
-  // justify-content: flex-end;
 
   &__inner{
     @extend .content-width;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    & .logo{
-      font-size: 36px;;
-    }
   }
   &__nav{
     display: none;
@@ -86,6 +95,36 @@ font-family: 'Lora','Noto Serif JP', serif;
   }
   &__li{
     list-style: none;
-    padding-left:10px ;
+    padding-left:15px ;
+  }
+}
+
+.footer{
+  @extend .content-width;
+  padding: 60px 0;
+
+  & .logo{
+    font-size: 33px;
+    justify-content: center;
+  }
+  &__nav{
+    @extend .flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__ul{
+    @extend .flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__li{
+    margin: 10px;
+    padding: 0;
+  }
+  &__copyright{
+    margin-top: 10px;
+    color: #535353;
+    opacity: 0.8;
   }
 }

@@ -25,11 +25,19 @@
 }
 
 .about{
-
   &__inner{
     padding: 50px 150px;
   }
   &__img{
     height: 400px;
+  }
 }
+
+.job-site{
+  &__item{
+    flex-basis: 25%;
+  }
+  &__img{
+    height: 350px;
+  }
 }

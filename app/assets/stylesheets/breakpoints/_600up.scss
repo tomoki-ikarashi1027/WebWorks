@@ -4,7 +4,6 @@
 }
 
 .about{
-
   &__inner{
     padding: 50px;
   }
@@ -19,14 +18,39 @@
 }
 
 .company{
+  &__inner{
+    justify-content: space-between;
+  }
   &__item{
     margin-bottom: 40px !important;
     flex-basis: 47%;
-    &:nth-child(odd){
-      margin-right: 6%;
-    }
+
     & > p{
       font-size: 25px;
     }
+  }
+}
+
+.job-site{
+  &__container{
+    justify-content: space-between;
+  }
+  &__item{
+    margin-bottom: 40px !important;
+    flex-basis: 49%;
+  }
+  &__img{
+    height: 200px;
+  }
+}
+
+.footer{
+  &__li{
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  & .logo{
+    justify-content: flex-start;
   }
 }
