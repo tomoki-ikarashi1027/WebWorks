@@ -14,7 +14,6 @@ overflow: visible !important;
     transform: scale(1.3);
     transition: transform 1.9s ease;
   }
-
   &-active{
     & > img{
       transform: none;
