@@ -87,4 +87,10 @@
      @extend .font-md;
      @extend .mb-sm;
    }
+
+   &__btn{
+     flex-basis: 100%;
+     text-align: center;
+     @extend .mb-sm;
+   }
 }
