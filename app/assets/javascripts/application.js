@@ -21,4 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const hero = new HeroSlider('.swiper-container');
   hero.start();//引数(delay)を入れてスライドの速さを変更できる
+
+  ta = new TextAnimation('.animate-title');
+  ta.animate();
 });
