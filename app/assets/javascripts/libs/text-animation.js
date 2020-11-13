@@ -24,7 +24,10 @@
 class TextAnimation{
   constructor(el) {
     this.DOM = {};
-    this.DOM.el = document.querySelector(el);
+    this.DOM.el = el instanceof HTMLElement ? el : document.querySelector(el);
+    //querySelectorは一番上の要素を取得するためDOM要素の判定をしないと繰り返し同じ要素が呼び出される
+
+    // this.DOM.el = document.querySelector(el);
     this.chars = this.DOM.el.innerHTML.trim().split("");
     this.DOM.el.innerHTML = this._splitText();
   }
