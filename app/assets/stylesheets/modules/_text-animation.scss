@@ -9,7 +9,7 @@
       @include animation(
         $name: kf-animate,
         $fill-mode: both,
-        $duration: 0.8s,
+        $duration: 0.4s,
 
       );
       @for $i from 1 through 30{

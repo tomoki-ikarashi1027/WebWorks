@@ -22,29 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const hero = new HeroSlider('.swiper-container');
   hero.start();//引数(delay)を入れてスライドの速さを変更できる
 
-  // ta = new TextAnimation('.animate-title');
-  // ta.animate();
-
-  const els = document.querySelectorAll('.animate-title');
-  const cb = function (entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        ta = new TextAnimation(entry.target);
-        ta.animate();
-        observer.unobserve(entry.target);
-      } else {
-
-      }
-    });
+  const cb = function (el, isIntersecting) {
+    if (isIntersecting) {
+      const ta = new TextAnimation(el);
+      ta.animate();
+    }
   };
+  new ScrollObserver('.animate-title' ,cb);
 
-  const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0
-  };
-
-
-  const io = new IntersectionObserver(cb, options);
-  els.forEach(el => io.observe(el));
 });
