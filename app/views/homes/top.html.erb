@@ -48,20 +48,25 @@
         </div>
       </div>
       <div id="main-content">
+        <aside class="side left">
+          <div class="side__inner">
+            <a class="twitter icon animate-title" href="#">Twitter</a>
+          </div>
+        </aside>
         <main>
           <section class="about">
             <div class="about__inner">
-              <div class="about__img cover-slide inview ">
-                <%= image_tag 'image-3.jpg', class:"about-img  " %>
+              <div class="about__img cover-slide ">
+                <%= image_tag 'image-3.jpg', class:"img-zoom" %>
               </div>
-              <div class="about__texts">
+              <div class="about__texts appear left">
                 <div class="about__texts-inner">
-                  <div class="about__title main-title">
+                  <div class="about__title main-title item">
                     <span>Let's</span>
                     <span>ChangeWork</span>
                   </div>
-                  <div class="about__subtitle subtitle">仕事を変えよう</div>
-                  <div class="about__description">
+                  <div class="about__subtitle subtitle item">仕事を変えよう</div>
+                  <div class="about__description item">
                     <p>全国のWEB企業を探せるサービスです</p>
                     <p>きっとあなたを探している会社があります</p>
                   </div>
@@ -77,38 +82,38 @@
             </div>
             <div class="company__inner">
               <div class="company__item">
-                <div class="cover-slide inview">
-                  <%= image_tag 'image-2.jpg'%>
+                <div class="cover-slide ">
+                  <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
                 </div>
                 <p>title1</p>
               </div>
               <div class="company__item">
-                <div class="cover-slide inview">
-                  <%= image_tag 'image-2.jpg'%>
+                <div class="cover-slide">
+                  <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
                 </div>
                 <p>title2</p>
               </div>
               <div class="company__item">
-                <div class="cover-slide inview">
-                  <%= image_tag 'image-2.jpg'%>
+                <div class="cover-slide">
+                  <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
                 </div>
                 <p>title3</p>
               </div>
               <div class="company__item">
-                <div class="cover-slide inview">
-                  <%= image_tag 'image-2.jpg'%>
+                <div class="cover-slide">
+                  <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
                 </div>
                 <p>title4</p>
               </div>
               <div class="company__item">
-                <div class="cover-slide inview">
-                  <%= image_tag 'image-2.jpg'%>
+                <div class="cover-slide">
+                  <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
                 </div>
                 <p>title5</p>
               </div>
               <div class="company__item">
-                <div class="cover-slide inview">
-                  <%= image_tag 'image-2.jpg'%>
+                <div class="cover-slide">
+                  <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
                 </div>
                 <p>title6</p>
               </div>
@@ -157,6 +162,11 @@
             </div>
           </section>
         </main>
+        <aside class="side right">
+          <div class="side__inner">
+            <a class="facebook icon animate-title" href="#">Facebook</a>
+          </div>
+        </aside>
       </div>
       <footer class="footer">
         <div class="logo">

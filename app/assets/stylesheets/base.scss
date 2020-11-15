@@ -97,6 +97,11 @@ font-family: 'Lora','Noto Serif JP', serif;
     list-style: none;
     padding-left:15px ;
   }
+
+  &.so-header{
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 50px 0 25px -20px rgba(0, 0, 0, 0.9);
+  }
 }
 
 .footer{
@@ -127,4 +132,14 @@ font-family: 'Lora','Noto Serif JP', serif;
     color: #535353;
     opacity: 0.8;
   }
+}
+
+#main-content{
+  position: relative;
+  z-index: 1;
+}
+
+main{
+  position: relative;
+  z-index: -1;
 }

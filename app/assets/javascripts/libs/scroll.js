@@ -3,7 +3,7 @@ class ScrollObserver{
     this.els = document.querySelectorAll(els);
     const defaultOptions = {
       root: null,
-      rootMargin: '0px',
+      rootMargin: '150px',
       threshold: 0,
       ones: true
     };
@@ -16,7 +16,7 @@ class ScrollObserver{
   _init() {
     const callBack = function (entries, observer) {
       entries.forEach(entry => {
-        if (entry.isIntersecting) { //要素が交差したら。
+        if (entry.isIntersecting) {//要素が交差したら。
           this.cb(entry.target,true);
           if (this.ones) {
             observer.unobserve(entry.target);

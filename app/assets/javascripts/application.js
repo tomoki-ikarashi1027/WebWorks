@@ -28,6 +28,31 @@ document.addEventListener("DOMContentLoaded", function () {
       ta.animate();
     }
   };
+  const cs = function (el ,isIntersecting) {
+    if (isIntersecting) {
+      el.classList.add('inview');
+    }
+  }
+
+  const header = document.querySelector('.header');
+  const nv = function (el, isIntersecting) {
+    if (isIntersecting) {
+      header.classList.add('so-header');
+    } else {
+      header.classList.remove('so-header');
+    }
+  }
+
+  const ap = function (el, isIntersecting) {
+    if (isIntersecting) {
+      el.classList.add('inview');
+    }
+  }
+
   new ScrollObserver('.animate-title' ,cb);
+  new ScrollObserver('.cover-slide' ,cs);
+  new ScrollObserver('.nav-triger' ,nv);
+  new ScrollObserver('.appear' ,ap);
+
 
 });
