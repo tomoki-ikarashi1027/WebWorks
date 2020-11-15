@@ -1,10 +1,12 @@
 .swiper-container {
 overflow: visible !important;
+z-index:10 !important;
 }
 
 .swiper-slide{
   height: 500px !important;
   overflow: hidden;
+
 
   & > img{
     height: 100%;

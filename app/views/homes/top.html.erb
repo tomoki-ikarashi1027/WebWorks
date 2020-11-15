@@ -3,17 +3,17 @@
     <div class="mobile-menu__cover"></div>
     <div class="nav-triger"></div>
     <header class="header">
-      <div class="header__inner">
-        <div class="logo">
+      <div class="header__inner appear down">
+        <div class="logo item">
           <%= image_tag 'logo.svg', class: "logo__img" %>
           <span class="logo__web">Web</span>
           <span class="logo__works">Works</span>
         </div>
         <nav class="header__nav">
           <ul class="header__ul">
-            <li class="header__li">Service</li>
-            <li class="header__li">Company</li>
-            <li class="header__li"> <a class="btn filled" href="#">Contact</a></li>
+            <li class="header__li item">Service</li>
+            <li class="header__li item">Company</li>
+            <li class="header__li item"> <a class="btn filled" href="#">Contact</a></li>
           </ul>
         </nav>
         <button class="mobile-menu__btn">
@@ -70,7 +70,7 @@
                     <p>全国のWEB企業を探せるサービスです</p>
                     <p>きっとあなたを探している会社があります</p>
                   </div>
-                  <button class="btn slide-bg">もっと詳しく</button>
+                  <button class="btn slide-bg item">もっと詳しく</button>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@
               <h2 class="main-title animate-title">Big City</h2>
               <p class="sub-title animate-title">大都市で探そう</p>
             </div>
-            <div class="company__inner">
+            <div class="company__inner appear">
               <div class="company__item">
                 <div class="cover-slide ">
                   <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
@@ -117,7 +117,7 @@
                 </div>
                 <p>title6</p>
               </div>
-              <button class="btn filled">全国から探す</button>
+              <button class="btn filled item">全国から探す</button>
             </div>
           </section>
           <section class="job-site">
@@ -125,33 +125,33 @@
               <h2 class="main-title animate-title">転職サイト</h2>
               <p class="sub-title">自分に合った転職サイトで探そう</p>
             </header>
-            <div class="job-site__inner">
+            <div class="job-site__inner appear up">
               <div class="job-site__container">
-                <div class="job-site__item">
+                <div class="job-site__item item">
                   <div class="job-site__img">
                     <%= image_tag 'image-2.jpg' %>
                   </div>
                   <div class="job-site__title">title1</div>
                 </div>
-                <div class="job-site__item">
+                <div class="job-site__item item">
                   <div class="job-site__img">
                     <%= image_tag 'image-2.jpg' %>
                   </div>
                   <div class="job-site__title">title2</div>
                 </div>
-                <div class="job-site__item">
+                <div class="job-site__item item">
                   <div class="job-site__img">
                     <%= image_tag 'image-2.jpg' %>
                   </div>
                   <div class="job-site__title">title3</div>
                 </div>
-                <div class="job-site__item">
+                <div class="job-site__item item">
                   <div class="job-site__img">
                     <%= image_tag 'image-2.jpg' %>
                   </div>
                   <div class="job-site__title">title4</div>
                 </div>
-                <div class="job-site__btn">
+                <div class="job-site__btn item">
                   <button class="btn cover-3d">
                     <span>
                       もっと見る
@@ -168,21 +168,22 @@
           </div>
         </aside>
       </div>
-      <footer class="footer">
-        <div class="logo">
+      <footer class="footer appear down">
+        <div class="logo item">
           <%= image_tag 'logo.svg', class: "logo__img" %>
           <span class="logo__web">Web</span>
           <span class="logo__works">Works</span>
         </div>
         <nav class="footer__nav">
           <div class="footer__ul">
-            <div class="footer__li">サービス</div>
-            <div class="footer__li">Company</div>
-            <div class="footer__li">Contact</div>
-            <div class="footer__li">Sitemap</div>
+            <div class="footer__li item">サービス</div>
+            <div class="footer__li item">Company</div>
+            <div class="footer__li item">Contact</div>
+            <div class="footer__li item">Sitemap</div>
           </div>
           <div class="footer__copyright">&copy; Ikarashi</div>
         </nav>
+      </footer>
     </div>
   </div>
   <nav class="mobile-menu">

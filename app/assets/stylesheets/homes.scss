@@ -40,15 +40,19 @@
 
 .company{
   @extend .content-width;
-  @extend .pb-lg;
+
   &__inner{
     @extend .flex;
+    @extend .pb-lg;
+    @extend .mb-lg;
     margin: 0 auto;
     height: 100%;
     width: 100%;
+    background-color: #eaebe6;
   }
   &__item{
     @extend .mb-sm;
+    padding: 30px;
 
     & img{
       max-width: 100%;
@@ -114,13 +118,18 @@
   transform: translateY(-50%);
   vertical-align: middle; //縦方向の揃え位置を指定,middleで中央へ。
   letter-spacing: 2px;
+  transition: all 0.3s ease;
 
   & a{
     color: black;
   }
 
   &.left{
-    left: 50px;
+    left: -50px;
+
+    &.inview{
+      left: 50px;
+    }
 
     & .side__inner{
       transform: rotate(-90deg);
@@ -128,7 +137,11 @@
     }
   }
   &.right{
-    right: 50px;
+    right: -50px;
+
+    &.inview{
+      right: 50px;
+    }
 
     & .side__inner{
       transform: rotate(90deg);
