@@ -17,42 +17,52 @@
 //= require_tree .
 
 document.addEventListener("DOMContentLoaded", function () {
-  new MobileMenu();
+  new Main();
+  // new MobileMenu();
 
-  const hero = new HeroSlider('.swiper-container');
-  hero.start();//引数(delay)を入れてスライドの速さを変更できる
+  // const hero = new HeroSlider('.swiper-container');
+  // hero.start();//引数(delay)を入れてスライドの速さを変更できる
 
-  const cb = function (el, isIntersecting) {
-    if (isIntersecting) {
-      const ta = new TextAnimation(el);
-      ta.animate();
-    }
-  };
-  const cs = function (el ,isIntersecting) {
-    if (isIntersecting) {
-      el.classList.add('inview');
-    }
-  }
+  // const cb = function (el, isIntersecting) {
+  //   if (isIntersecting) {
+  //     const ta = new TextAnimation(el);
+  //     ta.animate();
+  //   }
+  // };
+  // const _slideAnimation = function (el ,isIntersecting) {
+  //   if (isIntersecting) {
+  //     el.classList.add('inview');
+  //   }
+  // }
 
-  const header = document.querySelector('.header');
-  const nv = function (el, isIntersecting) {
-    if (isIntersecting) {
-      header.classList.add('so-header');
-    } else {
-      header.classList.remove('so-header');
-    }
-  }
+  // const header = document.querySelector('.header');
+  // const nv = function (el, isIntersecting) {
+  //   if (isIntersecting) {
+  //     header.classList.add('so-header');
+  //   } else {
+  //     header.classList.remove('so-header');
+  //   }
+  // }
 
-  const ap = function (el, isIntersecting) {
-    if (isIntersecting) {
-      el.classList.add('inview');
-    }
-  }
+  // const ap = function (el, isIntersecting) {
+  //   if (isIntersecting) {
+  //     el.classList.add('inview');
+  //   }
+  // }
 
-  new ScrollObserver('.animate-title' ,cb);
-  new ScrollObserver('.cover-slide' ,cs);
-  new ScrollObserver('.nav-triger' ,nv);
-  new ScrollObserver('.appear' ,ap);
+  // const sd = function (el,inview) {
+  //   if (inview) {
+  //     el.classList.add('inview');
+  //   } else {
+  //     el.classList.remove('inview');
+  //   }
+  // }
+
+  // new ScrollObserver('.animate-title' ,cb);
+  // new ScrollObserver('.cover-slide' ,cs);
+  // new ScrollObserver('.nav-triger' ,nv);
+  // new ScrollObserver('.appear' ,ap);
+  // new ScrollObserver('.side' ,sd,{rootMargin :"-300px 0px"});
 
 
 });
