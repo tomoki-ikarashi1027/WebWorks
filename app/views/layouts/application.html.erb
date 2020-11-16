@@ -4,21 +4,58 @@
   <title>WebWorks</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <%# <%= stylesheet_link_tag "application", :media => "all" %>
   <%= stylesheet_link_tag "vendors/bootstrap-reboot", :media => "all" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+JP&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 </head>
-
 <body>
-
-  <%= yield %>
-
+  <div id="global-container">
+    <div id="container">
+      <div class="mobile-menu__cover"></div>
+      <div class="nav-triger"></div>
+      <header class="header">
+        <div class="header__inner appear down">
+          <div class="logo item">
+            <%= image_tag 'logo.svg', class: "logo__img" %>
+            <span class="logo__web">Web</span>
+            <span class="logo__works">Works</span>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__ul">
+              <li class="header__li item">Service</li>
+              <li class="header__li item">Company</li>
+              <li class="header__li item"> <a class="btn filled" href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <button class="mobile-menu__btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+      <%= yield %>
+      <footer class="footer appear down">
+        <div class="logo item">
+          <%= image_tag 'logo.svg', class: "logo__img" %>
+          <span class="logo__web">Web</span>
+          <span class="logo__works">Works</span>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__ul">
+            <div class="footer__li item">サービス</div>
+            <div class="footer__li item">Company</div>
+            <div class="footer__li item">Contact</div>
+            <div class="footer__li item">Sitemap</div>
+          </div>
+          <div class="footer__copyright">&copy; Ikarashi</div>
+        </nav>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 .cover-slide{ //スライドアニメーション
   position: relative;
   overflow: hidden;
+
   &::after{
     content: "";
     position: absolute;
@@ -10,14 +11,14 @@
     right: 0;
     background-color: #eaebe6;
     z-index: 10;
-    opacity: 0;
   }
   &.inview{
+      opacity: 1;
     &::after{
       opacity: 1;
       @include animation(
         $name: kf-cover-slide,
-        $duration: 1.5s,
+        $duration: 1.6s,
         $timing-function: ease-in-out,
         $fill-mode: both
       );
@@ -33,7 +34,7 @@
     transition: transform 0.3s;
     @include animation(
       $name: kf-img-show,
-      $duration: 1.5s,
+      $duration: 1.6s,
       $timing-function: ease-in-out,
       $fill-mode:none
     );
@@ -62,7 +63,7 @@
 }
 
 
-@keyframes kf-cover-slide {
+@keyframes kf-cover-slide{
   0% {
     transform-origin: left;
     transform: scaleX(0);

@@ -66,7 +66,7 @@ class Main {
   }
 
   __scrollInit() {
-    this._observers = new ScrollObserver('.cover-slide', this._inviewAnimation ,{rootMargin: "150px 0px"});
+    this._observers = new ScrollObserver('.cover-slide', this._inviewAnimation ,{rootMargin: "200px 0px"});
     this._observers = new ScrollObserver('.animate-title', this._textAnimation);
     this._observers = new ScrollObserver('.appear', this._inviewAnimation);
     this._observers = new ScrollObserver('.nav-triger' ,this._headerAnimation.bind(this));
