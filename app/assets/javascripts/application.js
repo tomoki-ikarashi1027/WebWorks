@@ -63,6 +63,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // new ScrollObserver('.nav-triger' ,nv);
   // new ScrollObserver('.appear' ,ap);
   // new ScrollObserver('.side' ,sd,{rootMargin :"-300px 0px"});
-
-
 });
