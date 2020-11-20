@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>WebWorks</title>
   <%= csrf_meta_tags %>
@@ -12,6 +13,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
+
 <body>
   <div id="global-container">
     <div id="container">
@@ -26,7 +28,8 @@
           </div>
           <nav class="header__nav">
             <ul class="header__ul">
-              <li class="header__li item">Service</li>
+              <li class="header__li item"><%= link_to 'ログイン' ,new_admin_session_path  %></li>
+              <%# <li class="header__li item">Service</li> %>
               <li class="header__li item">Company</li>
               <li class="header__li item"> <a class="btn filled" href="#">Contact</a></li>
             </ul>
@@ -38,7 +41,10 @@
           </button>
         </div>
       </header>
+
       <%= yield %>
+
+
       <footer class="footer appear down">
         <div class="logo item">
           <%= image_tag 'logo.svg', class: "logo__img" %>
@@ -55,7 +61,9 @@
           <div class="footer__copyright">&copy; Ikarashi</div>
         </nav>
       </footer>
+
     </div>
   </div>
 </body>
+
 </html>
