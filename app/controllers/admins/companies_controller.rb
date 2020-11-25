@@ -7,9 +7,9 @@ class Admins::CompaniesController < ApplicationController
   end
 
   def create
-    @prefecture = Prefecture.find(params[:id])
-    company = Company.new(company_params)
-    company.prefecture_id = @prefecture.id
+    @prefecture = Prefecture.find(params[:prefecture_id])
+    company = @prefecture.companies.new(company_params)
+    # company.prefecture_id = @prefecture.id
     if company.save
       lash[:notice] = 'successfully'
       redirect_to admins_prefectures_path
