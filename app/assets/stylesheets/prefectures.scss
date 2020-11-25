@@ -1,3 +1,53 @@
 // Place all the styles related to the prefectures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.prefectures{
+  @extend .content-width;
+  padding: 60px 0;
+  @extend .flex;
+  justify-content: space-between;
+  &__inner{
+    background-color: #eaebe6;
+    padding: 10px;
+    @extend .mb-lg;
+  }
+
+  &__title{
+    position: absolute;
+    top: 120px;
+  }
+  &__group{
+    margin-bottom: 20px;
+  }
+
+  &__group-title{
+    background-color: #b3d4f9;
+    // padding: 10px;
+    font-size: 1.2em;
+  }
+  &__ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    // justify-content: space-around;
+     & > li{
+    font-size: 18px;
+    padding-right: 8px;
+     }
+  }
+
+
+}
+.prefectures-show{
+  background-color: #f8f6f1;
+  height: 100vh;
+
+}
+
+.company-post{
+  border: 1px solid;
+  padding: 20px;
+  height: 600px;
+}

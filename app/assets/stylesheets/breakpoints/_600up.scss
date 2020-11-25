@@ -53,6 +53,10 @@
     justify-content: flex-start;
   }
 }
-// .footer-head{
-//   height: 200px;
-// }
+
+.prefectures{
+  &__inner
+  {
+    flex-basis: 60%;
+  }
+}

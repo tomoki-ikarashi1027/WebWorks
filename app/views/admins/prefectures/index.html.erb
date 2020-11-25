@@ -1,17 +1,16 @@
 <div class="wrapper">
-  <div class="company-search">
-    <div class="company-search__inner">
-      <div class="company-search__title">
-        <span>企業一覧</span>
-      </div>
-      <div class="company-search-list">
-        <div class="company-search-group">
-          <div class="company-search-title">
+  <div class="prefectures">
+    <div class="prefectures__title">
+      <div>都道府県から探す</div>
+    </div>
+    <div class="prefectures__inner">
+      <div class="prefectures__list">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
             <span>北海道・東北</span>
           </div>
-          <ul>
-
-            <li> <%= link_to "北海道", admins_prefecture_path(0) %></li>
+          <ul class="prefectures__ul">
+            <li> <%= link_to "北海道", admins_prefecture_path(1) %></li>
             <li>青森県</li>
             <li>秋田県</li>
             <li>岩手県</li>
@@ -20,11 +19,11 @@
             <li>福島県</li>
           </ul>
         </div>
-        <div class="company-search-group">
-          <div class="company-search-title">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
             <span>関東地方</span>
           </div>
-          <ul>
+          <ul class="prefectures__ul">
             <li>東京都</li>
             <li>神奈川県</li>
             <li>千葉県</li>
@@ -34,11 +33,11 @@
             <li>群馬県</li>
           </ul>
         </div>
-        <div class="company-search-group">
-          <div class="company-search-title">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
             <span>北海道・東北</span>
           </div>
-          <ul>
+          <ul class="prefectures__ul">
             <li>test</li>
             <li>test</li>
             <li>test</li>
@@ -51,11 +50,11 @@
             <li>test</li>
           </ul>
         </div>
-        <div class="company-search-group">
-          <div class="company-search-title">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
             <span>北海道・東北</span>
           </div>
-          <ul>
+          <ul class="prefectures__ul">
             <li>test</li>
             <li>test</li>
             <li>test</li>
@@ -64,25 +63,11 @@
             <li>test</li>
           </ul>
         </div>
-        <div class="company-search-group">
-          <div class="company-search-title">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
             <span>北海道・東北</span>
           </div>
-          <ul>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-          </ul>
-        </div>
-        <div class="company-search-group">
-          <div class="company-search-title">
-            <span>北海道・東北</span>
-          </div>
-          <ul>
+          <ul class="prefectures__ul">
             <li>test</li>
             <li>test</li>
             <li>test</li>
@@ -92,11 +77,11 @@
             <li>test</li>
           </ul>
         </div>
-        <div class="company-search-group">
-          <div class="company-search-title">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
             <span>北海道・東北</span>
           </div>
-          <ul>
+          <ul class="prefectures__ul">
             <li>test</li>
             <li>test</li>
             <li>test</li>
@@ -106,11 +91,11 @@
             <li>test</li>
           </ul>
         </div>
-        <div class="company-search-group">
-          <div class="company-search-title">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
             <span>北海道・東北</span>
           </div>
-          <ul>
+          <ul class="prefectures__ul">
             <li>test</li>
             <li>test</li>
             <li>test</li>
@@ -120,6 +105,44 @@
             <li>test</li>
           </ul>
         </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="company-post">
+      <div class="company-post__inner">
+        <%= form_for(@company ,url:  admins_companies_path) do |f| %>
+        <%# <%= f.hidden_field :prefecture_id ,:value => @prefectures.id %>
+        <div class="company-post__title">
+
+          <h2>掲載企業を追加</h2>
+        </div>
+        <div class="company-post__prefectures">
+          <p>都道府県を選択</p>
+          <%= f.select :prefecture_name,:name, Prefecture.prefecture_names.keys %>
+
+          <p>会社名を記入</p>
+          <%= f.text_field :company_name %>
+          <p>説明文を記入</p>
+          <%= f.text_area :description %>
+          <div>
+            <%= f.attachment_field :image %>
+          </div>
+        </div>
+        <%= f.submit 'Create Company' %>
+        <% end %>
       </div>
     </div>
   </div>

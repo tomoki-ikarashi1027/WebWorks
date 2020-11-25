@@ -11,15 +11,14 @@ Rails.application.routes.draw do
   }
 
   namespace :admins do
-    resources :prefectures,only: [:index, :show] do
-      resources :companies
-    end
+    resources :prefectures,only: [:index, :show, :create ]
+    resources :companies
 
     get 'homes/top' => "homes#top"
   end
 
   root to: 'homes#top'
-  resources :companies, only: [:index, :show]
+  resources :companies, only: [:index, :show ,:create]
   resources :prefectures, only: [:index, :show] do
     resources :companies
   end

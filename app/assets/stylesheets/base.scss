@@ -158,7 +158,6 @@ main{
 
 .wrapper{
   padding-top:100px;
-  @extend .content-width;
   flex-grow: 1;
-
+  position: relative;
 }

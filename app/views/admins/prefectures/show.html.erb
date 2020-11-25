@@ -1,2 +1,14 @@
-<h1>Admins::Prefectures#show</h1>
-<p>Find me in app/views/admins/prefectures/show.html.erb</p>
+<div class="wrapper">
+  <div class="prefectures-show">
+    <div class="prefectures">
+      <div class="prefecture__title">
+        <%= @prefecture.prefecture_name + "の企業一覧ページ" %>
+      </div>
+      <div class="prefectures__company">
+        <%= @companies.each do |company| %>
+        <%= company.description %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
