@@ -131,7 +131,7 @@
         </div>
         <div class="company-post__prefectures">
           <p>都道府県を選択</p>
-          <%= f.select :prefecture_name,:name, Prefecture.prefecture_names.keys %>
+          <%= f.select :prefecture_id, Prefecture.prefecture_names.keys.to_a %>
 
           <p>会社名を記入</p>
           <%= f.text_field :company_name %>
