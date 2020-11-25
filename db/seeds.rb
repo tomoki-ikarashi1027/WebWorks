@@ -10,20 +10,20 @@
 #   [
 #     {
 #       id: 1,
-#       prefecture_name: '北海道',
+#       prefecture_name: 'hokkaido',
 #     },
 #     {
 #       id: 2,
-#       name: '青森',
+#       name: 'aomoriken',
 
 #     },
 #     {
 #       id: 3,
-#       name: '秋田',
+#       name: 'akitaken',
 #     }
 #   ]
 # )
 
-Prefecture.create(:prefecture_name => 'hokkaido')
-# Prefecture.create(:prefecture_name => '青森県')
-# Prefecture.create(:prefecture_name => '秋田県')
+Prefecture.create(:prefecture_name => '北海道')
+Prefecture.create(:prefecture_name => '青森県')
+Prefecture.create(:prefecture_name => '秋田県')
