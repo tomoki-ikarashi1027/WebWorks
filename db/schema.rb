@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 2020_11_19_122520) do
     t.text "description"
     t.integer "user_id"
     t.integer "prefecture_id"
+    t.integer "phone_number"
+    t.text "address"
+    t.text "url"
     t.string "image_id"
     t.text "comment"
     t.datetime "created_at", null: false

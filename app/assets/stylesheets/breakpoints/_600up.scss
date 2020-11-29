@@ -55,8 +55,24 @@
 }
 
 .prefectures{
-  &__inner
-  {
-    flex-basis: 60%;
+
+  &__img{
+    flex-basis: 40%;
+    height: 200px;
   }
+
+  &__texts{
+    flex-basis: 47%;
+  }
+
+  &__company{
+
+  }
+}
+.description-area {
+  width: 600px;
+  height: 400px;
+}
+.company-post{
+  margin: 0 auto;
 }

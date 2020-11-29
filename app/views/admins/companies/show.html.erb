@@ -1,2 +1,22 @@
-<h1>Company#show</h1>
-<p>Find me in app/views/company/show.html.erb</p>
+<div class="wrapper">
+  <div class="prefectures">
+    <div class="prefectures__company">
+      <div class="prefectures__img">
+        <%= attachment_image_tag @company,:image,  format: 'jpeg', fallback: "no-image.jpg" %>
+      </div>
+      <div class="prefectures__texts">
+        <div class="prefectures__texts-inner">
+          <div class="main-title"><%= @company.company_name %></div>
+          <div>本社所在地 :<%= @company.address %></div>
+          <div>電話番号 :<%= @company.phone_number %></div>
+          <div>概要 :<%= @company.description %></div>
+        </div>
+      </div>
+      <div>
+        <span><%= link_to "Edit ", edit_admins_company_path(@company)%></span>
+        <span>:</span>
+        <span><%= link_to "destroy", admins_company_path(@company),method: :delete %></span>
+      </div>
+    </div>
+  </div>
+</div>

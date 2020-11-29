@@ -100,7 +100,7 @@
       opacity: 0;
     }
     &:hover{
-      color: white;
+      color: white !important;
       &::before{
         transform: none;
         opacity: 1;
