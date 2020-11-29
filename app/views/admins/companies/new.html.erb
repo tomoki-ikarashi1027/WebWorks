@@ -2,7 +2,7 @@
    <div class="prefectures">
      <div class="company-post">
        <div class="company-post__inner">
-         <%= form_for(@company ,url:  admins_company_path(@company)) do |f| %>
+         <%= form_for(@company ,url:  admins_companies_path) do |f| %>
          <div class="company-post__title">
            <h2>掲載企業を追加</h2>
          </div>
@@ -21,7 +21,7 @@
              <%= f.attachment_field :image %>
            </div>
          </div>
-         <%= f.submit 'Edit Company' %>
+         <%= f.submit 'Create Company' %>
          <% end %>
        </div>
      </div>

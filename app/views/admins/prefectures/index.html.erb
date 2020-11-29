@@ -1,8 +1,13 @@
 <div class="wrapper">
   <div class="prefectures">
-    <div class="prefectures__title">
-      <div>都道府県から探す</div>
-    </div>
+    <%# <div class="prefectures__title">
+      都道府県から探す
+    </div> %>
+
+    <button class="btn solid ">
+      <%= link_to '掲載企業の追加・編集',new_admins_company_path %>
+    </button>
+
     <div class="prefectures__inner">
       <div class="prefectures__list">
         <div class="prefectures__group">
@@ -121,30 +126,5 @@
         </div>
       </div>
     </div>
-    <div class="company-post">
-      <div class="company-post__inner">
-        <%= form_for(@company ,url:  admins_companies_path) do |f| %>
-        <%# <%= f.hidden_field :prefecture_id ,:value => @prefectures.id %>
-        <div class="company-post__title">
-
-          <h2>掲載企業を追加</h2>
-        </div>
-        <div class="company-post__prefectures">
-          <p>都道府県を選択</p>
-          <%= f.select :prefecture_id, Prefecture.prefecture_names.keys.to_a %>
-
-          <p>会社名を記入</p>
-          <%= f.text_field :company_name %>
-          <p>説明文を記入</p>
-          <%= f.text_area :description %>
-          <div>
-            <%= f.attachment_field :image %>
-          </div>
-        </div>
-        <%= f.submit 'Create Company' %>
-        <% end %>
-      </div>
-    </div>
   </div>
-</div>
 </div>

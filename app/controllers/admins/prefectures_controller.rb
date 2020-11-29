@@ -1,7 +1,5 @@
 class Admins::PrefecturesController < ApplicationController
   def index
-    @company = Company.new
-    @prefectures = Prefecture.all
   end
 
   def show
@@ -9,5 +7,12 @@ class Admins::PrefecturesController < ApplicationController
     @companies = @prefecture.companies
   end
 
+  def destroy
+    @prefecture = Prefecture.find(params[:id])
+    @company = Company.find(params[:id])
+    if@company.destroy
+      redirect_to admins_prefecture_path(@prefecture)
+    end
+  end
 
 end
