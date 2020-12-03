@@ -28,9 +28,10 @@
           </div>
           <nav class="header__nav">
             <ul class="header__ul">
-              <li class="header__li item"><%= link_to 'ログイン' ,new_admin_session_path  %></li>
+              <li class="header__li item"><%= link_to 'Log in' ,new_admin_session_path  %></li>
               <%# <li class="header__li item">Service</li> %>
-              <li class="header__li item">Company</li>
+
+              <li class="header__li item"><%= link_to "Home", root_path %></li>
               <li class="header__li item"> <a class="btn filled" href="#">Contact</a></li>
             </ul>
           </nav>

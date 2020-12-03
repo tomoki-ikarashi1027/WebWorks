@@ -1,0 +1,34 @@
+// Place all the styles related to the PostComments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review{
+  background-color: #ededee	;
+
+  &__inner{
+    @extend .content-width;
+    margin: 30px auto;
+  }
+
+  &__items{
+    background-color: white;
+    @extend .mb-sm;
+    padding: 20px 30px 10px 30px;
+    border-radius: 5px;
+
+  }
+}
+
+.comment-post{
+  @extend .company-post;
+}
+
+.review-time{
+  margin-top: 10px;
+  opacity: 0.6;
+}
+
+.review-btn{
+  @extend .content-width;
+  @extend .mb-sm;
+}

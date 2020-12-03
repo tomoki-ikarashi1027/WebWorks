@@ -4,7 +4,7 @@
 
 .prefectures{
   @extend .content-width;
-  padding: 60px 0;
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
 
@@ -19,15 +19,14 @@
   &__title{
     @extend .font-lg;
     @extend .mb-sm;
-
-
   }
+
   &__group{
     margin-bottom: 20px;
   }
 
   &__group-title{
-    background-color: #b3d4f9;
+    background-color: oldlace;
     font-size: 1.2em;
   }
   &__ul{
@@ -91,6 +90,11 @@
   &__items{
     & input{
       width: 100%;
+      margin-bottom: 10px;
+    }
+    & > div:nth-child(3){
+      margin-top: 10px;
+
     }
   }
 }

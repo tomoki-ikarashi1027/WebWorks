@@ -13,14 +13,14 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :prefectures,only: [:index, :show, :create ]
     resources :companies
-
     get 'homes/top' => "homes#top"
   end
 
   root to: 'homes#top'
-  resources :companies, only: [:index, :show ,:create]
-  resources :prefectures, only: [:index, :show] do
-    resources :companies
+  # resources :companies, only: [:index, :show ,:create]
+  resources :prefectures, only: [:index, :show]
+  resources :companies do
+    resources :post_comments
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
