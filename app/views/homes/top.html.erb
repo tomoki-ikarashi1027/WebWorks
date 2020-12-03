@@ -45,7 +45,9 @@
                 <p>全国のWEB企業を探せるサービスです</p>
                 <p>きっとあなたを探している会社があります</p>
               </div>
-              <button class="btn slide-bg item">もっと詳しく</button>
+              <div class="item">
+                <button class="btn slide-bg">もっと詳しく</button>
+              </div>
             </div>
           </div>
         </div>
@@ -92,7 +94,9 @@
             </div>
             <p>title6</p>
           </div>
-          <button class="btn filled">全国から探す</button>
+          <button class="btn filled">
+            <%= link_to "全国から探す", prefectures_path %>
+          </button>
         </div>
       </section>
       <section class="job-site">

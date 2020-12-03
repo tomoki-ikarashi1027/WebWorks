@@ -22,10 +22,16 @@
     background-color: black;
     color: white;
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    & > a{
+      color: white;
+    }
     &:hover{
       background-color: white;
       color: black;
       box-shadow: none;
+      & > a{
+        color: black;
+      }
     }
   }
 
@@ -55,6 +61,9 @@
 
   &.slide-bg{
 
+    & > a{
+      color: black;
+    }
     overflow: hidden;
     z-index: 1;
     &::before{
@@ -70,7 +79,9 @@
       transition: transform 0.3s ease;
     }
     &:hover{
-      color: white;
+      & > a{
+        color: white;
+      }
       &::before{
         transform: none;
       }

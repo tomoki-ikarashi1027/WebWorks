@@ -9,7 +9,6 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.text :address
       t.text :url
       t.string :image_id
-      t.text :comment
 
       t.timestamps
     end

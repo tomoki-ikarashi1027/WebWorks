@@ -2,8 +2,9 @@
   <div class="prefectures">
     <div class="prefectures-show">
       <div class="prefectures__title">
-        <%= @prefecture.prefecture_name + "の企業一覧ページ" %>
+        <%= @prefecture.prefecture_name + "のWEB系企業を探す" %>
       </div>
+      <%= link_to "Back", admins_prefectures_path %>
       <% @companies.each do |company| %>
       <div class="prefectures__company">
         <div class="prefectures__img">
