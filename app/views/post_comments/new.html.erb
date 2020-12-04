@@ -6,8 +6,6 @@
           <h2>レビュー情報</h2>
         </div>
         <div class="comment-post__items">
-          <div>ニックネーム</div>
-          <%= f.text_field :nick_name %>
           <div>性別</div>
           <%= f.radio_button :gender, "男性" ,{:checked => true}%>
           <%= f.label :gender, "男性", {value: :男性, style: "display: inline-block;"} %>

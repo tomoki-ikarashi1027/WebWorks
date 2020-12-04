@@ -24,7 +24,8 @@
   <div class="review__inner">
     <% @company.post_comments.each do |comment| %>
     <div class="review__items">
-      <div><%= comment.nick_name %>・
+      <div>
+        <%# <%= comment.nick_name %>
         <%= comment.gender %>・
         <%= comment.employment_status %>
       </div>

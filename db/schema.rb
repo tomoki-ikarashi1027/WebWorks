@@ -40,12 +40,15 @@ ActiveRecord::Schema.define(version: 2020_11_30_125609) do
 
   create_table "post_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
-    t.integer "company_id"
-    t.string "nick_name"
+    t.bigint "user_id"
+    t.bigint "company_id"
+    t.integer "score"
     t.integer "gender"
     t.integer "employment_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_post_comments_on_company_id"
+    t.index ["user_id"], name: "index_post_comments_on_user_id"
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,4 +70,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_125609) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "post_comments", "companies"
+  add_foreign_key "post_comments", "users"
 end

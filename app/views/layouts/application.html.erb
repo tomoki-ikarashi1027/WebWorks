@@ -12,9 +12,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+JP&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/9f7238856e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <% if flash[:notice] %>
+  <div class="notification is-info">
+    <p class="notice"><%= notice %></p>
+  </div>
+  <% end %>
+  <% if flash[:alert] %>
+  <div class="notification is-danger">
+    <p class="alert"><%= alert %></p>
+  </div>
+  <% end %>
+
   <div id="global-container">
     <div id="container">
       <div class="mobile-menu__cover"></div>

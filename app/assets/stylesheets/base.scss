@@ -114,8 +114,9 @@ a {
 
 .footer{
   @extend .content-width;
-  padding: 60px 0;
+  padding: 60px 0 !important;
   flex-shrink: 0;
+  background-color: white !important;
 
   & .logo{
     font-size: 33px;
@@ -164,4 +165,15 @@ main{
   padding-top:100px;
   flex-grow: 1;
   position: relative;
+}
+
+.section{
+  color: white;
+  margin-top: 100px;
+  padding-bottom: 200px !important;
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+
+  & a{
+    color: white;
+  }
 }
