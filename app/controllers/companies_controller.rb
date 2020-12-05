@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @reviews = @company.post_comments
 
   end
 
