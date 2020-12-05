@@ -8,6 +8,7 @@ class PostCommentsController < ApplicationController
   def create
     company = Company.find(params[:company_id])
     comment = PostComment.new(post_comment_params)
+    comment.user_id = current_user.id
     comment.company_id = company.id
     if comment.save
       redirect_to company_path(company)
@@ -28,6 +29,6 @@ class PostCommentsController < ApplicationController
 
   private
   def post_comment_params
-    params.require(:post_comment).permit(:comment, :nick_name, :gender, :employment_status)
+    params.require(:post_comment).permit(:comment, :nick_name, :gender, :employment_status, :score)
   end
 end
