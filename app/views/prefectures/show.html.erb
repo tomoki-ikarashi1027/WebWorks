@@ -3,7 +3,13 @@
     <div class="prefectures-show">
       <div class="prefectures__title">
         <%= @prefecture.prefecture_name + "のWEB系企業を探す" %>
+
       </div>
+      <span class="back-link">
+        <%= link_to prefectures_path do %>
+        <i class="fas fa-undo-alt"></i>都道府県一覧ページ
+        <% end %>
+      </span>
       <% @companies.each do |company| %>
       <div class="prefectures__company">
         <div class="prefectures__img">
