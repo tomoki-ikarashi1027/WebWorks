@@ -177,3 +177,13 @@ main{
     color: white;
   }
 }
+
+.back-link{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+
+  & .fas{
+    margin-right: 3px;
+  }
+}

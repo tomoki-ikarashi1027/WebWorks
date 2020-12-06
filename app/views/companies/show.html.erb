@@ -1,5 +1,10 @@
 <div class="wrapper">
   <div class="prefectures">
+    <span class="back-link">
+      <%= link_to :back do %>
+      <i class="fas fa-undo-alt"></i>企業一覧ページ
+      <% end %>
+    </span>
     <div class="prefectures__company">
       <div class="prefectures__img">
         <div> <%= attachment_image_tag @company,:image,  format: 'jpeg', fallback: "no-image.jpg" %></div>
@@ -8,10 +13,13 @@
           <div class="star-rating-front" style="width: <%= @company.review_score_percentage %>%">★★★★★</div>
           <div class="star-rating-back">★★★★★</div>
         </div>
+
         <div class="average-score-display">
           <%= @company.avg_score %>点（<%= @company.post_comments.count %>件のレビュー）
         </div>
-
+        <div class="review-btn">
+          <button class="btn solid"><%= link_to "レビューを書く", new_company_post_comment_path(@company) %></button>
+        </div>
 
       </div>
       <div class="prefectures__texts">
@@ -26,9 +34,7 @@
     </div>
   </div>
 </div>
-<div class="review-btn">
-  <button class="btn solid"><%= link_to "レビューを書く", new_company_post_comment_path(@company) %></button>
-</div>
+
 <div class="review">
   <div class="review__inner">
     <% @reviews.each do |review| %>

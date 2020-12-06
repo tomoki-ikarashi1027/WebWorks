@@ -6,12 +6,14 @@ class PostCommentsController < ApplicationController
   end
 
   def create
-    company = Company.find(params[:company_id])
-    comment = PostComment.new(post_comment_params)
-    comment.user_id = current_user.id
-    comment.company_id = company.id
-    if comment.save
-      redirect_to company_path(company)
+    @company = Company.find(params[:company_id])
+    @comment = PostComment.new(post_comment_params)
+    @comment.user_id = current_user.id
+    @comment.company_id = @company.id
+    if @comment.save
+      redirect_to company_path(@company)
+    else
+      render :new
     end
   end
 

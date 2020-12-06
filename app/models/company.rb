@@ -3,6 +3,12 @@ class Company < ApplicationRecord
   attachment :image
   has_many :post_comments, dependent: :destroy
 
+  with_options presence: true do
+    validates :company_name
+    validates :description
+    validates :phone_number
+  end
+
   def avg_score
     unless self.post_comments.empty?
       post_comments.average(:score).round(1).to_f
@@ -21,7 +27,7 @@ class Company < ApplicationRecord
 
   # def review_score
   #   unless self.post_comments.empty?
-  #     post_comments.score.round(1).to_f*100/5
+  #     post_comments.(:score).round(1).to_f*100/5
   #   end
   # end
 
