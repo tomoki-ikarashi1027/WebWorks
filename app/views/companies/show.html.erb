@@ -7,20 +7,17 @@
     </span>
     <div class="prefectures__company">
       <div class="prefectures__img">
-        <div> <%= attachment_image_tag @company,:image,  format: 'jpeg', fallback: "no-image.jpg" %></div>
-
-        <div class="star-rating">
-          <div class="star-rating-front" style="width: <%= @company.review_score_percentage %>%">★★★★★</div>
-          <div class="star-rating-back">★★★★★</div>
-        </div>
-
-        <div class="average-score-display">
-          <%= @company.avg_score %>点（<%= @company.post_comments.count %>件のレビュー）
-        </div>
-        <div class="review-btn">
+        <%= attachment_image_tag @company,:image,  format: 'jpeg', fallback: "no-image.jpg" %>
+        <div class="left-item">
+          <div class="star-rating">
+            <div class="star-rating-front" style="width: <%= @company.review_score_percentage %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+          </div>
+          <div class="average-score-display">
+            <%= @company.avg_score %>点（<%= @company.post_comments.count %>件のレビュー）
+          </div>
           <button class="btn solid"><%= link_to "レビューを書く", new_company_post_comment_path(@company) %></button>
         </div>
-
       </div>
       <div class="prefectures__texts">
         <div class="prefectures__texts-inner">
@@ -44,11 +41,11 @@
         <%= review.gender %>・
         <%= review.employment_status %>
       </div>
-      <!--  <div class="star-rating mb-2">
-        <div class="star-rating-front" style="width: <%= @company.review_score_percentage %>%">★★★★★</div>
+      <div class="star-rating mb-2">
+        <div class="star-rating-front" style="width: <%= review.self_score_percentage %>%">★★★★★</div>
         <div class="star-rating-back">★★★★★</div>
       </div>
-      -->
+
       <div><%= review.score %>点</div>
       <div><%= review.comment %></div>
       <div class="review-time"><%= review.created_at.strftime("%Y年%m月%d日")  %></div>

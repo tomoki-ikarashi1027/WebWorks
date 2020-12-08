@@ -7,4 +7,8 @@ class PostComment < ApplicationRecord
 
   validates :score, presence: true
   validates :comment, presence: true,length: { minimum: 5 }
+
+  def self_score_percentage
+    score.round(1).to_f*100/5
+  end
 end
