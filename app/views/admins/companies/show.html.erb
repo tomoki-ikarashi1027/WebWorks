@@ -16,7 +16,7 @@
       <div>
         <span><%= link_to "Edit ", edit_admins_company_path(@company)%></span>
         <span>:</span>
-        <span><%= link_to "destroy", admins_company_path(@company),method: :delete %></span>
+        <span><%= link_to "destroy", admins_company_path(@company),method: :delete, data: {confirm: "本当に削除しますか？"} %></span>
       </div>
     </div>
   </div>

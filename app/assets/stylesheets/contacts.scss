@@ -1,4 +1,4 @@
-// Place all the styles related to the homes controller here.
+// Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -173,5 +173,32 @@
     &::before{
       background-image: image-url('facebook.svg');
     }
+  }
+}
+
+.contact{
+  @extend .content-width;
+
+  &__title{
+    margin: 30px 0;
+  }
+  & table{
+    font-size: 5px;
+    text-align: center;
+    margin: 0 auto;
+    & td,th{
+      padding: 10px;
+    }
+
+    & p{
+      height: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 50px;
+    }
+  }
+  & .pagination{
+    margin-top: 10px;
   }
 }

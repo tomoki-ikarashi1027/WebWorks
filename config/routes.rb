@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users , controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -13,11 +14,13 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :prefectures,only: [:index, :show, :create ]
     resources :companies
-    get 'homes/top' => "homes#top"
+    get 'contacts/top' => "contacts#top"
+    resources :contacts
   end
 
-  root to: 'homes#top'
-  # resources :companies, only: [:index, :show ,:create]
+  root to: 'contacts#top'
+
+  resources :contacts
   resources :prefectures, only: [:index, :show]
   resources :companies do
     resources :post_comments
