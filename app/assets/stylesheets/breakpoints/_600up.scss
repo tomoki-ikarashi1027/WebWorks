@@ -76,3 +76,15 @@
 .company-post{
   margin: 0 auto;
 }
+
+.contact{
+  & table{
+    font-size: 20px;
+    & td,th{
+      padding: 20px;
+    }
+    & p {
+      width: 150px;
+    }
+  }
+}

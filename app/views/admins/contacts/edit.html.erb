@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="prefectures">
+    <% if @contact.errors.any? %>
+    <%= @contact.errors.count %>件のエラー。
+    <% @contact.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>
+    <% end %>
+    <div class="company-post">
+      <div class="company-post__inner">
+        <%= form_for @contact, url: admins_contact_path do |f| %>
+        <div class="company-post__title">
+          <h2>お問い合わせ返信ページ</h2>
+        </div>
+        <div class="company-post__items">
+          <div>ユーザー名</div>
+          <%= @contact.user.name %>様
+          <div>受信日</div>
+          <%= @contact.created_at.strftime("%Y年%m月%d日 ") %>
+          <div>お問い合わせ内容</div>
+          <%= @contact.body %>
+          <div>返信</div>
+          <%= f.text_area :body ,class: 'description-area'%>
+        </div>
+        <%= f.submit 'Send', class: 'btn solid'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -15,7 +15,6 @@ class Admins::CompaniesController < ApplicationController
       flash[:notice] = 'successfully'
       redirect_to admins_prefectures_path
     end
-
   end
 
   def edit

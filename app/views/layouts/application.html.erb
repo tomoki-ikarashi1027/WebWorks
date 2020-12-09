@@ -41,14 +41,22 @@
           <nav class="header__nav">
             <ul class="header__ul">
               <% if user_signed_in? %>
-              <li class="header__li item"><%= link_to 'Log out' ,destroy_user_session_path, method: :delete  %></li>
               <li class="header__li item"><%= link_to "Home", root_path %></li>
-              <li class="header__li item"> <a class="btn filled" href="#">Contact</a></li>
+              <li class="header__li item"><%= link_to 'Log out' ,destroy_user_session_path, method: :delete  %></li>
+              <li class="header__li item ">
+                <button class="btn filled"><%= link_to "Contact", new_contact_path %></button>
+              </li>
               <!--    <li class="header__li item"><%= "ようこそ" + current_user.name + "さん" %></li> -->
+              <% elsif admin_signed_in? %>
+              <li class="header__li item"><%= link_to "Admins Home", admins_contacts_top_path %></li>
+              <li class="header__li item"><%= link_to 'Log out', destroy_admin_session_path, method: :delete  %></li>
+              <li class="header__li item"><%= link_to 'Users Home' ,root_path  %></li>
               <% else %>
               <li class="header__li item"><%= link_to 'Log in' ,new_user_session_path  %></li>
               <li class="header__li item"><%= link_to "Admins", new_admin_session_path %></li>
-              <li class="header__li item"> <a class="btn filled" href="#">Contact</a></li>
+              <li class="header__li item ">
+                <button class="btn filled"><%= link_to "Contact", new_contact_path %></button>
+              </li>
               <% end  %>
             </ul>
           </nav>
