@@ -24,6 +24,7 @@
             <%= company.avg_score %>点（<%= company.post_comments.count %>件のレビュー）
           </div>
 
+          <button class="btn solid"><%= link_to '詳しく見る', company_path(company) %>
 
         </div>
         <div class="prefectures__texts">
@@ -33,7 +34,6 @@
             <div>電話番号 :<%= company.phone_number %></div>
             <div>概要 :<%= company.description %></div>
           </div>
-          <button class="btn solid"><%= link_to '詳しく見る', company_path(company) %>
         </div>
       </div>
       <% end %>

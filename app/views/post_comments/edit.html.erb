@@ -1,0 +1,54 @@
+  <div class="wrapper">
+    <div class="prefectures">
+      <% if @comment.errors.any? %>
+      <div class="notification is-danger">
+        <h2><%= @comment.errors.count %>件のエラーがあります。</h2>
+        <ul>
+          <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <div class="comment-post">
+        <%= form_for [@company, @comment] do |f| %>
+        <div class="comment-post__title">
+          <h2>レビュー情報</h2>
+        </div>
+        <div class="comment-post__items">
+          <div>性別</div>
+          <%= f.radio_button :gender, "男性" ,{:checked => true}%>
+          <%= f.label :gender, "男性", {value: :男性, style: "display: inline-block;"} %>
+          <%= f.radio_button :gender, "女性" %>
+          <%= f.label :gender, "女性", {value: :女性, style: "display: inline-block;"} %>
+
+          <div>雇用形態</div>
+          <%= f.radio_button :employment_status, "正社員", {:checked => true}%>
+          <%= f.label :employment_status,"正社員", {value: :正社員} %>
+          <%= f.radio_button :employment_status, "契約社員" %>
+          <%= f.label :employment_status,"契約社員", {value: :契約社員} %>
+          <%= f.radio_button :employment_status, "アルバイト" %>
+          <%= f.label :employment_status,"アルバイト", {value: :アルバイト} %>
+
+
+          <div class="main-rating">
+            <div class="ratings">
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+            </div>
+            <div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
+          </div>
+          <%# <%= f.hidden_field :company_id, value: @company.id %>
+          <%= f.hidden_field :score,  id: "rating-value"  %>
+
+          <div>レビュー内容</div>
+          <%= f.text_area :comment ,class: 'description-area'%>
+        </div>
+        <%= f.submit '投稿' ,class: "btn solid" %>
+        <% end %>
+      </div>
+    </div>
+  </div>

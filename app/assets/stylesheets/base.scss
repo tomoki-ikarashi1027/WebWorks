@@ -1,5 +1,5 @@
 body{
-font-family: 'Lora','Noto Serif JP', serif;
+font-family: 'Lora','Noto Serif JP', serif !important;
 }
 
 a {
@@ -154,13 +154,6 @@ main{
   z-index: -1;
 }
 
-// .footer-head{
-//   position: relative;
-//   @extend .content-width;
-//   position: relative;
-//   height: 350px;
-// }
-
 .wrapper{
   padding-top:100px;
   flex-grow: 1;
@@ -186,4 +179,13 @@ main{
   & .fas{
     margin-right: 3px;
   }
+}
+
+.notification{
+  background-color: transparent !important;
+  color: black !important;
+}
+
+.useronly{
+  text-align: end;
 }

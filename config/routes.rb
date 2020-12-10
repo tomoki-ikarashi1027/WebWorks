@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :companies
     get 'contacts/top' => "contacts#top"
     resources :contacts
+    resources :post_comments
   end
 
   root to: 'contacts#top'

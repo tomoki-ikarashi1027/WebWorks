@@ -18,15 +18,26 @@ class PostCommentsController < ApplicationController
   end
 
   def edit
-
+    @company = Company.find(params[:company_id])
+    @comment = PostComment.find(params[:id])
   end
 
   def update
-
+    @company = Company.find(params[:company_id])
+    @comment = PostComment.find(params[:id])
+    if @comment.update(post_comment_params)
+      redirect_to company_path(@company)
+    else render :edit
+    end
   end
 
   def destroy
-
+    @company = Company.find(params[:company_id])
+    # @comment = PostComment.find(params[:id])
+    # @comment.company_id = @company.id
+    # @comment.destroy
+    PostComment.find_by(id: params[:id], company_id: params[:company_id]).destroy
+    redirect_to company_path(@company)
   end
 
   private

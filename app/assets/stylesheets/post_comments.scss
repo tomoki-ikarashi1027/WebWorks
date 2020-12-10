@@ -3,19 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .review{
-  background-color: #ededee	;
+  @extend .content-width;
+  border-top:1px dotted ;
 
   &__inner{
-    @extend .content-width;
     margin: 30px auto;
   }
 
   &__items{
+    border: 1px solid;
     background-color: white;
     @extend .mb-sm;
     padding: 20px 30px 10px 30px;
     border-radius: 5px;
-
   }
 }
 
