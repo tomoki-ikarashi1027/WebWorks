@@ -14,9 +14,9 @@ class Admins::ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     if @contact.update(contacts_params)
       flash[:notice] = '返信できました'
-    user = @contact.user
-    ContactMailer.send_when_admin_reply(user, @contact).deliver_now
-    redirect_to admins_contacts_path
+      user = @contact.user
+      ContactMailer.send_when_admin_reply(user, @contact).deliver_now
+      redirect_to admins_contacts_path
     else
       render :edit
     end
@@ -30,6 +30,7 @@ class Admins::ContactsController < ApplicationController
   end
 
   private
+
   def contacts_params
     params.require(:contact).permit(:title, :body, :reply)
   end

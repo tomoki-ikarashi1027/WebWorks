@@ -31,4 +31,11 @@ class Company < ApplicationRecord
   #   end
   # end
 
+  def self.search(search)
+    if search
+    Company.where(['company_name LIKE ?', "%#{search}%" ])
+    else
+      # Company.all
+    end
+  end
 end

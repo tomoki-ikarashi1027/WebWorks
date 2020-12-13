@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_12_08_141001) do
     t.integer "user_id"
     t.integer "prefecture_id"
     t.integer "phone_number"
+    t.string "language"
     t.text "address"
     t.text "url"
     t.string "image_id"

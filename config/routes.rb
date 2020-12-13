@@ -13,14 +13,15 @@ Rails.application.routes.draw do
 
   namespace :admins do
     resources :prefectures,only: [:index, :show, :create ]
-    resources :companies
     get 'contacts/top' => "contacts#top"
     resources :contacts
-    resources :post_comments
+    resources :companies do
+      resources :post_comments
+    end
   end
 
   root to: 'contacts#top'
-
+  get "prefectures/search" => "prefectures#search"
   resources :contacts
   resources :prefectures, only: [:index, :show]
   resources :companies do

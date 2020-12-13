@@ -1,23 +1,32 @@
 <div class="wrapper">
-  <div class="prefectures">
-    <div class="prefectures__company">
-      <div class="prefectures__img">
-        <%= attachment_image_tag @company,:image,  format: 'jpeg', fallback: "no-image.jpg" %>
-      </div>
-      <div class="prefectures__texts">
-        <div class="prefectures__texts-inner">
-          <div class="main-title"><%= @company.company_name %></div>
-          <div>本社所在地 :<%= @company.address %></div>
-          <div>電話番号 :<%= @company.phone_number %></div>
-          <div>ホームページ :<%= @company.url %></div>
-          <div>概要 :<%= @company.description %></div>
+  <div class="review" style="border:none;">
+    <div class="review__inner">
+      <% if @reviews.present? %>
+      <% @reviews.each do |review| %>
+      <div class="review__items">
+        <div class="personal">
+          <%= review.user.name %>・
+          <%= review.gender %>・
+          <%= review.employment_status %>
         </div>
+        <div class="star-rating mb-2">
+          <div class="star-rating-front" style="width: <%= review.self_score_percentage %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
+
+        <div><%= review.score %>点</div>
+        <div><%= review.comment %></div>
+        <div class="review-time"><%= review.created_at.strftime("%Y年%m月%d日")  %></div>
+
+        <div class="useronly">
+          <%= link_to "削除", admins_company_post_comment_path(review.company.id,review), method: :delete %>
+        </div>
+
       </div>
-      <div>
-        <span><%= link_to "Edit ", edit_admins_company_path(@company)%></span>
-        <span>:</span>
-        <span><%= link_to "destroy", admins_company_path(@company),method: :delete, data: {confirm: "本当に削除しますか？"} %></span>
-      </div>
+      <% end %>
+      <% else %>
+      <div>レビューはありません。</div>
+      <% end %>
     </div>
   </div>
 </div>

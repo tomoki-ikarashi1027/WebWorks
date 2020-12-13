@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   def index
+    @companies = Company.search(params[:search])
   end
 
   def show

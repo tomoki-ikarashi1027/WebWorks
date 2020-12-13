@@ -15,6 +15,14 @@
            <%= f.text_field :address %>
            <div>電話番号</div>
            <%= f.text_field :phone_number ,placeholder: "ハイフンなし" %>
+
+           <%= f.label :language %>
+           <% ["PHP","Ruby","JAVA"].each do |language| %>
+           <%= f.check_box :language, {multiple: true}, language, nil  %>
+           <%= language %>
+           <% end %>
+
+
            <div>説明文を記入</div>
            <%= f.text_area :description ,class: 'description-area'%>
            <div>

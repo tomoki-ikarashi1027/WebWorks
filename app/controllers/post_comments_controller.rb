@@ -1,12 +1,11 @@
 class PostCommentsController < ApplicationController
+  before_action :set_user
 
   def new
-    @company = Company.find(params[:company_id])
     @comment = PostComment.new
   end
 
   def create
-    @company = Company.find(params[:company_id])
     @comment = PostComment.new(post_comment_params)
     @comment.user_id = current_user.id
     @comment.company_id = @company.id
@@ -18,12 +17,10 @@ class PostCommentsController < ApplicationController
   end
 
   def edit
-    @company = Company.find(params[:company_id])
     @comment = PostComment.find(params[:id])
   end
 
   def update
-    @company = Company.find(params[:company_id])
     @comment = PostComment.find(params[:id])
     if @comment.update(post_comment_params)
       redirect_to company_path(@company)
@@ -32,7 +29,6 @@ class PostCommentsController < ApplicationController
   end
 
   def destroy
-    @company = Company.find(params[:company_id])
     # @comment = PostComment.find(params[:id])
     # @comment.company_id = @company.id
     # @comment.destroy
@@ -41,6 +37,11 @@ class PostCommentsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @company = Company.find(params[:company_id])
+  end
+
   def post_comment_params
     params.require(:post_comment).permit(:comment, :nick_name, :gender, :employment_status, :score)
   end

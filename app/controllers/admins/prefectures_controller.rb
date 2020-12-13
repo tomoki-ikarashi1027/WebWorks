@@ -14,5 +14,4 @@ class Admins::PrefecturesController < ApplicationController
       redirect_to admins_prefecture_path(@prefecture)
     end
   end
-
 end

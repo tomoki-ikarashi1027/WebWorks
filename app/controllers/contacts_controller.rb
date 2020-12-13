@@ -15,10 +15,10 @@ class ContactsController < ApplicationController
     else
       render :new
     end
-
   end
 
   private
+
   def contacts_params
     params.require(:contact).permit(:title, :body, :reply)
   end

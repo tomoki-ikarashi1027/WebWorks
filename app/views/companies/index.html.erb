@@ -11,6 +11,16 @@
 
   </div>
 </div>
+
+<%= form_tag(companies_path, :method => "get") do %>
+<%= text_field_tag :search %>
+<%= submit_tag "検索" %>
+<% end %>
+<% if @companies != nil %>
+<% @companies.each do |company| %>
+<%= company.id %>
+<% end %>
+<% end %>
 <style>
   .aaa {
     position: relative;
