@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_user!, only:[:show]
   def index
     @companies = Company.search(params[:search])
   end

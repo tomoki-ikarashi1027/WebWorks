@@ -1,24 +1,24 @@
 <div class="wrapper">
   <div class="contact">
     <h2 class="contact__title">お問い合わせ一覧</h2>
-    <table border="2">
+    <table class="table">
       <thead>
         <tr>
           <th>ユーザー名</th>
           <th>受信日</th>
           <th>件名</th>
+          <th></th>
           <th colspan="2"></th>
-
         </tr>
       </thead>
       <tbody>
         <% @contacts.each do |contact| %>
         <tr>
-          <td><%= contact.user.name %>様</td>
+          <td><%= contact.user.name %> さま</td>
           <td><%= contact.created_at.strftime("%Y年%m月%d日 ") %></td>
-          <td>
-            <p><%= contact.title %></p>
-          </td>
+          <p>
+            <td><%= contact.title %></td>
+          </p>
 
           <td><%= link_to "返信", edit_admins_contact_path(contact) %></td>
           <td><%= link_to "削除", admins_contact_path(contact), method: :delete, data: {confirm: "本当に削除しますか？"} %></td>

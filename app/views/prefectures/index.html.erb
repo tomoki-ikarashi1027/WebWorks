@@ -13,7 +13,8 @@
 
     <% if @companies != nil %>
     <% @companies.each do |company| %>
-    <%= company.company_name %>
+    <span><%= link_to company.company_name , company_path(company) %></span>
+    <span><%= company.prefecture.prefecture_name %></span>
     <% end %>
     <% end %>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_141001) do
+ActiveRecord::Schema.define(version: 2020_12_14_115608) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -30,12 +30,20 @@ ActiveRecord::Schema.define(version: 2020_12_08_141001) do
     t.integer "user_id"
     t.integer "prefecture_id"
     t.integer "phone_number"
-    t.string "language"
     t.text "address"
     t.text "url"
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "company_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "company_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_tag_relations_on_company_id"
+    t.index ["tag_id"], name: "index_company_tag_relations_on_tag_id"
   end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,6 +75,13 @@ ActiveRecord::Schema.define(version: 2020_12_08_141001) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "language"
+    t.string "framework"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
     t.string "encrypted_password", default: "", null: false
@@ -80,6 +95,8 @@ ActiveRecord::Schema.define(version: 2020_12_08_141001) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "company_tag_relations", "companies"
+  add_foreign_key "company_tag_relations", "tags"
   add_foreign_key "contacts", "users"
   add_foreign_key "post_comments", "companies"
   add_foreign_key "post_comments", "users"

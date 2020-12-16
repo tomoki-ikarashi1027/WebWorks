@@ -27,3 +27,19 @@
 Prefecture.create(:prefecture_name => '北海道')
 Prefecture.create(:prefecture_name => '青森県')
 Prefecture.create(:prefecture_name => '秋田県')
+
+Tag.create([
+  { language: 'タグ1' },
+  { language: 'タグ2' },
+  { language: 'タグ3' },
+  { language: 'タグ4' },
+  { language: 'タグ5' }
+])
+
+Tag.create([
+  { framework: 'タグ1' },
+  { framework: 'タグ2' },
+  { framework: 'タグ3' },
+  { framework: 'タグ4' },
+  { framework: 'タグ5' }
+])

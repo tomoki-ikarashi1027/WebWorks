@@ -70,10 +70,15 @@
       font-size: 20px;
     }
 
-     & span{
-       font-size: 0.5em;
-     }
+
   }
+
+  & .main-title{
+    & span{
+      font-size: 0.5em;
+    }
+  }
+
   & .btn{
     @extend .mb-sm;
     & > a{
@@ -110,4 +115,10 @@
 
 .edit{
   margin-left:30px ;
+}
+
+.language:not(:last-child){
+  &::after{
+    content:"/";
+  }
 }

@@ -37,11 +37,19 @@
             </div>
             <div>本社所在地 :<%= company.address %></div>
             <div>電話番号 :<%= company.phone_number %></div>
-            <div>言語 :<%= company.language %></div>
+            <div>言語 :
+              <% company.tags.each do |tag| %>
+              <span class="language"><%= tag.language  %>
+
+              </span>
+              <% end %>
+            </div>
             <div>概要 :<%= company.description %></div>
           </div>
         </div>
       </div>
+
+
       <% end %>
     </div>
   </div>

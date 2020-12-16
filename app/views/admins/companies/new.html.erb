@@ -16,12 +16,10 @@
            <div>電話番号</div>
            <%= f.text_field :phone_number ,placeholder: "ハイフンなし" %>
 
-           <%= f.label :language %>
-           <% ["PHP","Ruby","JAVA"].each do |language| %>
-           <%= f.check_box :language, {multiple: true}, language, nil  %>
-           <%= language %>
-           <% end %>
 
+           <%= f.collection_check_boxes(:tag_ids, @tags, :id, :language , include_hidden: false) do |tag| %>
+           <%= tag.label { tag.check_box + tag.text } %>
+           <% end %>
 
            <div>説明文を記入</div>
            <%= f.text_area :description ,class: 'description-area'%>

@@ -2,6 +2,13 @@
   <div class="review" style="border:none;">
     <div class="review__inner">
       <% if @reviews.present? %>
+      <div class="main-title"><%= @company.company_name %>のレビュー</div>
+      <span class="back-link">
+        <%= link_to :back do %>
+        <i class="fas fa-undo-alt"></i><%= @company.prefecture.prefecture_name %>の一覧ページへ戻る
+        <% end %>
+      </span>
+
       <% @reviews.each do |review| %>
       <div class="review__items">
         <div class="personal">
@@ -13,19 +20,21 @@
           <div class="star-rating-front" style="width: <%= review.self_score_percentage %>%">★★★★★</div>
           <div class="star-rating-back">★★★★★</div>
         </div>
-
         <div><%= review.score %>点</div>
         <div><%= review.comment %></div>
         <div class="review-time"><%= review.created_at.strftime("%Y年%m月%d日")  %></div>
-
         <div class="useronly">
           <%= link_to "削除", admins_company_post_comment_path(review.company.id,review), method: :delete %>
         </div>
-
       </div>
       <% end %>
       <% else %>
-      <div>レビューはありません。</div>
+      <%= @company.company_name %>に対するレビューはありません。
+      <span class="back-link">
+        <%= link_to :back do %>
+        <i class="fas fa-undo-alt"></i><%= @company.prefecture.prefecture_name %>の一覧ページへ戻る
+        <% end %>
+      </span>
       <% end %>
     </div>
   </div>

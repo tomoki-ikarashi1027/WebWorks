@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <h3>言語の追加</h3>
+  <%= form_with model: @tag, url:  admins_tags_path,local: true do |form| %>
+  <%= form.text_field :language %>
+  <%= form.text_field :framework %>
+  <%= form.submit %>
+  <% end %>
+
+  <% @tags.each do |tag| %>
+  <%= tag.language %>
+  <%= tag.framework %>
+
+  <% end %>
+</div>

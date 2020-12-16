@@ -5,6 +5,7 @@ class Admins::PrefecturesController < ApplicationController
   def show
     @prefecture = Prefecture.find(params[:id])
     @companies = @prefecture.companies
+    # @tags = @companies.tags
   end
 
   def destroy
