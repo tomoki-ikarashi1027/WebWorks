@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="tag row">
+    <div class="tag__add col-lg-4">
+      <div>
+        <h3>プログラミング言語</h3>
+        <%= form_with model: @language, url: admins_language_tags_path,local: true do |form| %>
+        <%= form.text_field :language %>
+        <%= form.submit "追加" %>
+        <% end %>
+      </div>
+      <div>
+        <h3>フレームワーク</h3>
+        <%= form_with model: @framework, url:  admins_framework_tags_path,local: true do |form| %>
+        <%= form.text_field :framework %>
+        <%= form.submit "追加" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>プログラミング言語</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @languages.each do |tag| %>
+          <tr>
+            <td><%= tag.language %></td>
+            <td><%= link_to "削除", admins_language_tag_path(tag) ,method: :delete %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>フレームワーク</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @frameworks.each do |tag| %>
+          <tr>
+            <td> <%= tag.framework %></td>
+            <td><%= link_to "削除", admins_framework_tag_path(tag) ,method: :delete %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.tag{
+  @extend .content-width;
+  &__add{
+    @extend .mb-sm;
+  }
+  & th{
+    font-size: 15px;
+  }
+}

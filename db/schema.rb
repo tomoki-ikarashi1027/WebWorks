@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_14_115608) do
+ActiveRecord::Schema.define(version: 2020_12_16_122229) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -37,13 +37,22 @@ ActiveRecord::Schema.define(version: 2020_12_14_115608) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "company_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "company_framework_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "company_id"
-    t.bigint "tag_id"
+    t.bigint "framework_tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_company_tag_relations_on_company_id"
-    t.index ["tag_id"], name: "index_company_tag_relations_on_tag_id"
+    t.index ["company_id"], name: "index_company_framework_tag_relations_on_company_id"
+    t.index ["framework_tag_id"], name: "index_company_framework_tag_relations_on_framework_tag_id"
+  end
+
+  create_table "company_language_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "company_id"
+    t.bigint "language_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_language_tag_relations_on_company_id"
+    t.index ["language_tag_id"], name: "index_company_language_tag_relations_on_language_tag_id"
   end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,6 +63,18 @@ ActiveRecord::Schema.define(version: 2020_12_14_115608) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "framework_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "framework", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "language_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "language", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "post_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,13 +96,6 @@ ActiveRecord::Schema.define(version: 2020_12_14_115608) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "language"
-    t.string "framework"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
     t.string "encrypted_password", default: "", null: false
@@ -95,8 +109,10 @@ ActiveRecord::Schema.define(version: 2020_12_14_115608) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "company_tag_relations", "companies"
-  add_foreign_key "company_tag_relations", "tags"
+  add_foreign_key "company_framework_tag_relations", "companies"
+  add_foreign_key "company_framework_tag_relations", "framework_tags"
+  add_foreign_key "company_language_tag_relations", "companies"
+  add_foreign_key "company_language_tag_relations", "language_tags"
   add_foreign_key "contacts", "users"
   add_foreign_key "post_comments", "companies"
   add_foreign_key "post_comments", "users"

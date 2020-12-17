@@ -15,7 +15,8 @@ Rails.application.routes.draw do
     resources :prefectures, only: [:index, :show, :create ]
     get 'contacts/top' => "contacts#top"
     resources :contacts, except: [:show]
-    resources :tags, except: [:show]
+    resources :language_tags, except: [:show]
+    resources :framework_tags, except: [:show]
     resources :companies do
       resources :post_comments, only: [:index, :show, :destroy]
     end

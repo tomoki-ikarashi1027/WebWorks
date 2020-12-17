@@ -44,3 +44,19 @@
   font-size: 16px;
   margin-top: 8px;
 }
+
+.company-post{
+  border: 1px solid;
+  padding: 20px;
+
+  &__items{
+    & input{
+      width: 80%;
+      margin-bottom: 10px;
+    }
+    & > div:nth-child(3){
+      margin-top: 10px;
+
+    }
+  }
+}

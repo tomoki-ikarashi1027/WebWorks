@@ -5,19 +5,23 @@ class Admins::CompaniesController < ApplicationController
   end
   def show
     @reviews = @company.post_comments
-    @tags = @company.tags
   end
 
   def new
-    @tags = Tag.all
+    @languages = LanguageTag.all
+    @frameworks = FrameworkTag.all
     @company = Company.new
   end
 
   def create
-    company = Company.new(company_params)
-    if company.save
+    @company = Company.new(company_params)
+    if @company.save
       flash[:notice] = 'successfully'
       redirect_to admins_prefectures_path
+    else
+      @languages = LanguageTag.all
+      @frameworks = FrameworkTag.all
+      render :new
     end
   end
 
@@ -25,9 +29,12 @@ class Admins::CompaniesController < ApplicationController
   end
 
   def update
-    company = Company.find(params[:id])
-    if company.update(company_params)
-      redirect_to  admins_company_path(company.id)
+    @prefecture = Prefecture.find(params[:id])
+    @company = Company.find(params[:id])
+    if @company.update(company_params)
+      redirect_to admins_prefecture_path(@prefecture)
+    else
+      render :edit
     end
 
   end
@@ -44,6 +51,6 @@ class Admins::CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:company_name, :description, :image, :prefecture_id, :address, :phone_number, :url,  tag_ids: [])
+    params.require(:company).permit(:company_name, :description, :image, :prefecture_id, :address, :phone_number, :url, language_tag_ids: [], framework_tag_ids: [])
   end
 end

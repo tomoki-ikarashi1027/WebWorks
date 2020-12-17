@@ -27,9 +27,9 @@
 @import "modules/appear";
 @import "contacts";
 @import "prefectures";
-@import "company";
+@import "companies";
 @import "post_comments";
-
+@import "tags";
 
 @media (min-width: 600px){
   @import "breakpoints/600up";
