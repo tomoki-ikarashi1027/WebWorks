@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="prefectures">
     <div class="prefectures-show">
-      <div class="prefectures__title">
+      <div class="prefectures__title main-title">
         <%= @prefecture.prefecture_name + "のWEB系企業を探す" %>
 
       </div>
@@ -32,6 +32,16 @@
             <div class="main-title"><%= company.company_name %></div>
             <div>本社所在地 :<%= company.address %></div>
             <div>電話番号 :<%= company.phone_number %></div>
+            <div>言語 :
+              <% company.language_tags.each do |tag| %>
+              <span class="language"><%= tag.language  %></span>
+              <% end %>
+            </div>
+            <div>フレームワーク :
+              <% company.framework_tags.each do |tag| %>
+              <span class="language"><%= tag.framework  %></span>
+              <% end %>
+            </div>
             <div>概要 :<%= company.description %></div>
           </div>
         </div>

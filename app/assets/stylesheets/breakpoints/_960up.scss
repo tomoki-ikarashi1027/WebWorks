@@ -61,3 +61,10 @@
 .pagination{
   margin-left: 100px;
 }
+
+.search-box{
+  & input[type="text"],
+    select {
+      width: 250px;
+  }
+}

@@ -4,8 +4,8 @@
       <% if @reviews.present? %>
       <div class="main-title"><%= @company.company_name %>のレビュー</div>
       <span class="back-link">
-        <%= link_to :back do %>
-        <i class="fas fa-undo-alt"></i><%= @company.prefecture.prefecture_name %>の一覧ページへ戻る
+        <%= link_to  admins_prefecture_path(@company.prefecture_id) do %>
+        <i class="fas fa-undo-alt"></i><%= @company.prefecture.prefecture_name %>の一覧ページ
         <% end %>
       </span>
 

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :prefectures, only: [:index, :show, :create ]
     get 'contacts/top' => "contacts#top"
+    get "prefectures/search" => "prefectures#search"
     resources :contacts, except: [:show]
     resources :language_tags, except: [:show]
     resources :framework_tags, except: [:show]
