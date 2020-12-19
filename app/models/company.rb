@@ -35,7 +35,7 @@ class Company < ApplicationRecord
     if search
     Company.where(['company_name LIKE ?', "%#{search}%" ])
     else
-      # Company.all
+      Company.all
     end
   end
 end

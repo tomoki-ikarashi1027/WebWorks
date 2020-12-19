@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="prefectures row appear down">
+  <div class="prefectures row">
     <div class="col-lg-8">
       <button class="btn solid ">
         <%= link_to '掲載企業の追加・編集',new_admins_company_path %>
@@ -122,29 +122,26 @@
         </div>
       </div>
     </div>
-
-
     <div class="search-box col-lg-4 item">
       <div class="search-box__inner">
         <div class="name-search">
-          <%= form_tag(prefectures_search_path, :method => "get") do %>
+          <%= form_tag(admins_prefectures_search_path, :method => "get") do %>
           <%= text_field_tag :search ,'', placeholder: "会社名を入力"%>
           <%= submit_tag "Search" %>
           <% end %>
         </div>
         <div class="tag-search">
-          <%= form_tag(prefectures_search_path, :method => "get") do %>
+          <%= form_tag( admins_prefectures_search_path, :method => "get") do %>
           <%= select_tag :language_tag_id,  options_from_collection_for_select(@languages, :id, :language, params[:language_tag_id]), prompt:  'プログラミング言語で絞り込み' %>
           <%= submit_tag "Search" %>
           <% end %>
 
-          <%= form_tag(prefectures_search_path, :method => "get") do %>
+          <%= form_tag(admins_prefectures_search_path, :method => "get") do %>
           <%= select_tag :framework_tag_id,  options_from_collection_for_select(@frameworks, :id, :framework, params[:framework_tag_id]), prompt:  'フレームワークで絞り込み'%>
           <%= submit_tag "Search" %>
           <% end %>
         </div>
       </div>
     </div>
-
   </div>
 </div>

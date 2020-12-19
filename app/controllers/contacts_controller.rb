@@ -3,6 +3,10 @@ class ContactsController < ApplicationController
   def top
   end
 
+  def about
+
+  end
+
   def new
     @contact = Contact.new
   end

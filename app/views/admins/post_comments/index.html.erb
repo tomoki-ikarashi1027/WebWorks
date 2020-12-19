@@ -1,0 +1,25 @@
+ <div class="wrapper">
+   <div class="contact">
+     <div class="contact__title main-title">投稿コメント一覧</div>
+     <table class="table">
+       <thead>
+         <tr>
+           <th>投稿コメント</th>
+           <th colspan="2"></th>
+         </tr>
+       </thead>
+       <tbody>
+         <% @reviews.each do |review|  %>
+         <tr>
+           <p>
+             <td><%= review.comment %></td>
+           </p>
+           <td><%= link_to "show", admins_post_comment_path(review) %></td>
+           <td><%= link_to "削除", admins_post_comment_path(review), method: :delete %></td>
+         </tr>
+         <% end %>
+       </tbody>
+     </table>
+
+   </div>
+ </div>

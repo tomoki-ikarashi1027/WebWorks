@@ -130,7 +130,7 @@
       <div class="search-box__inner">
         <div class="name-search">
           <%= form_tag(prefectures_search_path, :method => "get") do %>
-          <%= text_field_tag :search ,'', placeholder: "会社名を入力"%>
+          <%= text_field_tag :search ,'', placeholder: "会社名を入力" , required: true%>
           <%= submit_tag "Search" %>
           <% end %>
         </div>

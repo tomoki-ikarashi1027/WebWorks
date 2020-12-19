@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="review" style="border:none;">
+  <div class="review" style="border:none; margin-top:100px;">
     <div class="review__inner">
       <% if @reviews.present? %>
       <div class="main-title"><%= @company.company_name %>のレビュー</div>
@@ -24,7 +24,7 @@
         <div><%= review.comment %></div>
         <div class="review-time"><%= review.created_at.strftime("%Y年%m月%d日")  %></div>
         <div class="useronly">
-          <%= link_to "削除", admins_company_post_comment_path(review.company.id,review), method: :delete %>
+          <%= link_to "削除", admins_post_comment_path(review), method: :delete %>
         </div>
       </div>
       <% end %>

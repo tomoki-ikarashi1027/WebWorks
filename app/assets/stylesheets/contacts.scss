@@ -36,6 +36,27 @@
   &__title{
     margin:15px 0;
   }
+
+
+}
+
+
+.video-content{ //hover時に暗く表示
+  max-width: 100%;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    pointer-events: none; //マウスの操作を受け付けない
+    // background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.9);
+  }
 }
 
 .company{
@@ -184,9 +205,6 @@
   }
   & table{
     font-size: 5px;
-    // text-align: center;
-    // margin: 0 auto;
-
 
     & p{
       height: 100%;

@@ -1,4 +1,5 @@
 class Admins::CompaniesController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_user, except:[:new, :create, :index]
   def index
     @comments = PostComment.all
