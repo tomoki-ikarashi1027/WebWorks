@@ -93,3 +93,32 @@
 .psearch-box{
   display: block;
 }
+.qa-list{
+  margin-top: 50px;
+  & .qa{
+    font-size: 20px;
+    padding: 28px 80px 28px 30px;
+
+    &::before{
+        top: 35px;
+        right: 35px;
+        width: 7px;
+        height: 7px;
+    }
+
+    & dt{
+      &::before{
+        left: 0;
+        font-size: 22px;
+      }
+    }
+    & dd{
+      &::before{
+        font-size: 22px;
+        top: 3px;
+        left: 2px;
+      }
+    }
+  }
+
+}

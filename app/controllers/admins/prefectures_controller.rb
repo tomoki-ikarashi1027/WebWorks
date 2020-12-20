@@ -1,5 +1,5 @@
 class Admins::PrefecturesController < ApplicationController
-  before_action :authenticate_admin!
+  # before_action :authenticate_admin!
   def index
     @languages = LanguageTag.all
     @frameworks = FrameworkTag.all

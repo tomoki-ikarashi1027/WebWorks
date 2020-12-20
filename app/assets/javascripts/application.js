@@ -18,6 +18,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   new Main();
+
   // new MobileMenu();
 
   // const hero = new HeroSlider('.swiper-container');
