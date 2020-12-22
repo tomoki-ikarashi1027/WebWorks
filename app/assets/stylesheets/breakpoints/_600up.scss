@@ -90,7 +90,7 @@
     }
   }
 }
-.psearch-box{
+.search-box{
   display: block;
 }
 .qa-list{
@@ -120,5 +120,24 @@
       }
     }
   }
+}
 
+.calendar{
+
+  & .btn{
+    padding: 10px 40px;
+  }
+  & > h1{
+    margin-bottom: 50px;
+  }
+  & .calendar-heading{
+    top: 19%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 1.4em;
+
+    & > .calendar-title{
+      margin: 0 5px;
+    }
+  }
 }

@@ -15,7 +15,8 @@
              <td><%= review.comment %></td>
            </p>
            <td><%= link_to "show", admins_post_comment_path(review) %></td>
-           <td><%= link_to "削除", admins_post_comment_path(review), method: :delete %></td>
+           <td><%= link_to "削除", admins_post_comment_path(review), method: :delete, data: {confirm: "Are you sure?"} %>
+           </td>
          </tr>
          <% end %>
        </tbody>

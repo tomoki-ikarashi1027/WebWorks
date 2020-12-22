@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :post_comments, dependent: :destroy
   has_many :contacts, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   after_create :send_welcome_mail
 

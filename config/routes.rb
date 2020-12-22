@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
   devise_for :users , controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
     resources :framework_tags, except: [:show]
     resources :companies
     resources :post_comments, only: [:index, :show, :destroy]
-    delete "post_comments/:id" => "post_comments#destroy_company", as: 'destroy_review'
+    # delete "post_comments/:id" => "post_comments#destroy_company", as: 'destroy_review'
   end
 
   root to: 'contacts#top'
@@ -31,6 +32,6 @@ Rails.application.routes.draw do
   resources :companies do
     resources :post_comments, except: [:index ,:show]
   end
-
+  resources :events
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

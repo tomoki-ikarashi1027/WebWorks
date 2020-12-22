@@ -21,7 +21,7 @@
           </p>
 
           <td><%= link_to "返信", edit_admins_contact_path(contact) %></td>
-          <td><%= link_to "削除", admins_contact_path(contact), method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+          <td><%= link_to "削除", admins_contact_path(contact), method: :delete, data: {confirm: "Are you sure?"} %></td>
         </tr>
         <% end %>
       </tbody>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_122229) do
+ActiveRecord::Schema.define(version: 2020_12_22_041751) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 2020_12_16_122229) do
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "start_time"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
   create_table "framework_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "framework", null: false
     t.datetime "created_at", null: false
@@ -114,6 +124,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_122229) do
   add_foreign_key "company_language_tag_relations", "companies"
   add_foreign_key "company_language_tag_relations", "language_tags"
   add_foreign_key "contacts", "users"
+  add_foreign_key "events", "users"
   add_foreign_key "post_comments", "companies"
   add_foreign_key "post_comments", "users"
 end

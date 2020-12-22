@@ -58,7 +58,7 @@
       <% if review.user.id == current_user.id %>
       <div class="useronly">
         <%= link_to "編集",edit_company_post_comment_path(review.company.id,review) %>
-        <%= link_to "削除",company_post_comment_path(review.company.id,review), method: :delete %>
+        <%= link_to "削除",company_post_comment_path(review.company.id,review), method: :delete , data: {confirm: "Are you sure?"} %>
       </div>
       <% end %>
     </div>

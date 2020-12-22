@@ -42,7 +42,8 @@
           <% @frameworks.each do |tag| %>
           <tr>
             <td> <%= tag.framework %></td>
-            <td><%= link_to "削除", admins_framework_tag_path(tag) ,method: :delete %></td>
+            <td><%= link_to "削除", admins_framework_tag_path(tag) ,method: :delete, data: {confirm: "Are you sure?"} %>
+            </td>
           </tr>
           <% end %>
         </tbody>

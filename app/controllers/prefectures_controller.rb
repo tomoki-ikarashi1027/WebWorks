@@ -1,8 +1,7 @@
-class PrefecturesController < Admins::PrefecturesController
+class PrefecturesController < ApplicationController
   def index
     @languages = LanguageTag.all
     @frameworks = FrameworkTag.all
-
   end
 
   def show
