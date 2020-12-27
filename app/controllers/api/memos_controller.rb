@@ -1,5 +1,6 @@
 class Api::MemosController < ApplicationController
   def index
+    # @memos = Memo.all.order('created_at DESC')
     @memos = Memo.all.order('created_at DESC')
   end
 
