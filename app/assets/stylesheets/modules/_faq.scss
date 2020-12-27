@@ -1,0 +1,78 @@
+.qa-list {
+  margin-top: 10px;
+  & .qa {
+    position: relative;
+    margin: 0;
+    padding: 15px 40px 15px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+    font-weight: bold;
+    font-size: 14px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 7px;
+      height: 7px;
+      display: block;
+      margin: auto;
+      transform: rotate(135deg);
+      border-top: 2px solid #000;
+      border-right: 2px solid #000;
+      transition: transform 0.3s;
+    }
+
+    & dt{
+      position: relative;
+      padding: 0 0 0 50px;
+
+      &::before{
+        content: 'Q.';
+        top: 3px;
+        left: 5px;
+        position: absolute;
+        line-height: 1;
+        display: block;
+        color: #3285bf;
+        font-size: 14px;
+      }
+    }
+
+    & dd{
+      position: relative;
+      display: none;
+      height: auto;
+      margin: 20px 0 0;
+      padding: 0 0 0 50px;
+
+      &::before{
+        top: 5px;
+        left: 5px;
+        line-height: 1;
+        position: absolute;
+        display: block;
+        content: 'A.';
+        font-weight: bold;
+        color: #3285bf;
+        font-size: 14px;
+      }
+    }
+
+    &.opne{
+      &::before{
+        transform: rotate(-45deg);
+      }
+      & dd{
+        display: block;
+      }
+    }
+    & p{
+      margin: 30px 0 0;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+}

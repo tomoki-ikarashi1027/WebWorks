@@ -1,0 +1,78 @@
+.font-sm{
+  font-size: 16px;
+}
+.font-md{
+  font-size: 19px;
+}
+.font-lg{
+  font-size: 30px;
+}
+
+.mb-lg{
+  margin-bottom: 150px !important;
+}
+.pb-lg{
+  padding-bottom: 150px !important;
+}
+
+.header{
+  &__nav{
+    display: block ;
+  }
+  & .mobile-menu__btn{
+    display: none;
+  }
+}
+
+.about{
+  &__inner{
+    padding: 50px 150px;
+  }
+  &__img{
+    height: 400px;
+  }
+}
+
+.job-site{
+  &__item{
+    flex-basis: 25%;
+  }
+  &__img{
+    height: 350px;
+  }
+}
+
+.side{
+  display: block;
+}
+
+.swiper-slide {
+  box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+}
+
+.contact{
+  & table{
+    & p {
+      width: 200px;
+    }
+  }
+}
+
+.pagination{
+  margin-left: 100px;
+}
+
+.search-box{
+  & input[type="text"],
+    select {
+      width: 250px;
+  }
+}
+
+.about-text{
+  position: absolute;
+  top: 21%;
+  left: 23%;
+  color: white;
+  font-size: 2em;
+}

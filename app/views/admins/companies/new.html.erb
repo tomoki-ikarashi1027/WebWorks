@@ -1,0 +1,51 @@
+ <div class="wrapper">
+   <div class="prefectures">
+     <% if @company.errors.any? %>
+     <%= @company.errors.count %>件のエラー。<br>
+     <% @company.errors.full_messages.each do |message| %>
+     <%= message %><br>
+     <% end %>
+     <% end %>
+     <div class="company-post">
+       <div class="company-post__inner">
+         <%= form_for(@company ,url:  admins_companies_path) do |f| %>
+         <div class="company-post__title">
+           <h2>掲載企業を追加</h2>
+         </div>
+         <div class="company-post__items">
+           <div>都道府県</div>
+           <%= f.select :prefecture_id, Prefecture.prefecture_names %>
+           <div>会社名</div>
+           <%= f.text_field :company_name %>
+           <div>所在地</div>
+           <%= f.text_field :address %>
+           <div>電話番号</div>
+           <%= f.text_field :phone_number ,placeholder: "ハイフンなし" %>
+         </div>
+         <div>
+           <div>
+             <h5>プログラミング言語 (未選択でも可)</h5>
+             <%= f.collection_check_boxes(:language_tag_ids, @languages, :id, :language , include_hidden: false) do |tag| %>
+             <%= tag.label { tag.check_box + tag.text } %>
+             <% end %>
+           </div>
+           <h5>フレームワーク (未選択でも可)</h5>
+           <div>
+             <%= f.collection_check_boxes(:framework_tag_ids, @frameworks, :id, :framework , include_hidden: false) do |tag| %>
+             <%= tag.label { tag.check_box + tag.text } %>
+             <% end %>
+           </div>
+         </div>
+
+         <div>説明文を記入</div>
+         <%= f.text_area :description ,class: 'description-area'%>
+         <div>
+           <%= f.attachment_field :image %>
+         </div>
+
+         <%= f.submit 'Create Company', class: "btn solid" %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>

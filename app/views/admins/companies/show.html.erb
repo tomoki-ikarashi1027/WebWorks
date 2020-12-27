@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="review" style="border:none; margin-top:100px;">
+    <div class="review__inner">
+      <% if @reviews.present? %>
+      <div class="main-title"><%= @company.company_name %>のレビュー</div>
+      <span class="back-link">
+        <%= link_to  admins_prefecture_path(@company.prefecture_id) do %>
+        <i class="fas fa-undo-alt"></i><%= @company.prefecture.prefecture_name %>の一覧ページ
+        <% end %>
+      </span>
+
+      <% @reviews.each do |review| %>
+      <div class="review__items">
+        <div class="personal">
+          <%= review.user.name %>・
+          <%= review.gender %>・
+          <%= review.employment_status %>
+        </div>
+        <div class="star-rating mb-2">
+          <div class="star-rating-front" style="width: <%= review.self_score_percentage %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
+        <div><%= review.score %>点</div>
+        <div><%= review.comment %></div>
+        <div class="review-time"><%= review.created_at.strftime("%Y年%m月%d日")  %></div>
+        <div class="useronly">
+          <%= link_to "削除", admins_post_comment_path(review), method: :delete, data: {confirm: "Are you sure?"} %>
+        </div>
+      </div>
+      <% end %>
+      <% else %>
+      <%= @company.company_name %>に対するレビューはありません。
+      <span class="back-link">
+        <%= link_to :back do %>
+        <i class="fas fa-undo-alt"></i><%= @company.prefecture.prefecture_name %>の一覧ページへ戻る
+        <% end %>
+      </span>
+      <% end %>
+    </div>
+  </div>
+</div>

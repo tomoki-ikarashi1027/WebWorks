@@ -1,0 +1,62 @@
+// Place all the styles related to the Company controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.main-rating .ratings .fa {
+  font-size: 30px;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+.main-rating {
+  display: flex;
+}
+
+.rating-value-display {
+  font-size: 20px;
+}
+
+
+
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  color: #ccc;
+}
+
+.average-score {
+  display: flex;
+}
+.average-score-display {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.company-post{
+  border: 1px solid;
+  padding: 20px;
+
+  &__items{
+    & input{
+      width: 80%;
+      margin-bottom: 10px;
+    }
+    & > div:nth-child(3){
+      margin-top: 10px;
+
+    }
+  }
+}

@@ -1,0 +1,147 @@
+<div class="wrapper">
+  <div class="prefectures row">
+    <div class="col-lg-8">
+      <button class="btn solid ">
+        <%= link_to '掲載企業の追加・編集',new_admins_company_path %>
+      </button>
+
+      <div class="prefectures__inner">
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li> <%= link_to "北海道", admins_prefecture_path(1) %></li>
+            <li>青森県</li>
+            <li>秋田県</li>
+            <li>岩手県</li>
+            <li>宮城県</li>
+            <li>山形県</li>
+            <li>福島県</li>
+          </ul>
+        </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>関東地方</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>東京都</li>
+            <li>神奈川県</li>
+            <li>千葉県</li>
+            <li>埼玉県</li>
+            <li>茨城県</li>
+            <li>栃木県</li>
+            <li>群馬県</li>
+          </ul>
+        </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+        <div class="prefectures__group">
+          <div class="prefectures__group-title">
+            <span>北海道・東北</span>
+          </div>
+          <ul class="prefectures__ul">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="search-box col-lg-4 item">
+      <div class="search-box__inner">
+        <div class="name-search">
+          <%= form_tag(admins_prefectures_search_path, :method => "get") do %>
+          <%= text_field_tag :search ,'', placeholder: "会社名を入力"%>
+          <%= submit_tag "Search" %>
+          <% end %>
+        </div>
+        <div class="tag-search">
+          <%= form_tag( admins_prefectures_search_path, :method => "get") do %>
+          <%= select_tag :language_tag_id,  options_from_collection_for_select(@languages, :id, :language, params[:language_tag_id]), prompt:  'プログラミング言語で絞り込み' %>
+          <%= submit_tag "Search" %>
+          <% end %>
+
+          <%= form_tag(admins_prefectures_search_path, :method => "get") do %>
+          <%= select_tag :framework_tag_id,  options_from_collection_for_select(@frameworks, :id, :framework, params[:framework_tag_id]), prompt:  'フレームワークで絞り込み'%>
+          <%= submit_tag "Search" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

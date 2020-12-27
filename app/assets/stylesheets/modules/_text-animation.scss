@@ -1,0 +1,31 @@
+.animate-title{
+  opacity: 0;
+
+  &.inview{
+    opacity: 1;
+
+    & .char{
+      display: inline-block; //transformはinline要素のみ対応しないため。(今回,charsはspan要素)
+      @include animation(
+        $name: kf-animate,
+        $fill-mode: both,
+        $duration: 0.4s,
+
+      );
+      @for $i from 1 through 30{
+        &:nth-child(#{$i}){
+          animation-delay: $i * 0.1s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes kf-animate{
+  0%{
+    transform: translateY(-50%);
+  }
+  100%{
+    transform: none;
+  }
+}

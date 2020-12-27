@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ * require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "modules/mixin";
+@import "modules/loader";
+@import "modules/button";
+@import "base";
+@import "modules/hero-slider";
+@import "modules/mobile-menu";
+@import "modules/image-slide";
+@import "modules/text-animation";
+@import "modules/appear";
+@import "modules/faq";
+@import "contacts";
+@import "prefectures";
+@import "companies";
+@import "post_comments";
+@import "tags";
+@import "events";
+@import "memos";
+
+@media (min-width: 600px){
+  @import "breakpoints/600up";
+}
+
+@media (min-width: 960px){
+  @import "breakpoints/960up";
+}
+
+@media (min-width: 1280px){
+  @import "breakpoints/1280up";
+}

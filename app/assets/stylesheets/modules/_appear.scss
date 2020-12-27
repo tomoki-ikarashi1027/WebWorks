@@ -1,0 +1,33 @@
+$appearPattern: (
+  "up": translateY(10px),
+  "down": translateY(-10px),
+  "right": translateX(30px),
+  "left": translateX(-30px)
+);
+
+@each $key, $value in $appearPattern{
+  .appear.#{$key}{
+    & .item{
+      transform: $value;
+    }
+  }
+}
+
+.appear{
+  & .item{
+    opacity: 0;
+    transition: all 1s ease;
+  }
+  &.inview{
+    & .item{
+      opacity: 1;
+      transform: none;
+
+      @for $i from 1 through 10{
+        &:nth-child(#{$i}){
+          transition-delay: $i * 0.3s;
+        }
+      }
+    }
+  }
+}

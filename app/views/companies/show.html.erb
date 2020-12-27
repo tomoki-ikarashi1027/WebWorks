@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <div class="prefectures">
+    <div>
+      <span class="back-link">
+        <%= link_to prefecture_path(@company.prefecture_id) do %>
+        <i class="fas fa-undo-alt"></i><%= @company.prefecture.prefecture_name %>の一覧ページ
+        <% end %>
+      </span>
+      <div class="prefectures__company">
+        <div class="prefectures__img">
+          <div> <%= attachment_image_tag @company,:image,  format: 'jpeg', fallback: "no-image.jpg" %></div>
+
+          <div class="left-item">
+            <div class="star-rating">
+              <div class="star-rating-front" style="width: <%= @company.review_score_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+
+            <div class="average-score-display">
+              <%= @company.avg_score %>点（<%= @company.post_comments.count %>件のレビュー）
+            </div>
+
+            <button class="btn solid"><%= link_to "レビューを書く", new_company_post_comment_path(@company) %></button>
+
+          </div>
+        </div>
+        <div class="prefectures__texts">
+          <div class="prefectures__texts-inner">
+            <div class="main-title"><%= @company.company_name %></div>
+            <div>本社所在地 :<%= @company.address %></div>
+            <div>電話番号 :<%= @company.phone_number %></div>
+            <div>ホームページ :<%= @company.url %></div>
+            <div>概要 :<%= @company.description %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="review">
+  <div class="review__inner">
+    <% @reviews.each do |review| %>
+    <div class="review__items">
+      <div class="personal">
+        <%= review.user.name %>・
+        <%= review.gender %>・
+        <%= review.employment_status %>
+      </div>
+      <div class="star-rating mb-2">
+        <div class="star-rating-front" style="width: <%= review.self_score_percentage %>%">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+      </div>
+
+      <div><%= review.score %>点</div>
+      <div><%= review.comment %></div>
+      <div class="review-time"><%= review.created_at.strftime("%Y年%m月%d日")  %></div>
+      <% if review.user.id == current_user.id %>
+      <div class="useronly">
+        <%= link_to "編集",edit_company_post_comment_path(review.company.id,review) %>
+        <%= link_to "削除",company_post_comment_path(review.company.id,review), method: :delete , data: {confirm: "Are you sure?"} %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

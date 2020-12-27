@@ -1,0 +1,88 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.calendar{
+  @extend .content-width;
+  position: relative;
+
+  & .calendar-heading{
+    @extend .mb-sm;
+    position: absolute;
+    top: 15%;
+    right: 0;
+
+    & > .calendar-title{
+      margin: 0 2px;
+    }
+  }
+
+  & .index-btn{
+    padding: 8px 14px;
+    margin-bottom: 0;
+  }
+
+  & textarea{
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+  }
+  &__title{
+    margin-bottom: 10px;
+    width: 50%;
+  }
+
+  & .table-striped{
+    margin-top: 10px;
+  }
+
+  & .modal-footer{
+    text-align: center !important;
+    & .btn{
+      margin-bottom: 0;
+      &:nth-child(2){
+        padding: 10px 60px;
+      }
+    }
+    & input[type="submit"]{
+      display: none
+    }
+  }
+  & .wday-0{
+    background-color: #f7d7f7;
+  }
+  & .wday-6{
+    background-color: rgb(166, 221, 243);
+  }
+
+  & .fas{
+    margin-left: 10px;
+  }
+}
+
+.calendar-show{
+  font-size: 20px;
+  font-size: 20px;
+  margin: 0 auto;
+  width: 350px;
+  border: 1px solid;
+
+  & > div{
+    margin-bottom: 10px;
+    padding: 16px 20px;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  &__title{
+    border-bottom: 1px solid rgb(161, 157, 157);
+  }
+  &__comment{
+    height:300px;
+    border-top: 10px solid rgba(117, 115, 115, 0.6);
+  }
+  &__footer{
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+  }
+}

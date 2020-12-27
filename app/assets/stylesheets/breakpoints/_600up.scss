@@ -1,0 +1,143 @@
+.flex{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.about{
+  &__inner{
+    padding: 50px;
+  }
+  &__img,
+  &__texts{
+    flex-basis: 47%;
+  }
+  &__texts{
+    display: flex;
+    align-items: center;
+  }
+}
+
+.company{
+  &__inner{
+    justify-content: space-between;
+  }
+  &__item{
+    flex-basis: 49%;
+
+    & > p{
+      font-size: 25px;
+    }
+  }
+}
+
+.job-site{
+  &__container{
+    justify-content: space-between;
+  }
+  &__item{
+    margin-bottom: 40px !important;
+    flex-basis: 49%;
+  }
+  &__img{
+    height: 200px;
+  }
+}
+
+.footer{
+  &__li{
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  & .logo{
+    justify-content: flex-start;
+  }
+}
+
+.prefectures{
+
+  &__img{
+    flex-basis: 45%;
+    height: 250px;
+  }
+
+  &__texts{
+    flex-basis: 50%;
+  }
+
+  &__company{
+    height: 450px;
+  }
+}
+
+.description-area {
+  width: 600px;
+  height: 400px;
+}
+
+.company-post{
+  margin: 0 auto;
+}
+
+.contact{
+  & table{
+    font-size: 18px;
+    & td,th{
+      padding: 20px;
+    }
+    & p {
+      width: 150px;
+    }
+  }
+}
+.search-box{
+  display: block;
+}
+.qa-list{
+  margin-top: 50px;
+  & .qa{
+    font-size: 20px;
+    padding: 28px 80px 28px 30px;
+
+    &::before{
+        top: 35px;
+        right: 35px;
+        width: 7px;
+        height: 7px;
+    }
+
+    & dt{
+      &::before{
+        left: 0;
+        font-size: 22px;
+      }
+    }
+    & dd{
+      &::before{
+        font-size: 22px;
+        top: 3px;
+        left: 2px;
+      }
+    }
+  }
+}
+
+.calendar{
+
+  & .btn{
+    padding: 10px 40px;
+  }
+  & > h1{
+    margin-bottom: 50px;
+  }
+  & .calendar-heading{
+    top: 19%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 1.4em;
+
+    & > .calendar-title{
+      margin: 0 5px;
+    }
+  }
+}
