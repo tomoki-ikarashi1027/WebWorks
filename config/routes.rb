@@ -25,12 +25,14 @@ Rails.application.routes.draw do
   end
 
   namespace :api, format: 'json' do
-    resources :memos, only: [:index, :create]
+    resources :memos, only: [:index, :create, :destroy, :update]
+    resources :tasks, only: [:index, :create, :update, :destroy]
   end
 
   root to: 'contacts#top'
   get "contacts/about" => "contacts#about"
   get "contacts/memo" => "contacts#memo"
+  get "contacts/task" => "contacts#task"
   get "prefectures/search" => "prefectures#search"
   resources :contacts, only: [:new, :create]
   resources :prefectures, only: [:index, :show]

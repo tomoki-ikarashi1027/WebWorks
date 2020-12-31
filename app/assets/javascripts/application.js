@@ -18,7 +18,7 @@
 //= require_directory ./vendors
 //= require_tree .
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   new Main();
 
   // new MobileMenu();

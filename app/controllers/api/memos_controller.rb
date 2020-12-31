@@ -1,21 +1,30 @@
 class Api::MemosController < ApplicationController
-  def index
-    # @memos = Memo.all.order('created_at DESC')
-    @memos = Memo.all.order('created_at DESC')
-  end
+  skip_before_action :verify_authenticity_token
 
-  def create
-    @memo = Memo.new(memos_params)
-    if @memo.save
-      render :show, status: :created
-    else
-      render json: @memo.errors, status: :unprocessable_entity
+    def index
+      @memos = Memo.order('created_at DESC')
     end
-  end
 
-  private
+    def create
+      @memo = Memo.new(memo_params)
 
-  def memos_params
-    params.permit(:title, :body)
-  end
+      if @memo.save
+
+        render json: @memo, status: :created
+      else
+        render json: @memo.errors, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      Memo.find(params[:id]).destroy!
+    end
+
+    def update
+      Memo.find(params[:id]).toggle!(:is_done)
+    end
+
+    private def memo_params
+      params.require(:memo).permit(:title, :body, :is_done)
+    end
 end
