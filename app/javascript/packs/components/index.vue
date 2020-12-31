@@ -1,21 +1,32 @@
 <template>
-  <div>
-    <div>
-      <input v-model="newTask" placeholder="to doを追加して下さい">
-      <div v-on:click="createTask">
-        <i>追加</i>
-      </div>
+  <div class="task">
+    <div class="task__form">
+      <input v-model="name" placeholder="コメントを入力して下さい">
+      <span @click="createTask" ><i class="fas fa-plus-circle"></i></span>
     </div>
-    <ul>
-      <li v-for="(task, index) in tasks">
-        <input type="checkbox" v-model="task.is_done" v-on:click="update(task.id, index)">
-        <span v-bind:class="{done: task.is_done}">{{ task.name }}</span>
-        <button v-on:click="deleteTask(task.id, index)">削除</button>
-      </li>
+    <ul class="tasks1">
+      <div v-for="(task, index) in tasks" :key="task.id" class="tasks1__item">
+        <input type="checkbox" v-model="task.is_done" @click="update(task.id, index)" >
+        <span v-bind:class="{display_none : task.is_done}" >{{ task.name }}</span>
+      </div>
     </ul>
+    <div class="btn solid" v-on:click="displayFinishedTasks">Finished Tasks</div>
+    <div id="finished-tasks" class="display_none ">
+      <ul class="tasks2">
+        <li v-for="(task, index) in tasks" :key="task.id" v-if="task.is_done" v-bind:id="'row_task_' + task.id" class="tasks2__item">
+           <div class="finished-box">
+             <span>
+              <input type="checkbox" v-model="task.is_done" @click="update(task.id, index)" id="check">
+              <label  class="far fa-check-square" for="check"></label>
+              <span v-bind:for="'task_' + task.id">{{ task.name }}</span>
+             </span>
+           <span @click="deleteTask(task.id, index)"><i class="fas fa-trash"></i></span>
+           </div>
+         </li>
+      </ul>
+    </div>
   </div>
 </template>
-
 <script>
   import axios from 'axios';
 
@@ -23,7 +34,7 @@
     data: function () {
       return {
         tasks: [],
-        newTask: ''
+        name: '',
       }
     },
     mounted: function () {
@@ -40,11 +51,11 @@
         });
       },
       createTask: function () {
-        if(this.newTask == '') return;
+        if(this.name == '') return;
 
-        axios.post('/api/tasks', { task: { name: this.newTask } }).then((response) => {
+        axios.post('/api/tasks', { task: { name: this.name } }).then((response) => {
           this.tasks.unshift(response.data);
-          this.newTask = '';
+          this.name = '';
         }, (error) => {
           console.log(error, response);
         });
@@ -61,7 +72,17 @@
         }, (error) => {
           console.log(error);
         });
-      }
+      },
+      displayFinishedTasks: function() {
+        document.querySelector('#finished-tasks').classList.toggle('display_none');
+     },
     }
   }
 </script>
+
+<style scoped>
+  [v-cloak] {
+      display: none;
+    }
+
+</style>

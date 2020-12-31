@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get "contacts/about" => "contacts#about"
   get "contacts/memo" => "contacts#memo"
   get "contacts/task" => "contacts#task"
+  get "task_about" => "contacts#memo"
   get "prefectures/search" => "prefectures#search"
   resources :contacts, only: [:new, :create]
   resources :prefectures, only: [:index, :show]

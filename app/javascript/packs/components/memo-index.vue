@@ -78,86 +78,11 @@
   }
 </script>
 
-<style lang="scss" scoped>
-.memo{
-  &__form{
-    text-align: center;
-    & > input{
-    font-size: 16px;
-    width: 70%;
-    border: none;
-    outline: none;
-    padding-bottom: 8px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid#ddd;
-    margin-top: 30px;
+<style scoped>
+  [v-cloak] {
+      display: none;
     }
-
-    & .fa-plus-circle{
-    font-size: 3em;
-    color: brown;
-    cursor: pointer;
+    .task-about{
+      border: 1px solid #ddd;
     }
-  }
-}
-
-[v-cloak] {
-    display: none;
-  }
-  .display_none {
-    display:none;
-  }
-
-  ul{
-    list-style: none;
-    padding: 0;
-  }
-
-.memos1{
-  border: 1px solid #ddd;
-  margin: 0;
-  &__item{
-    width: 95%;
-    margin: 0 auto;
-    font-size: 1.5em;
-  }
-
-  & input[type="checkbox"]:checked{
-    display: none;
-  }
-
-  & .display_none　 {
-    display: none;
-  }
-}
-
-.memos2{
-  @extend .memos1;
-
-  &__item{
-    width: 95%;
-    margin: 0 auto;
-    font-size: 1.5em;
-    color: rgba(0,0,0,0.5);
-    &:hover{
-      color:black;
-    }
-  }
-
-  & .fa-trash{
-    cursor: pointer;
-    color: firebrick;
-    margin-left: 15px;
-    margin: 15px 0;
-  }
-}
-
-input[type="checkbox"]{
-    margin: 15px 0;
-  }
-
-.solid{
-  margin: 20px 0;
-}
-
 </style>
