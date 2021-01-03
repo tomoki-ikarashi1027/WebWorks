@@ -53,8 +53,8 @@
   )
 end
 
-3.times { Task.create!(name: 'Sample Task') }
-2.times { Task.create!(name: 'Sample Task', is_done: true) }
+# 3.times { Task.create!(name: 'Sample Task') }
+# 2.times { Task.create!(name: 'Sample Task', is_done: true) }
 
 # 48.times do
 #   Prefecture.create(

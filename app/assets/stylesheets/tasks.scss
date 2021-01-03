@@ -1,0 +1,97 @@
+.task-container{
+  top: 100px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.task{
+  &__form{
+    text-align: center;
+    & > input{
+    font-size: 16px;
+    width: 70%;
+    border: none;
+    outline: none;
+    padding-bottom: 8px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid#ddd;
+    margin-top: 30px;
+    }
+
+    & .fa-plus-circle{
+    font-size: 3em;
+    color: brown;
+    cursor: pointer;
+    }
+  }
+
+  & .solid{
+    margin: 20px 0;
+  }
+  & ul{
+    list-style: none;
+    padding: 0;
+  }
+  & input[type=checkbox]{
+    cursor: pointer;
+  }
+}
+
+.display_none {
+  display:none;
+}
+
+.tasks1{
+  border: 1px solid #ddd;
+  margin: 0;
+  &__item{
+    width: 95%;
+    margin: 0 auto;
+    font-size: 1.5em;
+  }
+
+  & input[type="checkbox"]:checked{
+    display: none;
+  }
+
+  & .display_none　 {
+    display: none;
+  }
+}
+
+.tasks2{
+  @extend .tasks1;
+
+  &__item{
+    width: 95%;
+    margin: 0 auto;
+    font-size: 1.5em;
+    color: rgba(0,0,0,0.5);
+    border-bottom: 1px solid #ddd;
+    &:hover{
+      color:black;
+    }
+  }
+
+  & .fa-trash{
+    cursor: pointer;
+    color: firebrick;
+    margin-left: 15px;
+    margin: 15px 0;
+  }
+
+  & .finished-box{
+    position: relative;
+    padding: 20px 0
+  }
+
+  & .fa-trash{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+  }
+
+  & .fa-check-square{
+    cursor: pointer;
+  }
+}

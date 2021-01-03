@@ -2,14 +2,14 @@ class Api::TasksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
     def index
-      @tasks = Task.order('created_at DESC')
+      @user = current_user
+      @tasks = @user.tasks.order('created_at DESC')
     end
 
     def create
       @task = Task.new(task_params)
-
+      @task.user_id = current_user.id
       if @task.save
-
         render json: @task, status: :created
       else
         render json: @task.errors, status: :unprocessable_entity

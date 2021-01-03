@@ -117,8 +117,10 @@ ActiveRecord::Schema.define(version: 2020_12_28_143933) do
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "is_done", default: false, null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -142,4 +144,5 @@ ActiveRecord::Schema.define(version: 2020_12_28_143933) do
   add_foreign_key "events", "users"
   add_foreign_key "post_comments", "companies"
   add_foreign_key "post_comments", "users"
+  add_foreign_key "tasks", "users"
 end

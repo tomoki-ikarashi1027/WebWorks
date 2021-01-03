@@ -1,88 +1,89 @@
 <template>
-  <div class="memo">
-    <div class="memo__form">
-      <input v-model="body" placeholder="コメントを入力して下さい">
-      <span @click="createTask" ><i class="fas fa-plus-circle"></i></span>
-    </div>
-    <ul class="memos1">
-      <div v-for="(memo, index) in memos" :key="memo.id" class="memos1__item">
-        <input type="checkbox" v-model="memo.is_done" @click="update(memo.id, index)" id="test2" >
-        <span v-bind:class="{display_none : memo.is_done}" >{{ memo.body }}</span>
+  <div id="app">
+    <div class="form">
+      <div class="form-group">
+        <input v-model="title" placeholder="タイトル" class="form-control">
       </div>
-    </ul>
-    <div class="btn solid" v-on:click="displayFinishedTasks">Finished Tasks</div>
-    <div id="finished-tasks" class="display_none finished-box">
-      <ul class="memos2">
-        <li v-for="(memo, index) in memos" :key="memo.id" v-if="memo.is_done" v-bind:id="'row_memo_' + memo.id" class="memos2__item">
-           <!-- <input type="checkbox" v-bind:id="'memo_' + memo.id" checked="checked" /> -->
-           <input type="checkbox" v-model="memo.is_done" @click="update(memo.id, index)" id="test">
-           <label  class="far fa-check-square" for="test"></label>
-           <!-- <i class="far fa-check-circle"></i> -->
-           <span v-bind:for="'memo_' + memo.id">{{ memo.body }}</span>
-           <span @click="deleteTask(memo.id, index)"><i class="fas fa-trash"></i></span>
-         </li>
-      </ul>
+      <div class="form-group">
+        <input v-model="body" placeholder="コメント" class="form-control">
+      </div>
+      <button @click="createMemo" class="btn solid">メモを追加</button>
+    </div>
+    <div class="flex">
+      <div v-for="(memo, index) in memos" :key="memo.id" class="card">
+        <input type="checkbox" v-model="memo.is_done" @click="update(memo.id, index)" >
+         <div v-bind:class="{linethrough : memo.is_done}" >
+        <div class="card-body">
+          <div class="card-title">
+
+
+              {{ memo.title }}
+          </div>
+          {{ memo.body }}
+       <span @click="deleteTask(memo.id, index)"><i class="fas fa-trash"></i></span>
+       </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
 <script>
-  import axios from 'axios';
+import axios from 'axios';
 
-  export default {
-    data: function () {
-      return {
-        memos: [],
-        body: '',
-      }
-    },
-    mounted: function () {
-      this.fetchTasks();
-    },
-    methods: {
-      fetchTasks: function () {
-        axios.get('/api/memos').then((response) => {
-          for(let i = 0; i < response.data.memos.length; i++) {
-            this.memos.push(response.data.memos[i]);
-          }
-        }, (error) => {
-          console.log(error, response);
-        });
-      },
-      createTask: function () {
-        if(this.body == '') return;
-
-        axios.post('/api/memos', { memo: { title: this.title, body: this.body } }).then((response) => {
-          this.memos.unshift(response.data);
-          this.body = '';
-        }, (error) => {
-          console.log(error, response);
-        });
-      },
-      deleteTask: function (memo_id, index) {
-        axios.delete('/api/memos/' + memo_id).then((response) => {
-          this.memos.splice(index, 1);
-        }, (error) => {
-          console.log(error, response);
-        });
-      },
-      update: function (memo_id) {
-        axios.put('/api/memos/' + memo_id).then((response) => {
-        }, (error) => {
-          console.log(error);
-        });
-      },
-      displayFinishedTasks: function() {
-        document.querySelector('#finished-tasks').classList.toggle('display_none');
-     },
+export default {
+  data: function(){
+    return{
+       memos: [],
+       title: '',
+       body: '',
     }
+  },
+  mounted(){
+    this.fetchMemos();
+  },
+  methods: {
+    fetchMemos: function () {
+      axios.get('/api/memos').then((response) => {
+        for(let i = 0; i < response.data.memos.length; i++) {
+          this.memos.push(response.data.memos[i]);
+        }
+      }, (error) => {
+        console.log(error, response);
+      });
+    },
+    createMemo: function () {
+      if(this.title == '') return;
+
+      axios.post('/api/memos', { memo: { title: this.title ,body: this.body} }).then((response) => {
+        this.memos.unshift(response.data);
+        this.title = '';
+        this.body = '';
+      }, (error) => {
+        console.log(error, response);
+      });
+    },
+    update: function (memo_id) {
+      axios.put('/api/memos/' + memo_id).then((response) => {
+      }, (error) => {
+        console.log(error);
+      });
+    },
+    deleteMemo: function(memo_id, index){
+      axios.delete('/api/memos/' + memo_id).then((response) => {
+        this.memos.splice(index, 1);
+      }, (error) => {
+        console.log(error, response);
+      });
+    },
   }
+}
 </script>
+  <style scoped>
 
-<style scoped>
-  [v-cloak] {
-      display: none;
-    }
-    .task-about{
-      border: 1px solid #ddd;
-    }
+  .linethrough{
+     text-decoration: line-through;
+     background: #000;
+  }
+
 </style>

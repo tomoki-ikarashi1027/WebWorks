@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user!, except: [:top, :about, :memo ,:task]
+  before_action :authenticate_user!, except: [:top, :about, :memo]
   def top
   end
 

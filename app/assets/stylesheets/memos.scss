@@ -1,106 +1,41 @@
-.task-container{
-
-  top: 100px;
-  margin: 0 auto;
-  width: 70%;
-}
-
-.task{
-  &__form{
-    text-align: center;
-    & > input{
-    font-size: 16px;
-    width: 70%;
-    border: none;
-    outline: none;
-    padding-bottom: 8px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid#ddd;
-    margin-top: 30px;
-    }
-
-    & .fa-plus-circle{
-    font-size: 3em;
-    color: brown;
-    cursor: pointer;
-    }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 32px;
+  &-group {
+    margin-bottom: 1rem;
   }
-
-  & .solid{
-    margin: 20px 0;
+  &-control {
+    width: 600px;
+    min-height: 24px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    padding: 4px 8px;
   }
-  & ul{
-    list-style: none;
-    padding: 0;
-  }
-  & input[type=checkbox]{
-    cursor: pointer;
-  }
-}
+ }
 
-.display_none {
-  display:none;
-}
+ button {
+   width: 200px;
+ }
 
-.tasks1{
-  border: 1px solid #ddd;
-  margin: 0;
-  &__item{
-    width: 95%;
-    margin: 0 auto;
-    font-size: 1.5em;
-  }
+ .flex {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
 
-  & input[type="checkbox"]:checked{
-    display: none;
-  }
-
-  & .display_none　 {
-    display: none;
-  }
-}
-
-.tasks2{
-  @extend .tasks1;
-
-  &__item{
-    width: 95%;
-    margin: 0 auto;
-    font-size: 1.5em;
-    color: rgba(0,0,0,0.5);
-    border-bottom: 1px solid #ddd;
-    &:hover{
-      color:black;
-    }
-  }
-
-  & .fa-trash{
-    cursor: pointer;
-    color: firebrick;
-    margin-left: 15px;
-    margin: 15px 0;
-  }
-
-  & .finished-box{
-    position: relative;
-    padding: 20px 0
-  }
-
-  & .fa-trash{
-    position: absolute;
-    cursor: pointer;
-    right: 0;
-  }
-
-  & .fa-check-square{
-    cursor: pointer;
-  }
-}
-
-input[type="checkbox"]{
-    margin: 15px 0;
-  }
-
-.task-about{
-  border: 1px solid #ddd;
-}
+ .card {
+   width: 238px;
+   border: 1px solid rgba(0,0,0,.125);
+   border-radius: .25rem;
+   margin: 16px;
+   &-body {
+     padding: 1.25rem;
+   }
+   &-title {
+     margin-bottom: .75rem;
+     font-weight: 600;
+   }
+ }
