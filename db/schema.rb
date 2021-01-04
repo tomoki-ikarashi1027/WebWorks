@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_143933) do
     t.integer "phone_number"
     t.text "address"
     t.text "url"
-    t.string "image_id"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,8 +91,10 @@ ActiveRecord::Schema.define(version: 2020_12_28_143933) do
     t.string "title"
     t.text "body"
     t.boolean "is_done", default: false, null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
   create_table "post_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -142,6 +144,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_143933) do
   add_foreign_key "company_language_tag_relations", "language_tags"
   add_foreign_key "contacts", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "memos", "users"
   add_foreign_key "post_comments", "companies"
   add_foreign_key "post_comments", "users"
   add_foreign_key "tasks", "users"

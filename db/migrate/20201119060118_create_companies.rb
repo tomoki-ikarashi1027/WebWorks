@@ -8,7 +8,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.integer :phone_number
       t.text :address
       t.text :url
-      t.string :image_id
+      t.string :image
 
       t.timestamps
     end

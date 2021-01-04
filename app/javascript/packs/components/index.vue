@@ -10,17 +10,17 @@
         <span v-bind:class="{display_none : task.is_done}" >{{ task.name }}</span>
       </div>
     </ul>
-    <div class="btn solid" v-on:click="displayFinishedTasks">Finished Tasks</div>
+    <div class="btn solid" @click="displayFinishedTasks">Finished Tasks</div>
     <div id="finished-tasks" class="display_none ">
       <ul class="tasks2">
         <li v-for="(task, index) in tasks" :key="task.id" v-if="task.is_done" v-bind:id="'row_task_' + task.id" class="tasks2__item">
            <div class="finished-box">
              <span>
-              <input type="checkbox" v-model="task.is_done" @click="update(task.id, index)" id="check">
-              <label  class="far fa-check-square" for="check"></label>
-              <span v-bind:for="'task_' + task.id">{{ task.name }}</span>
-             </span>
-           <span @click="deleteTask(task.id, index)"><i class="fas fa-trash"></i></span>
+                <input type="checkbox" v-model="task.is_done" @click="update(task.id, index)" id="check">
+                <label  class="far fa-check-square" for="check"></label>
+                <span v-bind:for="'task_' + task.id">{{ task.name }}</span>
+              </span>
+              <span @click="deleteTask(task.id, index)"><i class="fas fa-trash"></i></span>
            </div>
          </li>
       </ul>

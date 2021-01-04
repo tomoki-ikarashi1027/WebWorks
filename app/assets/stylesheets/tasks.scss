@@ -78,17 +78,13 @@
     color: firebrick;
     margin-left: 15px;
     margin: 15px 0;
+    position: absolute;
+    right: 0;
   }
 
   & .finished-box{
     position: relative;
     padding: 20px 0
-  }
-
-  & .fa-trash{
-    position: absolute;
-    cursor: pointer;
-    right: 0;
   }
 
   & .fa-check-square{

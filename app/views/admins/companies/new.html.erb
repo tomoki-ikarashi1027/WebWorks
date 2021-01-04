@@ -40,7 +40,8 @@
          <div>説明文を記入</div>
          <%= f.text_area :description ,class: 'description-area'%>
          <div>
-           <%= f.attachment_field :image %>
+           <%= f.label :画像 %><br />
+           <%= f.file_field :image, class: "image" %>
          </div>
 
          <%= f.submit 'Create Company', class: "btn solid" %>

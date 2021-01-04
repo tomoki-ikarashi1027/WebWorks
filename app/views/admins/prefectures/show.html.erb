@@ -13,7 +13,12 @@
       <% @companies.each do |company| %>
       <div class="prefectures__company">
         <div class="prefectures__img">
-          <div><%= attachment_image_tag company,:image,  format: 'jpeg', fallback: "no-image.jpg" %></div>
+          <% if company.image? %>
+          <%= image_tag company.image.url %>
+          <% else %>
+          <%= image_tag "no-image.jpg" %>
+          <% end %>
+
           <div class="star-rating">
             <div class="star-rating-front" style="width: <%= company.review_score_percentage %>%">★★★★★</div>
             <div class="star-rating-back">★★★★★</div>
@@ -31,7 +36,7 @@
                 <%= link_to edit_admins_company_path(company) ,class: "edit" do %>
                 <i class="fas fa-tools"></i>
                 <% end %>:
-                <%= link_to admins_company_path(company),method: :delete do, data: {confirm: "Are you sure?"} %>
+                <%= link_to admins_company_path(company),method: :delete, data: {confirm: "Are you sure?"} do %>
                 <i class="fas fa-trash"></i>
                 <% end %>
               </span>

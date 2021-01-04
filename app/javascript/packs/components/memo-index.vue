@@ -11,17 +11,14 @@
     </div>
     <div class="flex">
       <div v-for="(memo, index) in memos" :key="memo.id" class="card">
-        <input type="checkbox" v-model="memo.is_done" @click="update(memo.id, index)" >
-         <div v-bind:class="{linethrough : memo.is_done}" >
+        <label v-bind:class="{ colorchange : memo.is_done, }" class="far fa-check-circle">
+          <input type="checkbox" v-model="memo.is_done" @click="update(memo.id, index)" >
+         </label>
+        <span @click="deleteMemo(memo.id, index)"><i class="fas fa-trash"></i></span>
+        <div v-bind:class="{bgcolor : memo.is_done, }"></div>
         <div class="card-body">
-          <div class="card-title">
-
-
-              {{ memo.title }}
-          </div>
+          <div class="card-title">{{ memo.title }}</div>
           {{ memo.body }}
-       <span @click="deleteTask(memo.id, index)"><i class="fas fa-trash"></i></span>
-       </div>
         </div>
       </div>
     </div>
@@ -72,6 +69,7 @@ export default {
     deleteMemo: function(memo_id, index){
       axios.delete('/api/memos/' + memo_id).then((response) => {
         this.memos.splice(index, 1);
+        alert('test');
       }, (error) => {
         console.log(error, response);
       });
@@ -80,10 +78,24 @@ export default {
 }
 </script>
   <style scoped>
-
-  .linethrough{
-     text-decoration: line-through;
-     background: #000;
+  input[type="checkbox"]{
+    display: none;
+  }
+  .bgcolor{
+    background:#f1eeee;
+  }
+  .fa-check-circle{
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .fa-trash{
+    font-size: 1.3em;
+    cursor: pointer;
+    color: firebrick;
   }
 
+  .colorchange{
+    color: red;
+  }
 </style>

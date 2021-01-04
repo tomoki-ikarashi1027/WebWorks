@@ -46,12 +46,12 @@
 #   { framework: 'タグ5' }
 # ])
 
-5.times do
-  Memo.create(
-    title: Faker::Lorem.word,
-    body: Faker::Lorem.sentence,
-  )
-end
+# 5.times do
+#   Memo.create(
+#     title: Faker::Lorem.word,
+#     body: Faker::Lorem.sentence,
+#   )
+# end
 
 # 3.times { Task.create!(name: 'Sample Task') }
 # 2.times { Task.create!(name: 'Sample Task', is_done: true) }

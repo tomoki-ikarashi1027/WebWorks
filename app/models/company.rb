@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   belongs_to :prefecture
-  attachment :image
+  mount_uploader :image, ImageUploader
   has_many :post_comments, dependent: :destroy
   has_many :company_language_tag_relations, dependent: :destroy
   has_many :company_framework_tag_relations, dependent: :destroy

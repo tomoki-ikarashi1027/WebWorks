@@ -8,7 +8,11 @@
       </span>
       <div class="prefectures__company">
         <div class="prefectures__img">
-          <div> <%= attachment_image_tag @company,:image,  format: 'jpeg', fallback: "no-image.jpg" %></div>
+          <% if @company.image? %>
+          <%= image_tag @company.image.url %>
+          <% else %>
+          <%= image_tag "no-image.jpg" %>
+          <% end %>
 
           <div class="left-item">
             <div class="star-rating">

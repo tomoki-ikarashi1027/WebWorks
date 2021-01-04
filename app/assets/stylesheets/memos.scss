@@ -31,11 +31,23 @@
    border: 1px solid rgba(0,0,0,.125);
    border-radius: .25rem;
    margin: 16px;
+   font-size: 1.2em;
    &-body {
-     padding: 1.25rem;
+     padding: 5px 10px;
    }
    &-title {
      margin-bottom: .75rem;
      font-weight: 600;
+     border-bottom: 1px solid #ddd;
    }
  }
+
+ .bgcolor{
+   height: 35px;
+   line-height: 35px;
+   text-align: center;
+  &::after{
+    content: "完了済";
+    color: red;
+  }
+}

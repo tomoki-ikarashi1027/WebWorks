@@ -2,7 +2,8 @@ class Api::MemosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
     def index
-      @memos = Memo.order('created_at DESC')
+      @user = current_user
+      @memos = @user.memos.order('created_at DESC')
     end
 
     def create
