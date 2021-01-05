@@ -4,16 +4,24 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-          <div class="hero__title">Enjoy</div>
-          <%= image_tag 'image-2.jpg' %>
+          <div class="hero__title">転職先を見つけよう</div>
+          <%= image_tag 'Search.jpg' %>
         </div>
         <div class="swiper-slide">
-          <div class="hero__title">Enjoy2</div>
-          <%= image_tag 'image-2.jpg' %>
+          <div class="hero__title">カレンダーに予定を記入</div>
+          <%= image_tag 'Calendar.jpg' %>
         </div>
         <div class="swiper-slide">
-          <div class="hero__title">Enjoy3</div>
-          <%= image_tag 'image-2.jpg' %>
+          <div class="hero__title">タスク管理</div>
+          <%= image_tag 'Todo.jpg' %>
+        </div>
+        <div class="swiper-slide">
+          <div class="hero__title">会社のレビューを確認</div>
+          <%= image_tag 'Review.jpg' %>
+        </div>
+        <div class="swiper-slide">
+          <div class="hero__title">必要なことは忘れないようにメモ</div>
+          <%= image_tag 'Memo.jpg' %>
         </div>
       </div>
       <div class="hero__footer">
@@ -25,14 +33,14 @@
   <div id="main-content">
     <aside class="side left">
       <div class="side__inner">
-        <a class="twitter icon animate-title" href="#">Twitter</a>
+        <a class="twitter icon animate-title" href="https://twitter.com/home?lang=ja">Twitter</a>
       </div>
     </aside>
     <main>
       <section class="about">
         <div class="about__inner">
           <div class="about__img cover-slide ">
-            <%= image_tag 'image-3.jpg', class:"img-zoom" %>
+            <%= image_tag 'faq.jpg', class:"img-zoom" %>
           </div>
           <div class="about__texts appear left">
             <div class="about__texts-inner">
@@ -42,11 +50,11 @@
               </div>
               <div class="about__subtitle subtitle item">仕事を変えよう</div>
               <div class="about__description item">
-                <p>全国のWEB企業を探せるサービスです</p>
-                <p>きっとあなたを探している会社があります</p>
+                <p>プログラマーの転職を効率的に。</p>
+                <p>きっとあなたに合った会社があります</p>
               </div>
               <div class="item">
-                <button class="btn slide-bg"><%= link_to "もっと詳しく",  contacts_about_path %></button>
+                <button class="btn slide-bg"><%= link_to "当サイトについて",  homes_about_path %></button>
               </div>
             </div>
           </div>
@@ -60,39 +68,39 @@
         <div class="company__inner appear">
           <div class="company__item">
             <div class="cover-slide ">
-              <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
+              <%= image_tag 'tokyo.jpg' ,class: "img-zoom" %>
             </div>
-            <p>title1</p>
+            <p>東京都</p>
           </div>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
+              <%= image_tag 'osaka.jpg' ,class: "img-zoom" %>
             </div>
-            <p>title2</p>
+            <p>大阪府</p>
           </div>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
+              <%= image_tag 'kanagawa.jpg' ,class: "img-zoom" %>
             </div>
-            <p>title3</p>
+            <p>神奈川県</p>
           </div>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
+              <%= image_tag 'fukuoka.jpg' ,class: "img-zoom" %>
             </div>
-            <p>title4</p>
+            <p>福岡県</p>
           </div>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
+              <%= image_tag 'hokkaido.jpg' ,class: "img-zoom" %>
             </div>
-            <p>title5</p>
+            <p>北海道</p>
           </div>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'image-2.jpg' ,class: "img-zoom" %>
+              <%= image_tag 'aichi.jpg' ,class: "img-zoom" %>
             </div>
-            <p>title6</p>
+            <p>愛知県</p>
           </div>
           <button class="btn filled">
             <%= link_to "全国から探す", prefectures_path %>
@@ -101,41 +109,34 @@
       </section>
       <section class="job-site">
         <header>
-          <h2 class="main-title animate-title">転職サイト</h2>
-          <p class="sub-title">自分に合った転職サイトで探そう</p>
+          <h2 class="main-title animate-title">タスク管理</h2>
+          <p class="sub-title">好みのタスク管理ツールを使いましょう！</p>
         </header>
         <div class="job-site__inner appear up">
           <div class="job-site__container">
             <div class="job-site__item item">
+              <%= link_to events_path do%>
               <div class="job-site__img">
-                <%= image_tag 'image-2.jpg' %>
+                <%= image_tag 'calendar2.jpg' %>
               </div>
-              <div class="job-site__title">title1</div>
+              <div class="job-site__title">Calendar</div>
+              <% end %>
             </div>
             <div class="job-site__item item">
+              <%= link_to homes_task_path do%>
               <div class="job-site__img">
-                <%= image_tag 'image-2.jpg' %>
+                <%= image_tag 'todo2.jpg' %>
               </div>
-              <div class="job-site__title">title2</div>
+              <div class="job-site__title">Todo List</div>
+              <% end %>
             </div>
             <div class="job-site__item item">
+              <%= link_to homes_memo_path do%>
               <div class="job-site__img">
-                <%= image_tag 'image-2.jpg' %>
+                <%= image_tag 'memo2.jpg' %>
               </div>
-              <div class="job-site__title">title3</div>
-            </div>
-            <div class="job-site__item item">
-              <div class="job-site__img">
-                <%= image_tag 'image-2.jpg' %>
-              </div>
-              <div class="job-site__title">title4</div>
-            </div>
-            <div class="job-site__btn item">
-              <button class="btn cover-3d">
-                <span>
-                  もっと見る
-                </span>
-              </button>
+              <div class="job-site__title">Memo</div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -143,7 +144,7 @@
     </main>
     <aside class="side right">
       <div class="side__inner">
-        <a class="facebook icon animate-title" href="#">Facebook</a>
+        <a class="facebook icon animate-title" href="https://ja-jp.facebook.com/">Facebook</a>
       </div>
     </aside>
   </div>

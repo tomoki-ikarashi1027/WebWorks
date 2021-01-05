@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     resources :framework_tags, except: [:show]
     resources :companies
     resources :post_comments, only: [:index, :show, :destroy]
-    # delete "post_comments/:id" => "post_comments#destroy_company", as: 'destroy_review'
   end
 
   namespace :api, format: 'json' do
@@ -29,10 +28,10 @@ Rails.application.routes.draw do
     resources :tasks, only: [:index, :create, :update, :destroy]
   end
 
-  root to: 'contacts#top'
-  get "contacts/about" => "contacts#about"
-  get "contacts/memo" => "contacts#memo"
-  get "contacts/task" => "contacts#task"
+  root to: 'homes#top'
+  get "homes/about" => "homes#about"
+  get "homes/memo" => "homes#memo"
+  get "homes/task" => "homes#task"
   get "task_about" => "contacts#task"
   get "task_top" => "contacts#task"
   get "prefectures/search" => "prefectures#search"
@@ -42,5 +41,4 @@ Rails.application.routes.draw do
     resources :post_comments, except: [:index ,:show]
   end
   resources :events
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
