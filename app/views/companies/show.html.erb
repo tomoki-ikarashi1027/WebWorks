@@ -19,13 +19,10 @@
               <div class="star-rating-front" style="width: <%= @company.review_score_percentage %>%">★★★★★</div>
               <div class="star-rating-back">★★★★★</div>
             </div>
-
             <div class="average-score-display">
               <%= @company.avg_score %>点（<%= @company.post_comments.count %>件のレビュー）
             </div>
-
-            <button class="btn solid"><%= link_to "レビューを書く", new_company_post_comment_path(@company) %></button>
-
+            <%= link_to "レビューを書く", new_company_post_comment_path(@company), class: "btn solid"  %>
           </div>
         </div>
         <div class="prefectures__texts">

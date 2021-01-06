@@ -8,11 +8,11 @@
           <%= image_tag 'Search.jpg' %>
         </div>
         <div class="swiper-slide">
-          <div class="hero__title">カレンダーに予定を記入</div>
+          <div class="hero__title">自分だけのカレンダー</div>
           <%= image_tag 'Calendar.jpg' %>
         </div>
         <div class="swiper-slide">
-          <div class="hero__title">タスク管理</div>
+          <div class="hero__title">Todoリスト</div>
           <%= image_tag 'Todo.jpg' %>
         </div>
         <div class="swiper-slide">
@@ -20,7 +20,7 @@
           <%= image_tag 'Review.jpg' %>
         </div>
         <div class="swiper-slide">
-          <div class="hero__title">必要なことは忘れないようにメモ</div>
+          <div class="hero__title">メモの作成</div>
           <%= image_tag 'Memo.jpg' %>
         </div>
       </div>
@@ -54,7 +54,7 @@
                 <p>きっとあなたに合った会社があります</p>
               </div>
               <div class="item">
-                <button class="btn slide-bg"><%= link_to "当サイトについて",  homes_about_path %></button>
+                <%= link_to "当サイトについて",  homes_about_path ,class:"btn slide-bg"  %>
               </div>
             </div>
           </div>
@@ -63,48 +63,58 @@
       <section class="company">
         <div>
           <h2 class="main-title animate-title">Big City</h2>
-          <p class="sub-title animate-title">大都市で探そう</p>
+          <p class="sub-title">大都市で探そう</p>
         </div>
         <div class="company__inner appear">
+          <%= link_to prefecture_path(13) do %>
           <div class="company__item">
             <div class="cover-slide ">
               <%= image_tag 'tokyo.jpg' ,class: "img-zoom" %>
             </div>
             <p>東京都</p>
+            <% end %>
           </div>
+          <%= link_to prefecture_path(27) do %>
           <div class="company__item">
             <div class="cover-slide">
               <%= image_tag 'osaka.jpg' ,class: "img-zoom" %>
             </div>
             <p>大阪府</p>
+            <% end %>
           </div>
+          <%= link_to  prefecture_path(14) do %>
           <div class="company__item">
             <div class="cover-slide">
               <%= image_tag 'kanagawa.jpg' ,class: "img-zoom" %>
             </div>
             <p>神奈川県</p>
+            <% end %>
           </div>
+          <%= link_to prefecture_path(40) do %>
           <div class="company__item">
             <div class="cover-slide">
               <%= image_tag 'fukuoka.jpg' ,class: "img-zoom" %>
             </div>
             <p>福岡県</p>
+            <% end %>
           </div>
+          <%= link_to prefecture_path(1) do %>
           <div class="company__item">
             <div class="cover-slide">
               <%= image_tag 'hokkaido.jpg' ,class: "img-zoom" %>
             </div>
             <p>北海道</p>
+            <% end %>
           </div>
+          <%= link_to prefecture_path(23) do %>
           <div class="company__item">
             <div class="cover-slide">
               <%= image_tag 'aichi.jpg' ,class: "img-zoom" %>
             </div>
             <p>愛知県</p>
+            <% end %>
           </div>
-          <button class="btn filled">
-            <%= link_to "全国から探す", prefectures_path %>
-          </button>
+          <%= link_to "全国から探す", prefectures_path, class: "btn filled"%>
         </div>
       </section>
       <section class="job-site">

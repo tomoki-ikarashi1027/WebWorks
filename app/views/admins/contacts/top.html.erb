@@ -1,7 +1,38 @@
 <div class="wrapper">
-  <%= link_to "メール", admins_contacts_path %>
-  <%= link_to "口コミ", admins_post_comments_path %>
-  <%= link_to "都道府県", admins_prefectures_path %>
-  <%= link_to "タグ", admins_language_tags_path %>
-
+  <div class="admin-top">
+    <div class="items">
+      <div class="items__inner">
+        <%= link_to  admins_contacts_path do %>
+        <div class="item">
+          <p>Mail</p>
+          <p>メールの確認・返信</p>
+        </div>
+        <% end %>
+      </div>
+      <div class="items__inner">
+        <%= link_to admins_post_comments_path do %>
+        <div class="item">
+          <p>Reviews</p>
+          <p>Reviewの確認・削除</p>
+        </div>
+        <% end %>
+      </div>
+      <div class="items__inner">
+        <%= link_to admins_prefectures_path do %>
+        <div class="item">
+          <p>Company</p>
+          <p>掲載企業の追加・変更</p>
+        </div>
+        <% end %>
+      </div>
+      <div class="items__inner">
+        <%= link_to admins_language_tags_path do %>
+        <div class="item">
+          <p>Language</p>
+          <p>プログラミング言語の追加・削除</p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

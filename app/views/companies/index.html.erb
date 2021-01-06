@@ -7,6 +7,19 @@
   </div>
 </div>
 
+
+
+<script>
+  'use strict';
+
+  const box = document.getElementById('target');
+  box.addEventListener('click', () => {
+    box.classList.toggle('maru');
+  })
+</script> %>
+
+<div class="bg-img-zoom img-bg50 test"></div>
+
 <style>
   .box {
     width: 300px;
@@ -25,12 +38,3 @@
     transform: rotate(360deg);
   }
 </style>
-
-<script>
-  'use strict';
-
-  const box = document.getElementById('target');
-  box.addEventListener('click', () => {
-    box.classList.toggle('maru');
-  })
-</script> %>

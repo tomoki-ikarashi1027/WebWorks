@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="prefectures">
     <div class="prefectures-show">
-      <div class="prefectures__title main-title">
+      <div class="prefectures__title main-title animate-title">
         <%= @prefecture.prefecture_name + "のWEB系企業を探す" %>
 
       </div>
@@ -28,7 +28,7 @@
             <%= company.avg_score %>点（<%= company.post_comments.count %>件のレビュー）
           </div>
 
-          <button class="btn solid"><%= link_to '詳しく見る', company_path(company) %>
+          <%= link_to '詳しく見る', company_path(company), class: "btn solid" %>
 
         </div>
         <div class="prefectures__texts">

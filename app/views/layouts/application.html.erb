@@ -32,7 +32,7 @@
     <div id="container">
       <div class="mobile-menu__cover"></div>
       <div class="nav-triger"></div>
-      <header class="header">
+      <header class="header" id="header">
         <div class="header__inner appear down">
           <div class="logo item">
             <%= image_tag 'logo.svg', class: "logo__img" %>
@@ -41,17 +41,23 @@
           </div>
           <nav class="header__nav">
             <ul class="header__ul">
-              <% if user_signed_in? %>
+              <% if admin_signed_in? && user_signed_in? %>
+              <li class="header__li item"><%= link_to "Admins Home", admins_contacts_top_path %></li>
+              <li class="header__li item"><%= link_to 'Log out', destroy_admin_session_path, method: :delete  %></li>
+              <li class="header__li item"><%= link_to 'Users Home' ,root_path  %></li>
+
+              <% elsif user_signed_in? %>
               <li class="header__li item"><%= link_to "Home", root_path %></li>
               <li class="header__li item"><%= link_to 'Log out' ,destroy_user_session_path, method: :delete  %></li>
               <li class="header__li item ">
                 <button class="btn filled"><%= link_to "Contact", new_contact_path %></button>
               </li>
-              <!--    <li class="header__li item"><%= "ようこそ" + current_user.name + "さん" %></li> -->
+
               <% elsif admin_signed_in? %>
               <li class="header__li item"><%= link_to "Admins Home", admins_contacts_top_path %></li>
               <li class="header__li item"><%= link_to 'Log out', destroy_admin_session_path, method: :delete  %></li>
               <li class="header__li item"><%= link_to 'Users Home' ,root_path  %></li>
+
               <% else %>
               <li class="header__li item"><%= link_to 'Log in' ,new_user_session_path  %></li>
               <li class="header__li item"><%= link_to "Admins", new_admin_session_path %></li>
@@ -71,7 +77,6 @@
 
       <%= yield %>
 
-
       <footer class="footer appear down">
         <div class="logo item">
           <%= image_tag 'logo.svg', class: "logo__img" %>
@@ -79,12 +84,10 @@
           <span class="logo__works">Works</span>
         </div>
         <nav class="footer__nav">
-          <div class="footer__ul">
-            <div class="footer__li item">サービス</div>
-            <div class="footer__li item">Company</div>
-            <div class="footer__li item">Contact</div>
-            <div class="footer__li item">Sitemap</div>
-          </div>
+          <ul class="footer__ul">
+            <li class="footer__li item"><%= link_to "Contact", new_contact_path %></li>
+            <a id="header" href="#" class="footer__li item">ページTOPへ戻る</a>
+          </ul>
           <div class="footer__copyright">&copy; Ikarashi</div>
         </nav>
       </footer>
@@ -97,18 +100,33 @@
         <span class="logo__works">Works</span>
       </div>
       <ul class="mobile-menu__main">
+        <% if user_signed_in? %>
         <li class="mobile-menu__item">
-          <span class="main-title">Our Service</span>
+          <span class="main-title"><%= link_to "Home", root_path %></span>
+          <span class="sub-title">トップ画面へ</span>
+        </li>
+        <li class="mobile-menu__item">
+          <span class="main-title"><%= link_to 'Log out' ,destroy_user_session_path, method: :delete  %></span>
+          <span class="sub-title">ログアウト</span>
+        </li>
+        <li class="mobile-menu__item">
+          <span class="main-title"> <%= link_to "Contact Us", new_contact_path %></span>
+          <span class="sub-title">お問い合わせ</span>
+        </li>
+        <% else %>
+        <li class="mobile-menu__item">
+          <span class="main-title"><%= link_to 'Log in' ,new_user_session_path  %></span>
+          <span class="sub-title">ログインはこちら</span>
+        </li>
+        <li class="mobile-menu__item">
+          <span class="main-title"><%= link_to "Our Service",  homes_about_path %></span>
           <span class="sub-title">サービスについて</span>
         </li>
         <li class="mobile-menu__item">
-          <span class="main-title">About Us</span>
-          <span class="sub-title">私たちについて</span>
+          <span class="main-title"> <%= link_to "Contact Us", new_contact_path %></span>
+          <span class="sub-title">お問い合わせはこちら</span>
         </li>
-        <li class="mobile-menu__item">
-          <span class="main-title">Contact Us</span>
-          <span class="sub-title">コンタクト方法</span>
-        </li>
+        <% end %>
       </ul>
     </nav>
   </div>

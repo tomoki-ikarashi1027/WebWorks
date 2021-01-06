@@ -2,9 +2,9 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
-  def after_sign_in_path_for(resource)
-    root_path
-  end
+  # def after_sign_in_path_for(resource)
+  #   root_path
+  # end
   def destroy
     resource.soft_delete
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
