@@ -50,7 +50,7 @@ export default {
       });
     },
     createMemo: function () {
-      if(this.title == '') return;
+
 
       axios.post('/api/memos', { memo: { title: this.title ,body: this.body} }).then((response) => {
         this.memos.unshift(response.data);

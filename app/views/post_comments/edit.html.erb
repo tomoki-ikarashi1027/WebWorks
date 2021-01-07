@@ -30,7 +30,6 @@
           <%= f.radio_button :employment_status, "アルバイト" %>
           <%= f.label :employment_status,"アルバイト", {value: :アルバイト} %>
 
-
           <div class="main-rating">
             <div class="ratings">
               <span class="fa fa-star-o" id="star"></span>
@@ -42,7 +41,6 @@
             <div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
           </div>
           <%= f.hidden_field :score,  id: "rating-value"  %>
-
           <div>レビュー内容</div>
           <%= f.text_area :comment ,class: 'description-area'%>
         </div>

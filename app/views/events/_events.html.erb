@@ -9,9 +9,6 @@
     <% events.each do |event| %>
     <div>
       <%= link_to event.title, event %>
-      <%= link_to event_path(event)  ,method: :delete , data: {confirm: "Are you sure?"}  ,remote: true do %><i
-        class="fas fa-trash"></i>
-      <% end %>
     </div>
     <% end %>
     <% end %>

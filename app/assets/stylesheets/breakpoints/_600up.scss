@@ -169,3 +169,11 @@
     }
   }
 }
+
+.modal-footer{
+  & .btn{
+    &:nth-child(1){
+      width: 27% !important;
+    }
+  }
+}

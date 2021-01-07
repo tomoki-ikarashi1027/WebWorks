@@ -20,8 +20,6 @@
         <button class="btn cover-3d" data-toggle="modal" data-target="#editModal">
           <span>Edit</span>
         </button>
-
-
         <%= link_to events_path , class: "btn cover-3d" do %>
         <span>Back</span>
         <% end %>
@@ -52,8 +50,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn" data-dismiss="modal">キャンセル</button>
-            <%= form.submit  "決定" , class:"btn" %>
+            <button class="btn filled" data-dismiss="modal">キャンセル</button>
+            <%= form.submit  "決定" , class:"btn filled" %>
           </div>
           <% end %>
         </div>

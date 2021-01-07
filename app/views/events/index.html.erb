@@ -26,8 +26,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn cover-3d" data-dismiss="modal"><span>キャンセル</span></button>
-            <button class="btn cover-3d" data-dismiss="modal"><%= form.submit ""  %><span>決定</span></button>
+            <button class="btn filled" data-dismiss="modal">中止</button>
+            <%= form.submit "決定" ,class: "btn filled"  %>
           </div>
           <% end %>
         </div>

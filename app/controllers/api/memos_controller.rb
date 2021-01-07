@@ -8,6 +8,7 @@ class Api::MemosController < ApplicationController
 
     def create
       @memo = Memo.new(memo_params)
+      @memo.user_id = current_user.id
       if @memo.save
         render json: @memo, status: :created
       else
@@ -23,7 +24,9 @@ class Api::MemosController < ApplicationController
       Memo.find(params[:id]).toggle!(:is_done)
     end
 
-    private def memo_params
+    private
+
+    def memo_params
       params.require(:memo).permit(:title, :body, :is_done)
     end
 end

@@ -40,13 +40,16 @@
     text-align: center !important;
     & .btn{
       margin-bottom: 0;
+      &:nth-child(1){
+        width: 47%;
+      }
       &:nth-child(2){
         padding: 10px 60px;
       }
     }
-    & input[type="submit"]{
-      display: none
-    }
+    // & input[type="submit"]{
+    //   display: none
+    // }
   }
   & .wday-0{
     background-color: #f7d7f7;
@@ -84,5 +87,11 @@
   &__footer{
     text-align: center;
     border-top: 1px solid #e5e5e5;
+
+    & .btn{
+      &:first-child{
+        width: 38%;
+      }
+    }
   }
 }
