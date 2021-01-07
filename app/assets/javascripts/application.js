@@ -15,8 +15,9 @@
 //= require rails-ujs
 //= require activestorage
 // require turbolinks
+//= require_directory ./libs
 //= require_directory ./vendors
-//= require_tree .
+// require_tree .
 
 document.addEventListener("DOMContentLoaded", function() {
   new Main();
