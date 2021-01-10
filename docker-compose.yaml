@@ -11,11 +11,14 @@ services:
       - db
     tty: true
     stdin_open: true
+    environment:
+      - RAILS_SERVE_STATIC_FILES=true
   db:
     image: mysql:5.7
     volumes:
       - db-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+
 volumes:
   db-volume:
