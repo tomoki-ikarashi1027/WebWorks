@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/9f7238856e.js" crossorigin="anonymous"></script>
-  <%= favicon_link_tag('favicon.ico') %>
+  <%= favicon_link_tag asset_path('favicon.ico') %>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
       <header class="header" id="header">
         <div class="header__inner appear down">
           <div class="logo item">
-            <%= image_tag 'logo.svg', class: "logo__img" %>
+            <%= image_tag asset_path('logo.svg'), class: "logo__img" %>
             <span class="logo__web">Web</span>
             <span class="logo__works">Works</span>
           </div>
@@ -79,7 +79,7 @@
 
       <footer class="footer appear down">
         <div class="logo item">
-          <%= image_tag 'logo.svg', class: "logo__img" %>
+          <%= image_tag asset_path('logo.svg'), class: "logo__img" %>
           <span class="logo__web">Web</span>
           <span class="logo__works">Works</span>
         </div>
@@ -95,7 +95,7 @@
     </div>
     <nav class="mobile-menu">
       <div class="logo">
-        <%= image_tag 'logo.svg', class: "logo__img" %>
+        <%= image_tag asset_path('logo.svg'), class: "logo__img" %>
         <span class="logo__web">Web</span>
         <span class="logo__works">Works</span>
       </div>

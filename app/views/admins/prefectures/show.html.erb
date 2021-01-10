@@ -16,7 +16,7 @@
           <% if company.image? %>
           <%= image_tag company.image.url %>
           <% else %>
-          <%= image_tag "no-image.jpg" %>
+          <%= image_tag asset_path("no-image.jpg") %>
           <% end %>
 
           <div class="star-rating">

@@ -5,27 +5,27 @@
         <!-- Slides -->
         <div class="swiper-slide">
           <div class="hero__title">転職先を見つけよう</div>
-          <%= image_tag 'Search.jpg' %>
+          <%= image_tag  asset_path('Search.jpg') %>
         </div>
         <div class="swiper-slide">
           <div class="hero__title">My Calendar</div>
-          <%= image_tag 'Calendar.jpg' %>
+          <%= image_tag  asset_path('Calendar.jpg') %>
         </div>
         <div class="swiper-slide">
           <div class="hero__title">Todo List</div>
-          <%= image_tag 'Todo.jpg' %>
+          <%= image_tag  asset_path('Todo.jpg') %>
         </div>
         <div class="swiper-slide">
           <div class="hero__title">Reviews</div>
-          <%= image_tag 'Review.jpg' %>
+          <%= image_tag  asset_path('Review.jpg') %>
         </div>
         <div class="swiper-slide">
           <div class="hero__title">Memo</div>
-          <%= image_tag 'Memo.jpg' %>
+          <%= image_tag  asset_path('Memo.jpg') %>
         </div>
       </div>
       <div class="hero__footer">
-        <%= image_tag 'arrow.svg' ,class: "hero__downarrow" %>
+        <%= image_tag  asset_path('arrow.svg') ,class: "hero__downarrow" %>
         <span class="hero__scrolltext">scroll</span>
       </div>
     </div>
@@ -40,7 +40,7 @@
       <section class="about">
         <div class="about__inner">
           <div class="about__img cover-slide ">
-            <%= image_tag 'faq.jpg', class:"img-zoom" %>
+            <%= image_tag asset_path('faq.jpg'), class:"img-zoom" %>
           </div>
           <div class="about__texts appear left">
             <div class="about__texts-inner">
@@ -69,7 +69,7 @@
           <%= link_to prefecture_path(13) do %>
           <div class="company__item">
             <div class="cover-slide ">
-              <%= image_tag 'tokyo.jpg' ,class: "img-zoom" %>
+              <%= image_tag asset_path('tokyo.jpg') ,class: "img-zoom" %>
             </div>
             <p>東京都</p>
             <% end %>
@@ -77,7 +77,7 @@
           <%= link_to prefecture_path(27) do %>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'osaka.jpg' ,class: "img-zoom" %>
+              <%= image_tag asset_path('osaka.jpg') ,class: "img-zoom" %>
             </div>
             <p>大阪府</p>
             <% end %>
@@ -85,7 +85,7 @@
           <%= link_to  prefecture_path(14) do %>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'kanagawa.jpg' ,class: "img-zoom" %>
+              <%= image_tag asset_path('kanagawa.jpg') ,class: "img-zoom" %>
             </div>
             <p>神奈川県</p>
             <% end %>
@@ -93,7 +93,7 @@
           <%= link_to prefecture_path(40) do %>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'fukuoka.jpg' ,class: "img-zoom" %>
+              <%= image_tag  asset_path('fukuoka.jpg') ,class: "img-zoom" %>
             </div>
             <p>福岡県</p>
             <% end %>
@@ -101,7 +101,7 @@
           <%= link_to prefecture_path(1) do %>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'hokkaido.jpg' ,class: "img-zoom" %>
+              <%= image_tag asset_path('hokkaido.jpg') ,class: "img-zoom" %>
             </div>
             <p>北海道</p>
             <% end %>
@@ -109,7 +109,7 @@
           <%= link_to prefecture_path(23) do %>
           <div class="company__item">
             <div class="cover-slide">
-              <%= image_tag 'aichi.jpg' ,class: "img-zoom" %>
+              <%= image_tag asset_path('aichi.jpg') ,class: "img-zoom" %>
             </div>
             <p>愛知県</p>
             <% end %>
@@ -127,7 +127,7 @@
             <div class="job-site__item item">
               <%= link_to events_path do%>
               <div class="job-site__img">
-                <%= image_tag 'calendar2.jpg' %>
+                <%= image_tag asset_path('calendar2.jpg') %>
               </div>
               <div class="job-site__title">Calendar</div>
               <% end %>
@@ -135,7 +135,7 @@
             <div class="job-site__item item">
               <%= link_to homes_task_path do%>
               <div class="job-site__img">
-                <%= image_tag 'todo2.jpg' %>
+                <%= image_tag asset_path('todo2.jpg') %>
               </div>
               <div class="job-site__title">Todo List</div>
               <% end %>
@@ -143,7 +143,7 @@
             <div class="job-site__item item">
               <%= link_to homes_memo_path do%>
               <div class="job-site__img">
-                <%= image_tag 'memo2.jpg' %>
+                <%= image_tag asset_path('memo2.jpg') %>
               </div>
               <div class="job-site__title">Memo</div>
               <% end %>
