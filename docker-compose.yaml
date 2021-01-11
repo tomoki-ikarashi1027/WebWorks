@@ -11,8 +11,8 @@ services:
       - db
     tty: true
     stdin_open: true
-    environment:
-      - RAILS_SERVE_STATIC_FILES=true
+    # environment:
+    #   - RAILS_SERVE_STATIC_FILES=true
   db:
     image: mysql:5.7
     volumes:
