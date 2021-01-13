@@ -34,7 +34,13 @@
   }
   & input[type=checkbox]{
     cursor: pointer;
+    margin: 15px 0;
   }
+
+  .task-about{
+    border: 1px solid #ddd;
+  }
+
 }
 
 .display_none {

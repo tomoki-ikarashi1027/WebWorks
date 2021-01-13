@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="memo">
     <div class="form">
       <div class="form-group">
         <input v-model="title" placeholder="タイトル" class="form-control">
@@ -77,25 +77,3 @@ export default {
   }
 }
 </script>
-  <style scoped>
-  input[type="checkbox"]{
-    display: none;
-  }
-  .bgcolor{
-    background:#f1eeee;
-  }
-  .fa-check-circle{
-    font-size: 1.5em;
-    cursor: pointer;
-    margin: 5px;
-  }
-  .fa-trash{
-    font-size: 1.3em;
-    cursor: pointer;
-    color: firebrick;
-  }
-
-  .colorchange{
-    color: red;
-  }
-</style>

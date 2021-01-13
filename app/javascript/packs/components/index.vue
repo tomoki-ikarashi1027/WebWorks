@@ -84,13 +84,4 @@
   [v-cloak] {
       display: none;
     }
-
-  input[type="checkbox"]{
-    margin: 15px 0;
-  }
-
-  .task-about{
-    border: 1px solid #ddd;
-  }
-
 </style>
