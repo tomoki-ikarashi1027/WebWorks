@@ -17,7 +17,6 @@ class Main {
   _init() {
     new MobileMenu();
     this.hero = new HeroSlider(".swiper-container");
-    // this.__scrollInit();
     Pace.on("done", this._paceDone.bind(this)); //画面の更新後にアニメーション開始
   }
 

@@ -1,14 +1,12 @@
-class HeroSlider{
+class HeroSlider {
   constructor(el) {
     this.el = el;
     this.swiper = this._initSwiper();
   }
-  _initSwiper(){
+  _initSwiper() {
     return new Swiper(this.el, {
-      // Optional parameters
-      // direction: 'vertical',//上下方法のスライド
       loop: true,
-      effect: 'coverflow',
+      effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
       slidesPerView: 1,
@@ -18,21 +16,18 @@ class HeroSlider{
           slidesPerView: 2,
         },
       },
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      // },
-    })
+    });
   }
 
-  start(options = {}){
-    options = Object.assign({
-      delay: 4000,
-      disableOnInteraction: false //自分でスライドさせてもautoplayが継続
-    },options);
+  start(options = {}) {
+    options = Object.assign(
+      {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      options
+    );
     this.swiper.params.autoplay = options;
     this.swiper.autoplay.start();
   }
-  // stop(){
-  //   this.swiper.autoplay.stop();
-  // }
 }
