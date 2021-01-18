@@ -1,7 +1,7 @@
 class Admins::PostCommentsController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @reviews = PostComment.all
+    @reviews = PostComment.page(params[:page]).order(created_at: :desc).per(15)
   end
 
   def show
