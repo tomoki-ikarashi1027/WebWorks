@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const ratingValueDisplay = document.getElementById("rating-value-display");
 
   let index;
-
   for (let i = 0; i < stars.length; i++) {
     stars[i].addEventListener("mouseover", function() {
       for (let j = 0; j < stars.length; j++) {
