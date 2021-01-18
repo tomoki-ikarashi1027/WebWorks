@@ -13,7 +13,7 @@
            <h2>掲載企業を追加</h2>
          </div>
          <div class="company-post__items">
-           <div>都道府県</div>
+           <label for="company_prefecture_id">都道府県</label>
            <%= f.select :prefecture_id, Prefecture.prefecture_names %>
            <div>会社名</div>
            <%= f.text_field :company_name %>

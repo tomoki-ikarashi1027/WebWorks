@@ -11,6 +11,7 @@ class PostCommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.company_id = @company.id
     if @comment.save
+      flash[:notice] = "successfully"
       redirect_to company_path(@company)
     else
       render :new
@@ -24,6 +25,7 @@ class PostCommentsController < ApplicationController
   def update
     @comment = PostComment.find(params[:id])
     if @comment.update(post_comment_params)
+      flash[:notice] = "successfully"
       redirect_to company_path(@company)
     else render :edit
     end

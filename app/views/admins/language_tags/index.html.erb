@@ -5,14 +5,14 @@
         <h3>プログラミング言語</h3>
         <%= form_with model: @language, url: admins_language_tags_path,local: true do |form| %>
         <%= form.text_field :language %>
-        <%= form.submit "追加" %>
+        <%= form.submit "追加", class:"language "%>
         <% end %>
       </div>
       <div>
         <h3>フレームワーク</h3>
         <%= form_with model: @framework, url:  admins_framework_tags_path,local: true do |form| %>
         <%= form.text_field :framework %>
-        <%= form.submit "追加" %>
+        <%= form.submit "追加" ,class:"framework "%>
         <% end %>
       </div>
     </div>

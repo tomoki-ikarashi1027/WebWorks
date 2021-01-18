@@ -2,6 +2,7 @@ class Admins::FrameworkTagsController < ApplicationController
   def create
     @framework = FrameworkTag.new(framework_tags_params)
     if @framework.save
+      flash[:notice] = "successfully"
       redirect_to admins_language_tags_path
     else
       @languages = LanguageTag.all

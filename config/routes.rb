@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'events/index'
   devise_for :users , controllers: {
     sessions: 'users/sessions',
@@ -22,7 +21,6 @@ Rails.application.routes.draw do
     resources :companies
     resources :post_comments, only: [:index, :show, :destroy]
   end
-
   namespace :api, format: 'json' do
     resources :memos, only: [:index, :create, :destroy, :update]
     resources :tasks, only: [:index, :create, :update, :destroy]

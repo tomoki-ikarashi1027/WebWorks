@@ -9,6 +9,7 @@ class Admins::LanguageTagsController < ApplicationController
   def create
     @language = LanguageTag.new(language_tags_params)
     if @language.save
+      flash[:notice] = "successfully"
       redirect_to admins_language_tags_path
     else
     @languages = LanguageTag.all
