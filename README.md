@@ -32,18 +32,18 @@ http://web-works.work/
 
 
 # 使用言語
-・ruby 2.6.3  
-・Rails 5.2.3  
-・javascript/vue.js/jQuery 
+* ruby 2.6.3  
+* Rails 5.2.3  
+* javascript/vue.js/jQuery 
 
 # 使用技術
 ### 開発環境
-・Docker + Docker-compose
+* Docker + Docker-compose
 
 ### インフラ
-・AWS(EC2, RDS, Puma)  
-・Nginx(Webサーバ)  
-・MySQL2
+* AWS(EC2, RDS, Puma)  
+* Nginx(Webサーバ)  
+* MySQL2
 
 ### Gemなど
 * Rspec (モデルテスト、コントローラテスト、システムテスト)  
