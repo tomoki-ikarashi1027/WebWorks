@@ -1,24 +1,83 @@
-# README
+# WebWorks
+http://18.180.28.189/
+# 概要
+ プログラマーの転職活動を手助けするアプリケーションです。
+ 
+# 機能
+* 会員登録  
+* 掲載企業の追加・更新・削除  
+* データ検索  
+  ⅰ. フリーワードで  
+  ⅱ. プログラミング言語から  
+  ⅲ. フレームワークから  
+* 画像投稿  
+* レビュー  
+* お問い合わせ (メールの送信と返信)  
+* カレンダー  
+* Todoリスト  
+* メモ  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 技術面での工夫  
+* BEM記法での実装  
+* Swiperを使用したアニメーションの実装  
+* レスポンシブ対応  
+* axiosを用いた非同期通信  
+* 日本語化によるユーザビリティの向上  
+* 自分以外のタスクを非表示に  
+* ページネーションの実装
+* IntersectionObserverを使ってスクロール処理の実装  
+* CSSでのアニメーションの実装  
+* カレンダー機能にて投稿蘭をモーダルを用いて表示  
+* pace.jsを用いたローダーの実装
 
-Things you may want to cover:
 
-* Ruby version
+# 使用言語
+・ruby 2.6.3  
+・Rails 5.2.3  
+・javascript/vue.js/jQuery 
 
-* System dependencies
+# 使用技術
+### 開発環境
+・Docker + Docker-compose
 
-* Configuration
+### インフラ
+・AWS(EC2, RDS, Puma)  
+・Nginx(Webサーバ)  
+・MySQL2
 
-* Database creation
+### Gemなど
+* devise (認証機能)  
+* kaminari (ページネーション)  
+* bootstrap-sass  
+* bulma-rails
+* carrierwave    
+* simple_calendar  
+* jquery-rails  
+* rails-i18n (日本語化)  
+* webpacker
+* font-awesome  
 
-* Database initialization
+# 使い方
+### 管理者ページ
+* ヘッダーのadminsより管理者ページへログイン。
+* トップページの以下4つのリンクから用途に合わせて遷移。    
+* 【Mail】 メールの確認と返信。  
+* 【Reviews】 レビューコメントの確認、削除。  
+* 【Company】 掲載企業の追加、編集、削除。  
+* 【Language】　タグの追加、削除。
 
-* How to run the test suite
+### 子育て相談室
+・お悩みを投稿できます。  
+・投稿の本文が詳細ページへのリンクとなっております。  
+・詳細ページよりコメント、コメントに対する「いいね」ができます。  
+・検索窓より、部分一致もしくはカテゴリーで過去の投稿を検索できます。
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Baby自慢室
+・画像を投稿できます。  
+・一覧ページの画像は詳細ページへのリンクとなっております。  
+・詳細ページよりコメントできます。
+ 
+# 最後に
+説明は以上となります。  
+私自身、子供を授かったことがきっかけでこのようなアプリケーションを作成しました。  
+初めてのアプリ開発で至らない点は多いかと思いますが、少しでも子供に対する思いがみなさんに伝われば嬉しく思います。
