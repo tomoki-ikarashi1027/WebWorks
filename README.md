@@ -46,12 +46,13 @@ http://54.95.126.208/
 ・MySQL2
 
 ### Gemなど
+* Rspec (モデルテスト、コントローラテスト、システムテスト)  
 * devise (認証機能)  
 * kaminari (ページネーション)  
 * bootstrap-sass  
 * bulma-rails
-* carrierwave    
-* simple_calendar  
+* carrierwave (画像投稿)    
+* simple_calendar (スケジュール機能)  
 * jquery-rails  
 * rails-i18n (日本語化)  
 * webpacker
