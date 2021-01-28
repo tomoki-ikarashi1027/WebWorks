@@ -7,15 +7,7 @@
       <%= form_with scope: resource, as: resource_name, url: registration_path(resource_name), local: true, method: :patch do |f| %>
 
       <div class="profile">
-        <img id="profile-img-prev" src="#" class='hidden' />
-        <% if @user.profile_image.url.nil? %>
         <div class="profile-default-img"></div>
-        <% else %>
-        <%= image_tag @user.profile_image.url, class: "profile-img", id: "profile-img" %>
-        <% end %>
-        <label class="profile-img-upload">
-          <%= f.file_field :profile_image, id: "profile_image_upload" %>ファイルを選択
-        </label>
       </div>
 
       <div class="form-group">
@@ -30,6 +22,13 @@
         <%= f.text_area :self_introduction, class: "form-control", placeholder: "紹介文" %>
       </div>
 
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワードの確認" %>
+      </div>
 
       <div class="user-edit__submit-btn">
         <%= f.submit "保存", class: "btn btn-block text-white filled" %>

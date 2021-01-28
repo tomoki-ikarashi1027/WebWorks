@@ -39,4 +39,5 @@ Rails.application.routes.draw do
     resources :post_comments, except: [:index ,:show]
   end
   resources :events
+  resources :users, only: [:show]
 end
