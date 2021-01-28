@@ -60,6 +60,7 @@
           </div>
         </div>
       </section>
+
       <section class="company">
         <div>
           <h2 class="main-title animate-title">Big City</h2>
@@ -117,6 +118,31 @@
           <%= link_to "全国から探す", prefectures_path, class: "btn filled"%>
         </div>
       </section>
+
+      <section class="about">
+        <div class="about__inner">
+          <div class="about__img cover-slide ">
+            <%= image_tag asset_path('faq.jpg'), class:"img-zoom" %>
+          </div>
+          <div class="about__texts appear left">
+            <div class="about__texts-inner">
+              <div class="about__title main-title item">
+                <span>Let's</span>
+                <span>ChangeWork</span>
+              </div>
+              <div class="about__subtitle subtitle item">仕事を変えよう</div>
+              <div class="about__description item">
+                <p>プログラマーの転職を効率的に。</p>
+                <p>きっとあなたに合った会社があります</p>
+              </div>
+              <div class="item">
+                <%= link_to "当サイトについて",  homes_about_path ,class:"btn slide-bg"  %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="job-site">
         <header>
           <h2 class="main-title animate-title">タスク管理</h2>

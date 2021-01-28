@@ -1,20 +1,20 @@
 <div class="wrapper">
-
   <div class="user-show-page">
 
     <div class="profile">
       <% if @user.profile_image? %>
-      <%= image_tag @user.profile_image.url, class: "profile-img" %>
+      <%= image_tag @user.profile_image.url, class: "profile__img" %>
       <% else %>
-      <div class="profile-default-img"></div>
+      <div class="profile__default-img"></div>
       <% end %>
-      <div class="profile-name">
+      <div class="profile__name">
         <%= @user.name %>
       </div>
-      <div class="profile-text">
+      <div class="profile__text">
         <%= @user.self_introduction %>
       </div>
     </div>
+    <% if @user.id == current_user.id %>
     <div class="user-action">
       <div class="user-action-common">
         <%= link_to destroy_user_session_path, method: :delete do %>
@@ -29,6 +29,6 @@
         <span>情報を編集<span>
       </div>
     </div>
+    <% end %>
   </div>
-
 </div>

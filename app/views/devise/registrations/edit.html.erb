@@ -9,11 +9,11 @@
       <div class="profile">
         <img id="profile-img-prev" src="#" class='hidden' />
         <% if @user.profile_image.url.nil? %>
-        <div class="profile-default-img"></div>
+        <div class="profile__default-img"></div>
         <% else %>
-        <%= image_tag @user.profile_image.url, class: "profile-img", id: "profile-img" %>
+        <%= image_tag @user.profile_image.url, class: "profile__img", id: "profile-img" %>
         <% end %>
-        <label class="profile-img-upload">
+        <label class="profile__img-upload">
           <%= f.file_field :profile_image, id: "profile_image_upload" %>ファイルを選択
         </label>
       </div>

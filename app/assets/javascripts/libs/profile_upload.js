@@ -2,7 +2,7 @@ $(document).on("change", "#profile_image_upload", function(e) {
   let reader = new FileReader();
   reader.onload = function(e) {
     $(".hidden").removeClass();
-    $(".profile-default-img").removeClass();
+    $(".profile__default-img").removeClass();
     $("#profile-img").remove();
     $("#profile-img-prev").attr("src", e.target.result);
   };

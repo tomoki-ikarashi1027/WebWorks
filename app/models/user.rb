@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :memos, dependent: :destroy
+  has_many :communities, dependent: :destroy
   validates :name, presence: true
   validates :self_introduction, length: { maximum: 300 }
 
