@@ -1,5 +1,5 @@
  <div class="wrapper">
-   <div class="prefectures">
+   <div class="wrapper__inner">
      <% if @company.errors.any? %>
      <%= @company.errors.count %>件のエラー。<br>
      <% @company.errors.full_messages.each do |message| %>

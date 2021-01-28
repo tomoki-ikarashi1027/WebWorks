@@ -47,7 +47,7 @@
               <li class="header__li item"><%= link_to 'Users Home' ,root_path  %></li>
 
               <% elsif user_signed_in? %>
-              <li class="header__li item"><%= link_to "profile" ,user_path(current_user.id) %></li>
+              <li class="header__li item"><%= link_to "MyPage" ,user_path(current_user.id) %></li>
               <li class="header__li item"><%= link_to "Home", root_path %></li>
               <li class="header__li item"><%= link_to 'Log out' ,destroy_user_session_path, method: :delete  %></li>
               <li class="header__li item ">

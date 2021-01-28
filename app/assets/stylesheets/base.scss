@@ -162,6 +162,12 @@ main{
   padding-top:100px;
   flex-grow: 1;
   position: relative;
+
+  &__inner{
+  @extend .content-width;
+  padding: 40px 0;
+  display: flex;
+  }
 }
 
 .section{

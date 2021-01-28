@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_122711) do
+ActiveRecord::Schema.define(version: 2021_01_28_060451) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2021_01_27_122711) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -140,6 +148,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_122711) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "communities", "users"
   add_foreign_key "company_framework_tag_relations", "companies"
   add_foreign_key "company_framework_tag_relations", "framework_tags"
   add_foreign_key "company_language_tag_relations", "companies"

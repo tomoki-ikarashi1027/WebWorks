@@ -40,4 +40,5 @@ Rails.application.routes.draw do
   end
   resources :events
   resources :users, only: [:show]
+  resources :communities, only: [:index, :show, :destroy]
 end

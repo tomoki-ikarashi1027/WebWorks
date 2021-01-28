@@ -8,25 +8,25 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
-    &-default-img {
+    &__default-img {
       margin-top: 10px;
       height: 128px;
       width: 128px;
       object-fit: cover;
       border-radius: 50%;
-      background-image: url("profile_default_img_128.png");
+      background-image: image-url("profile_default_img.png");
       background-size: contain;
     }
-    &-img {
+    &__img {
       height: 128px;
       width: 128px;
       border-radius: 50%;
       object-fit: cover;
     }
-    &-name {
+    &__name {
       font-size: 24px;
     }
-    &-text {
+    &__text {
       padding: 16px 24px 16px;
       word-break: break-all;
     }
@@ -80,25 +80,25 @@
     align-items: center;
     margin: 24px 0 12px;
 
-    &-default-img {
+    &__default-img {
       height: 128px;
       width: 128px;
       border-radius: 50%;
-      background-image: url("profile_default_img_128.png");
+      background-image: image-url("profile_default_img.png");
       background-size: contain;
       margin-bottom: 10px;
       &>input {
         display: none;
       }
     }
-    &-img{
+    &__img{
       height: 128px;
       width: 128px;
       border-radius: 50%;
       object-fit: cover;
       margin-top: 10px;
     }
-    &-img-upload {
+    &__img-upload {
       margin-top: 12px;
       padding: 8px 12px;
       font-size: 14px;
