@@ -39,7 +39,7 @@
   & .modal-footer{
     text-align: center !important;
     & .btn{
-      margin-bottom: 0;
+
       &:nth-child(1){
         width: 47%;
       }
@@ -47,9 +47,6 @@
         padding: 10px 60px;
       }
     }
-    // & input[type="submit"]{
-    //   display: none
-    // }
   }
   & .wday-0{
     background-color: #f7d7f7;

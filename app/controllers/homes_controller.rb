@@ -9,6 +9,9 @@ class HomesController < ApplicationController
   def task
   end
 
+  def community
+  end
+
   def memo
   end
 end

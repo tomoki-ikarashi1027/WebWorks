@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <div class="wrapper__inner">
+    <div class="community-posts">
+      <%= render 'communities',  communities: @communities%>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              近況を投稿</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <%= form_with(model: @community) do |form| %>
+          <div class="modal-body">
+            <div>
+              <%= form.text_area :body, :placeholder => 'コメントを入力', class: 'community-area' %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn filled" data-dismiss="modal">中止</button>
+            <%= form.submit "投稿" ,class: "btn filled"  %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content community-users">
+      <% @users.each do |user| %>
+      <div class="community-users__item">
+        <%= link_to user_path(user) do %>
+        <% if user.profile_image? %>
+        <div>
+          <%= image_tag user.profile_image.url, class: "users-img" %>
+          <div><%= user.name %></div>
+        </div>
+        <% else %>
+        <div class="profile__default-img"></div>
+        <div><%= user.name %></div>
+        <% end %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
