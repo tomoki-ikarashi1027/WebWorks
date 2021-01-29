@@ -1,0 +1,4 @@
+$("textarea").val("");
+$('input').val('');
+$('#exampleModal').modal('hide');
+$('.community-posts').html("<%= escape_javascript(render 'communities', communities: @communities) %>")

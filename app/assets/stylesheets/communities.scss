@@ -1,3 +1,89 @@
 // Place all the styles related to the communities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .community-posts{
+//   width: inherit;
+// }
+
+.community-posts{
+max-width: 100%;
+width: inherit;
+  & > h1{
+    margin-bottom: 20px ;
+  }
+}
+.modal-footer{
+  text-align: center !important;
+  & .btn{
+    &:nth-child(2){
+      padding: 10px 60px;
+      margin-bottom: 10px;
+    }
+  }
+}
+.community-area{
+  width: 100%;
+}
+
+.communities{
+  border: 1px inset;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  height: auto;
+  position: relative;
+
+  &__comment{
+    word-break : break-all;
+    margin-left: 10px;
+  }
+
+  &__strftime{
+    position: absolute;
+    right: 40px;
+    top: 8px;
+    color: rgba(0,0,0, .5);
+
+  }
+
+  & .fa-trash:before {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.users-img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile__default-img{
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-image: image-url("profile_default_img.png");
+  background-size: contain;
+}
+
+.community-show{
+  @extend .content-width;
+  padding: 40px 0;
+}
+
+.community-users{
+  display:flex;
+  height: auto;
+  flex-wrap: wrap;
+  &__item{
+    padding: 10px;
+    background: aliceblue;
+    margin: 9px;
+    text-align: center;
+  }
+}

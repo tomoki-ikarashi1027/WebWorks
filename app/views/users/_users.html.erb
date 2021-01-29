@@ -1,18 +1,56 @@
+<!--
+<div class="wrapper">
+  <div class="user-show-page">
+
+    <div class="profile">
+      <% if @user.profile_image? %>
+      <%= image_tag @user.profile_image.url, class: "profile__img" %>
+      <% else %>
+      <div class="profile__default-img"></div>
+      <% end %>
+      <div class="profile__name">
+        <%= @user.name %>
+      </div>
+      <div class="profile__text">
+        <%= @user.self_introduction %>
+      </div>
+    </div>
+    <% if @user.id == current_user.id %>
+    <div class="user-action">
+      <div class="user-action-common">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt fa-2x"></i>
+        <% end %>
+        <span>ログアウト</span>
+      </div>
+      <div class="user-action-common">
+        <%= link_to edit_user_registration_path do %>
+        <i class="fas fa-pencil-alt fa-2x"></i>
+        <% end %>
+        <span>情報を編集<span>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+--->
+
 <div class="wrapper">
   <div class="community-show">
     <div class="user-show-page">
 
       <div class="profile">
-        <% if @user.profile_image? %>
-        <%= image_tag @user.profile_image.url, class: "profile__img" %>
+        <% if user.profile_image? %>
+        <%= image_tag user.profile_image.url, class: "profile__img" %>
         <% else %>
         <div class="profile__default-img"></div>
         <% end %>
         <div class="profile__name">
-          <%= @user.name %>
+          <%= user.name %>
         </div>
         <div class="profile__text">
-          <%= @user.self_introduction %>
+          <%= user.self_introduction %>
         </div>
       </div>
       <% if @user.id == current_user.id %>
@@ -33,7 +71,7 @@
       <% end %>
     </div>
 
-    <% @communities.each do |community| %>
+    <% communities.each do |community| %>
     <div class="communities" id="community-<%= community.id %>">
       <% if community.user.profile_image? %>
       <div>

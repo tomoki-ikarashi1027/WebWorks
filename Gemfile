@@ -52,6 +52,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+
 end
 
 group :test do
@@ -62,7 +63,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'rspec-rails'
   gem "factory_bot_rails"
-  gem 'faker'
+  # gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -82,7 +83,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_calendar', '~> 2.0'
 gem 'webpacker'
 gem "mini_magick"
-
+gem 'faker'
 group :production do
   gem 'mysql2'
 end

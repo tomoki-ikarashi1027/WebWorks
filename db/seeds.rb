@@ -45,3 +45,15 @@ Prefecture.create(prefecture_name: 44)
 Prefecture.create(prefecture_name: 45)
 Prefecture.create(prefecture_name: 46)
 Prefecture.create(prefecture_name: 47)
+
+20.times do |n|
+  email = Faker::Internet.email
+  name =  Faker::Lorem.characters(number: 5)
+  password = "password"
+  User.create!(email: email,
+               name: name,
+               profile_image: nil,
+               password: password,
+               password_confirmation: password,
+               )
+end
