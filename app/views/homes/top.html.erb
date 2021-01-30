@@ -42,13 +42,11 @@
           <div class="about__img cover-slide ">
             <%= image_tag asset_path('faq.jpg'), class:"img-zoom" %>
           </div>
-          <div class="about__texts appear left">
+          <div class="about__texts appear right">
             <div class="about__texts-inner">
               <div class="about__title main-title item">
-                <span>Let's</span>
-                <span>ChangeWork</span>
+                <span>Let's ChangeWork</span>
               </div>
-              <div class="about__subtitle subtitle item">仕事を変えよう</div>
               <div class="about__description item">
                 <p>プログラマーの転職を効率的に。</p>
                 <p>きっとあなたに合った会社があります</p>
@@ -63,13 +61,13 @@
 
       <section class="company">
         <div>
-          <h2 class="main-title animate-title">Big City</h2>
-          <p class="sub-title">大都市で探そう</p>
+          <h2 class="main-title animate-title">Company</h2>
+          <p class="sub-title">転職先を探そう</p>
         </div>
         <div class="company__inner appear">
           <%= link_to prefecture_path(13) do %>
           <div class="company__item">
-            <div class="cover-slide ">
+            <div>
               <%= image_tag asset_path('tokyo.jpg') ,class: "img-zoom" %>
             </div>
             <p>東京都</p>
@@ -77,7 +75,7 @@
           </div>
           <%= link_to prefecture_path(27) do %>
           <div class="company__item">
-            <div class="cover-slide">
+            <div>
               <%= image_tag asset_path('osaka.jpg') ,class: "img-zoom" %>
             </div>
             <p>大阪府</p>
@@ -85,7 +83,7 @@
           </div>
           <%= link_to  prefecture_path(14) do %>
           <div class="company__item">
-            <div class="cover-slide">
+            <div>
               <%= image_tag asset_path('kanagawa.jpg') ,class: "img-zoom" %>
             </div>
             <p>神奈川県</p>
@@ -93,7 +91,7 @@
           </div>
           <%= link_to prefecture_path(40) do %>
           <div class="company__item">
-            <div class="cover-slide">
+            <div>
               <%= image_tag  asset_path('fukuoka.jpg') ,class: "img-zoom" %>
             </div>
             <p>福岡県</p>
@@ -101,7 +99,7 @@
           </div>
           <%= link_to prefecture_path(1) do %>
           <div class="company__item">
-            <div class="cover-slide">
+            <div>
               <%= image_tag asset_path('hokkaido.jpg') ,class: "img-zoom" %>
             </div>
             <p>北海道</p>
@@ -109,7 +107,7 @@
           </div>
           <%= link_to prefecture_path(23) do %>
           <div class="company__item">
-            <div class="cover-slide">
+            <div>
               <%= image_tag asset_path('aichi.jpg') ,class: "img-zoom" %>
             </div>
             <p>愛知県</p>
@@ -122,21 +120,19 @@
       <section class="about">
         <div class="about__inner">
           <div class="about__img cover-slide ">
-            <%= image_tag asset_path('faq.jpg'), class:"img-zoom" %>
+            <%= image_tag asset_path('community.jpg'), class:"img-zoom" %>
           </div>
-          <div class="about__texts appear left">
+          <div class="about__texts appear right">
             <div class="about__texts-inner">
               <div class="about__title main-title item">
-                <span>Let's</span>
-                <span>ChangeWork</span>
+                <span>Community Square</span>
               </div>
-              <div class="about__subtitle subtitle item">仕事を変えよう</div>
               <div class="about__description item">
-                <p>プログラマーの転職を効率的に。</p>
-                <p>きっとあなたに合った会社があります</p>
+                <p>近況をみんなに報告</p>
+                <p>気になる人にはチャットしよう！</p>
               </div>
               <div class="item">
-                <%= link_to "community", communities_path ,class:"btn slide-bg"  %>
+                <%= link_to "広場に参加", communities_path ,class:"btn slide-bg"  %>
               </div>
             </div>
           </div>
@@ -145,8 +141,8 @@
 
       <section class="job-site">
         <header>
-          <h2 class="main-title animate-title">タスク管理</h2>
-          <p class="sub-title">好みのタスク管理ツールを使いましょう！</p>
+          <h2 class="main-title animate-title">Task management</h2>
+          <p class="sub-title">自分に合ったタスク管理ツールを使おう！</p>
         </header>
         <div class="job-site__inner appear up">
           <div class="job-site__container">

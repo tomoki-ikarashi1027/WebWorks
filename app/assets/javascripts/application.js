@@ -17,7 +17,6 @@
 // require turbolinks
 //= require_directory ./libs
 //= require_directory ./vendors
-//= require_directory ./channels
 // require_tree .
 
 document.addEventListener("DOMContentLoaded", function() {
