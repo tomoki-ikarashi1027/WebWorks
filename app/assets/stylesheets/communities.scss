@@ -86,4 +86,9 @@ width: inherit;
     margin: 9px;
     text-align: center;
   }
+  & .profile__default-img,
+    .users-img{
+    height: 100px;
+    width: 100px;
+  }
 }
