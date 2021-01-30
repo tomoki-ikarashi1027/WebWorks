@@ -43,4 +43,7 @@ Rails.application.routes.draw do
   resources :events
   resources :users, only: [:show]
   resources :communities, only: [:index, :show, :create ,:destroy]
+  resources :chat_rooms, only: [:show, :create ]
+
+  mount ActionCable.server => '/cable'
 end
