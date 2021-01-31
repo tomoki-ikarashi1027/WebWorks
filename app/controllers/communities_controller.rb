@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!
   def index
     @communities = Community.all.order('created_at DESC')
     @community = Community.new
