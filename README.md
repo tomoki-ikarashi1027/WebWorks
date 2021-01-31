@@ -16,10 +16,11 @@ http://web-works.work/
 * カレンダー  
 * Todoリスト  
 * メモ  
+* 画像プレビュー
 
 ### 技術面での工夫  
 * BEM記法での実装  
-* Swiperを使用したアニメーションの実装  
+* swiper.cssを使用したアニメーションの実装  
 * レスポンシブ対応  
 * axiosを用いた非同期通信  
 * 日本語化によるユーザビリティの向上  
@@ -27,7 +28,7 @@ http://web-works.work/
 * ページネーションの実装
 * IntersectionObserverを使ったスクロール処理の実装  
 * CSSでのアニメーションの実装  
-* カレンダー機能にて投稿蘭をモーダルを用いて表示  
+* モーダルを用いた表示方法  
 * pace.jsを用いたローダーの実装
 
 
@@ -41,7 +42,8 @@ http://web-works.work/
 * Docker + Docker-compose
 
 ### インフラ
-* AWS(EC2, RDS, Puma)  
+* AWS(EC2, RDS, Route53)
+* Puma
 * Nginx(Webサーバ)  
 * MySQL2
 
