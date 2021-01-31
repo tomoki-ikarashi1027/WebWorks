@@ -15,7 +15,7 @@ class CommunitiesController < ApplicationController
     @community = Community.new(communities_params)
     @community.user_id = current_user.id
     if @community.save
-      @communities = Community.all.all.order('created_at DESC')
+      @communities = Community.all.order('created_at DESC')
     else
       render :index
     end
