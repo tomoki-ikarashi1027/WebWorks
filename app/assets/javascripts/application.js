@@ -15,6 +15,8 @@
 //= require rails-ujs
 //= require activestorage
 // require turbolinks
+//= require cable
+//= require_directory ./channels
 //= require_directory ./libs
 //= require_directory ./vendors
 // require_tree .

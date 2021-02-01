@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
   get 'events/index'
   devise_for :users , controllers: {
     sessions: 'users/sessions',
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
     # resources :communities, only: [:index, :create, :update, :destroy]
   end
 
+  # root to: 'rooms#show'
   root to: 'homes#top'
   get "homes/about" => "homes#about"
   get "homes/memo" => "homes#memo"
