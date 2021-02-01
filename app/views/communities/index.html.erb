@@ -37,7 +37,7 @@
     <div class="modal-content community-users">
       <% @users.each do |user| %>
       <div class="community-users__item">
-        <%# <%= link_to 'チャット', chat_rooms_path(params: { user_id: user.id }), method: :post  %>
+        <%= link_to 'チャット', chat_rooms_path(params: { user_id: user.id }), method: :post  %>
         <%= link_to user_path(user) do %>
         <% if user.profile_image? %>
         <div>
