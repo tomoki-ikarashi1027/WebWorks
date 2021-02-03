@@ -16,7 +16,8 @@ http://web-works.work/
 * カレンダー  
 * Todoリスト  
 * メモ  
-* 画像プレビュー
+* 画像プレビュー  
+* チャット
 
 ### 技術面での工夫  
 * BEM記法での実装  
@@ -29,7 +30,8 @@ http://web-works.work/
 * IntersectionObserverを使ったスクロール処理の実装  
 * CSSでのアニメーションの実装  
 * モーダルを用いた表示方法  
-* pace.jsを用いたローダーの実装
+* pace.jsを用いたローダーの実装  
+* Action Cableを使用したチャット機能の実装
 
 
 # 使用言語
