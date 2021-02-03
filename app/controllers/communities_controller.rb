@@ -2,7 +2,7 @@ class CommunitiesController < ApplicationController
   before_action :authenticate_user!
   def index
     @communities = Community.all.order('created_at DESC')
-    @users = User.where.not(id: current_user.id)
+    @users = User.where.not(id: current_user.id).order('created_at DESC')
     @community = Community.new
 
   end
