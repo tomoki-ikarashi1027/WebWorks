@@ -8,6 +8,8 @@ set :ssh_options, {
   auth_methods: %w(publickey)
 }
 
+
+
 # set :ssh_options, {
 #   # capistranoコマンド実行者の秘密鍵
 #   keys: %w(~/.ssh/id_rsa),
