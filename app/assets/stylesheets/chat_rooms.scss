@@ -1,3 +1,112 @@
-// Place all the styles related to the chat_rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.chat-room{
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: cornflowerblue;
+
+  &__header{
+    display: flex;
+    padding: 10px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    background: #4d8aea;
+  }
+  &__form{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    margin-bottom: -100px;
+    padding: 8px 12px;
+    border: 1px solid;
+    font-size: 20px;
+    background: aliceblue;
+    & > textarea{
+      width: 85%;
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      padding: 10px;
+    }
+  }
+}
+
+.user-default-img,
+.talk-user-img
+{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-image: image-url("profile_default_img.png");
+  background-size: contain;
+}
+
+
+.chat-messages{
+
+  &__current-user{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+  }
+  &__talk-user{
+    display: flex;
+    margin-left: 20px;
+    & > .talk-user-img,
+        .user-default-img
+    {
+      height: 35px;
+      width: 35px;
+      margin: 5px;
+    }
+  }
+
+  &__content{
+    margin: 4px 8px 4px;
+    padding: 8px 12px;
+    color: #555;
+    font-size: 16px;
+    border-radius: 8px;
+    background: white;
+    position: relative;
+    &::before{
+      content: '';
+      width: 0;
+      height: 0;
+      border: 8px solid transparent;
+      position: absolute;
+    }
+    &.left-side{
+      &::before{
+        top: 7px;
+        left: -16px;
+        border-right-color: white;
+      }
+    }
+    &.right-side{
+      &::before{
+        top: 7px;
+        right: -16px;
+        border-left-color: chartreuse;
+      }
+    }
+  }
+  .main-color{
+    background-color: chartreuse;
+  }
+}
+
+.form-bottom{
+  margin: 100px;
+}
+
+.fa-paper-plane{
+  position: absolute;
+  top: 32%;
+  font-size: 1.2em;
+  right: 6%;
+  color: #375a92;
+}
