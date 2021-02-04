@@ -14,6 +14,7 @@
         <div class="profile__text">
           <%= @user.self_introduction %>
         </div>
+        <%= link_to 'チャット', chat_rooms_path(params: { user_id: @user.id }), method: :post %>
 
       </div>
       <% if @user.id == current_user.id %>
