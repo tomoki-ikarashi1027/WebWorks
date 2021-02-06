@@ -24,12 +24,15 @@
     border: 1px solid;
     font-size: 20px;
     background: aliceblue;
-    & > textarea{
+    & .chat-room__message-form_textarea{
       width: 85%;
       border: none;
       outline: none;
       border-radius: 25px;
       padding: 10px;
+    }
+    & input[type=submit]{
+      display: none;
     }
   }
 }
@@ -72,6 +75,8 @@
     border-radius: 8px;
     background: white;
     position: relative;
+    max-width: 60%;
+    word-break: break-all;
     &::before{
       content: '';
       width: 0;
@@ -106,7 +111,13 @@
 .fa-paper-plane{
   position: absolute;
   top: 32%;
-  font-size: 1.2em;
+  font-size: 1.5em;
   right: 6%;
   color: #375a92;
+  cursor: pointer;
+}
+
+.none-btn{
+  color:#9a9898;
+  opacity: 0;
 }

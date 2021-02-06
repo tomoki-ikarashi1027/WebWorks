@@ -28,12 +28,15 @@
       <i class="fas fa-paper-plane"></i>
     </form>
     -->
-    <form class="chat-room__form">
-      <textarea data-behavior="chat_room_speaker" data-chat-room-id="<%= @chat_room.id  %>" placeholder="メッセージを入力"
-        class="chat-room__message-form_textarea" id="message-content"></textarea>
-      <i class="fas fa-paper-plane"></i>
-    </form>
-
+    <div class="chat-room__form" name="form1">
+      <%= form_with model: @message do |f| %>
+      <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" ,class: "chat-room__message-form_textarea" %>
+      <%= f.hidden_field :chat_room_id, :value => @chat_room.id %>
+      <label>
+        <%= f.submit class: "" %> <i class=" fas fa-paper-plane chat_btn none-btn"></i>
+      </label>
+      <% end %>
+    </div>
     <div class="form-bottom"></div>
   </div>
 </div>

@@ -12,32 +12,63 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
     const chatMessages = document.getElementById("chat-messages");
     chatMessages.insertAdjacentHTML("beforeend", data["chat_message"]);
   },
-
-  speak: function(chat_message, chat_room_id) {
-    return this.perform("speak", {
-      chat_message: chat_message,
-      chat_room_id: chat_room_id,
-    });
-  },
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+  const documentElement = document.documentElement;
+  const messageButton = document.querySelector(".chat_btn");
   const input = document.querySelector(".chat-room__message-form_textarea");
-  const btn = document.querySelector(".fa-paper-plane");
-  btn.addEventListener("click", function() {
-    const content = input.value;
-    const chat_room_id = input.dataset.chatRoomId;
-    App.room.speak(content, chat_room_id);
-    input.value = "";
+
+  const button_activation = function() {
+    if (input.value === "") {
+      messageButton.classList.add("none-btn");
+    } else {
+      messageButton.classList.remove("none-btn");
+    }
+  };
+  input.addEventListener("input", function() {
+    button_activation();
   });
 
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-      const content = input.value;
-      const chat_room_id = input.dataset.chatRoomId;
-      App.room.speak(content, chat_room_id);
-      input.value = "";
-      e.preventDefault(); //submitイベントの発生元であるフォームが持つデフォルトの動作をキャンセル
-    }
-  });
+  const scrollToBottom = function() {
+    scroll(0, documentElement.scrollHeight);
+  };
+  scrollToBottom();
 });
+
+// const messageContent = document.querySelector(
+//   ".chat-room__message-form_textarea"
+// );
+
+// フォームに入力した際の動作s
+
+// 送信ボタンが押された時にボタンを無効化
+
+// messageContent.addEventListener("input", () => {
+//   chat_button.classList.add("test");
+// });
+
+// chat_button.addEventListener("click", function() {
+//   console.log("eee");
+// });
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   const input = document.querySelector(".chat-room__message-form_textarea");
+//   const btn = document.querySelector(".fa-paper-plane");
+//   btn.addEventListener("click", function() {
+//     const content = input.value;
+//     const chat_room_id = input.dataset.chatRoomId;
+//     App.room.speak(content, chat_room_id);
+//     input.value = "";
+//   });
+
+//   document.addEventListener("keydown", function(e) {
+//     if (e.key === "Enter") {
+//       const content = input.value;
+//       const chat_room_id = input.dataset.chatRoomId;
+//       App.room.speak(content, chat_room_id);
+//       input.value = "";
+//       e.preventDefault(); //submitイベントの発生元であるフォームが持つデフォルトの動作をキャンセル
+//     }
+//   });
+// });
