@@ -2,7 +2,7 @@
   <% if chat_message.user_id == current_user.id %>
   <div class="chat-messages__current-user">
     <div class="chat-messages__content right-side main-color">
-      <%= chat_message.content %>
+      <%= simple_format chat_message.content %>
     </div>
   </div>
   <% else %>
@@ -13,7 +13,7 @@
     <div class="user-default-img"></div>
     <% end %>
     <div class="chat-messages__content left-side">
-      <%= chat_message.content %>
+      <%= simple_format chat_message.content %>
     </div>
   </div>
   <% end %>
