@@ -26,12 +26,9 @@ class Admins::CompaniesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
-    @prefecture = Prefecture.find(params[:id])
     @company = Company.find(params[:id])
+    @prefecture = @company.prefecture_id
     if @company.update(company_params)
       redirect_to admins_prefecture_path(@prefecture)
     else
