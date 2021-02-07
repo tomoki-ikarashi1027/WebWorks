@@ -47,6 +47,17 @@
               <li class="header__li item"><%= link_to 'Users Home' ,root_path  %></li>
 
               <% elsif user_signed_in? %>
+              <% if unchecked_notifications.any? %>
+              <span class="fa-stack">
+                <li class="header__li item"><%= link_to notifications_path do %><i class="fas fa-bell fa-stack-2x"
+                    style="color:#f7d79e;"></i><% end %>
+                </li>
+                <i class="fa-stack-1x notifications-count "> <%= unchecked_notifications.count %></i>
+              </span>
+              <% else %>
+              <li class="header__li item"><%= link_to notifications_path do %><i class="fas fa-bell"></i>
+              </li><% end %>
+              <% end %>
               <li class="header__li item"><%= link_to "MyPage" ,user_path(current_user.id) %></li>
               <li class="header__li item"><%= link_to "Home", root_path %></li>
               <li class="header__li item"><%= link_to 'Log out' ,destroy_user_session_path, method: :delete  %></li>
@@ -81,16 +92,11 @@
           <span class="logo__web">Web</span>
           <span class="logo__works">Works</span>
         </div>
-        <nav class="footer__nav">
-          <ul class="footer__ul">
-            <li class="footer__li item"><%= link_to "Contact", new_contact_path %></li>
-            <a id="header" href="#" class="footer__li item">ページTOPへ戻る</a>
-          </ul>
-          <div class="footer__copyright">&copy; Ikarashi</div>
-        </nav>
-      </footer>
+        <div class="footer__copyright">&copy; Ikarashi</div>
 
+      </footer>
     </div>
+
     <nav class="mobile-menu">
       <div class="logo">
         <%= image_tag asset_path('logo.svg'), class: "logo__img" %>

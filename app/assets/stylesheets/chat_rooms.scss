@@ -35,6 +35,11 @@
       display: none;
     }
   }
+  & .pagination{
+    position: absolute;
+    bottom: -25%;
+    right: 38%;
+  }
 }
 
 .user-default-img,

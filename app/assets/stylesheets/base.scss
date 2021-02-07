@@ -145,6 +145,7 @@ a {
   &__copyright{
     color: #535353;
     opacity: 0.8;
+    text-align: end;
   }
 }
 
@@ -203,4 +204,14 @@ main{
 .fa-trash{
   cursor: pointer;
   color: firebrick;
+}
+
+.fa-bell{
+  color: orange;
+  font-size: 1.5em !important;
+}
+.notifications-count{
+  color: red;
+  font-size: 1.2em;
+  pointer-events: none;
 }
