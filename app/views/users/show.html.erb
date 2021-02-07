@@ -14,8 +14,15 @@
         <div class="profile__text">
           <%= @user.self_introduction %>
         </div>
-        <%= link_to 'チャット', chat_rooms_path(params: { user_id: @user.id }), method: :post %>
+        <div class="profile__chat">
+          <% if @user.id != current_user.id %>
 
+          <%= link_to chat_rooms_path( user_id: @user.id ), method: :post , class: "btn filled" do %>
+          <i class="fas fa-comments"></i>
+          チャット
+          <% end %>
+          <% end %>
+        </div>
       </div>
       <% if @user.id == current_user.id %>
       <div class="user-action">

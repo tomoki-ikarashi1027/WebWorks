@@ -1,0 +1,19 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<div class="notifications__messages">
+  <% if visitor.profile_image? %>
+  <%= visitor.profile_image.url %>
+  <% else %>
+  <div class="user-default-img"></div>
+  <% end %>
+  <div class="notifications__message">
+    <%= link_to user_path(visitor) do %>
+    <%= visitor.name %>さん
+    <% end %>
+    <% if  notification.action === 'chat' %>
+    <span>から <%= link_to "メッセージ", chat_rooms_path( params: {user_id: visitor}) , method: :post%> がきました
+      <%= " (#{time_ago_in_words(notification.created_at)} 前)" %></span>
+    <div></div>
+    <% end %>
+  </div>
+</div>
