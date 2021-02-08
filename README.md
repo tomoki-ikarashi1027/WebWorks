@@ -77,15 +77,18 @@ http://web-works.work/
 * ヘッダーの「Log in」からユーザー側のページへログイン。  
 * ヘッダーの「Contact」から管理者へお問い合わせメールを送信。
 * 【Big Cityセクション】掲載企業の確認、レビューの投稿。  
+* 【Community Square】近況などを投稿。User一覧画面よりチャットページへ遷移。（プロフィールからも可）
 * 【タスク管理セクション】自分に合ったタスク管理ツールを使用。（画像がリンクになっています。）  
 
 # インストール
  ```
 $ git clone https://github.com/tomoki-ikarashi1027/WebWorks.git
 $ cd WebWorks
-$ bundle install
-$ rails db:migrate
-$ rails db:seed
+$ docker-compose build
+$ docker-compose run web rails db:create
+$ docker-compose run web rails db:migrate
+$ docker-compose up
+
 
 テストユーザー： mail "test1@user", password "123456"
 管理者： mail "test@admin", password "123456"
