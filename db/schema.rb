@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_060410) do
+ActiveRecord::Schema.define(version: 2021_02_09_070315) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -119,6 +119,15 @@ ActiveRecord::Schema.define(version: 2021_02_04_060410) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "community_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_likes_on_community_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -200,6 +209,8 @@ ActiveRecord::Schema.define(version: 2021_02_04_060410) do
   add_foreign_key "company_language_tag_relations", "language_tags"
   add_foreign_key "contacts", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "likes", "communities"
+  add_foreign_key "likes", "users"
   add_foreign_key "memos", "users"
   add_foreign_key "post_comments", "companies"
   add_foreign_key "post_comments", "users"

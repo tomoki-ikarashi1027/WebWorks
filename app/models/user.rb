@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :chat_messages
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :name, presence: true
   validates :self_introduction, length: { maximum: 300 }
@@ -37,5 +38,9 @@ class User < ApplicationRecord
     result = update_attributes(params, *options)
     clean_up_passwords
     result
+  end
+
+  def liked_by?(community_id)
+    self.likes.where(community_id: community_id ).exists?
   end
 end

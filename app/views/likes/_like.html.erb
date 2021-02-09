@@ -1,0 +1,13 @@
+  <div class="likes">
+    <% if current_user.liked_by?(community) %>
+    <%= link_to community_likes_path(community) ,method: :delete, remote: true do %>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <% end %>
+    <%= community.likes.count %>
+    <% else %>
+    <%= link_to community_likes_path(community) ,method: :post, remote: true do %>
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <%= community.likes.count %>
+    <% end %>
+    <% end %>
+  </div>

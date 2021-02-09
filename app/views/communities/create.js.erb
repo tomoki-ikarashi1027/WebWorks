@@ -1,3 +1,5 @@
+document.getElementById('like_<%= community.id %>').innerHTML = '<%= j(render @communities) %>'
+
 $("textarea").val("");
 $('input').val('');
 $('#exampleModal').modal('hide');

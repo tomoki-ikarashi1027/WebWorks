@@ -17,12 +17,22 @@
   <div><%= community.user.name %></div>
   <% end %>
   <% end %>
+
   <div class="communities__comment"><%= community.body %> </div>
   <div class="communities__strftime"><%= community.created_at.strftime('%Y/%m/%d %H:%M:%S')  %></div>
+
+
+
   <% if community.user_id == current_user.id %>
   <%= link_to community_path(community)  ,method: :delete , remote: true, data: {confirm: "Are you sure?"}  do %>
   <i class="fas fa-trash"></i>
   <% end %>
+
+  <div id="like_<%= community.id %>">
+
+    <%= render partial: 'likes/like', locals: { community: community } %>
+  </div>
+
   <% end %>
 </div>
 <% end %>

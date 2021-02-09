@@ -26,10 +26,8 @@ Rails.application.routes.draw do
   namespace :api, format: 'json' do
     resources :memos, only: [:index, :create, :destroy, :update]
     resources :tasks, only: [:index, :create, :update, :destroy]
-    # resources :communities, only: [:index, :create, :update, :destroy]
   end
 
-  # root to: 'rooms#show'
   root to: 'homes#top'
   get "homes/about" => "homes#about"
   get "homes/memo" => "homes#memo"
@@ -45,7 +43,9 @@ Rails.application.routes.draw do
   end
   resources :events
   resources :users, only: :show
-  resources :communities, only: [:index, :show, :create ,:destroy]
+  resources :communities, only: [:index, :show, :create ,:destroy] do
+    resource :likes, only: [:create, :destroy]
+  end
   resources :chat_rooms, only: [:show, :create ]
   resources :chat_messages, only: :create
   resources :notifications, only: [:index]
