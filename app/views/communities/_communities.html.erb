@@ -27,12 +27,10 @@
   <%= link_to community_path(community)  ,method: :delete , remote: true, data: {confirm: "Are you sure?"}  do %>
   <i class="fas fa-trash"></i>
   <% end %>
+  <% end %>
 
   <div id="like_<%= community.id %>">
-
     <%= render partial: 'likes/like', locals: { community: community } %>
   </div>
-
-  <% end %>
 </div>
 <% end %>
