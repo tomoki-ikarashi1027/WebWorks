@@ -94,42 +94,42 @@ describe 'ユーザーの機能' do
       expect(page).to have_content 'successfully'
     end
   end
-  context 'カレンダー機能' do
-    before do
-      visit events_path
-    end
-    it '遷移できる' do
-      expect(current_path).to eq events_path
-    end
-    it 'タイトルフォームの表示' do
-      expect(page).to have_field 'event[title]'
-    end
-    it 'コメントフォームの表示' do
-      expect(page).to have_field 'event[body]'
-    end
-  end
-  context 'タスク機能' do
-    before do
-      visit homes_task_path
-    end
-    it '遷移できる' do
-      expect(current_path).to eq homes_task_path
-    end
-    it 'セレクターの確認' do
-      expect(page).to have_selector '.task-container'
-    end
-  end
-  context 'メモ機能' do
-    before do
-      visit homes_memo_path
-    end
-    it '遷移できる' do
-      expect(current_path).to eq homes_memo_path
-    end
-    it 'セレクターの確認' do
-      expect(page).to have_selector '.memo-container'
-    end
-  end
+  # context 'カレンダー機能' do
+  #   before do
+  #     visit events_path
+  #   end
+  #   it '遷移できる' do
+  #     expect(current_path).to eq events_path
+  #   end
+  #   it 'タイトルフォームの表示' do
+  #     expect(page).to have_field 'event[title]'
+  #   end
+  #   it 'コメントフォームの表示' do
+  #     expect(page).to have_field 'event[body]'
+  #   end
+  # end
+  # context 'タスク機能' do
+  #   before do
+  #     visit homes_task_path
+  #   end
+  #   it '遷移できる' do
+  #     expect(current_path).to eq homes_task_path
+  #   end
+  #   it 'セレクターの確認' do
+  #     expect(page).to have_selector '.task-container'
+  #   end
+  # end
+  # context 'メモ機能' do
+  #   before do
+  #     visit homes_memo_path
+  #   end
+  #   it '遷移できる' do
+  #     expect(current_path).to eq homes_memo_path
+  #   end
+  #   it 'セレクターの確認' do
+  #     expect(page).to have_selector '.memo-container'
+  #   end
+  # end
   context 'メール機能' do
     before do
      visit new_contact_path
