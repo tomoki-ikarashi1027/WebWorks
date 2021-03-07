@@ -17,6 +17,12 @@ jobs:
     steps:
     - checkout
 
+    - run:
+      name: "Node.js と npm の更新"
+      command: |
+        curl -sSL "https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v10.16.3-linux-x64/bin/node
+        curl https://www.npmjs.com/install.sh | sudo bash
+
     - restore_cache:
         keys:
         - v1-dependencies-{{ checksum "Gemfile.lock" }}
@@ -27,6 +33,7 @@ jobs:
         command: |
           gem install bundler -v 2.0.2
           bundle install --jobs=4 --retry=3 --path vendor/bundle
+    
 
 
     - save_cache:
@@ -43,7 +50,7 @@ jobs:
         command: |
            bundle exec rake db:create
            bundle exec rake db:schema:load
-           
+
     - run:
          name: yarn Install
          command: yarn install
