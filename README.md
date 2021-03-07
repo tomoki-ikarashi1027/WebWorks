@@ -54,6 +54,7 @@ http://web-works.work/
 
 ### Gemなど
 * Rspec (モデルテスト、コントローラテスト、システムテスト)  
+* CircleCI
 * devise (認証機能)  
 * kaminari (ページネーション)  
 * bootstrap-sass  
