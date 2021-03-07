@@ -11,10 +11,10 @@ RSpec.describe "homes", type: :request do
         expect(response.status).to eq 200
       end
       it 'タイトルが正しく表示されること' do
-        expect(response.body).to include('転職先を見つけよう')
+        expect(response.body).to include('転職先を探そう')
       end
       it 'タイトルが正しく表示されること' do
-        expect(response.body).to include('仕事を変えよう')
+        expect(response.body).to include('自分に合ったタスク管理ツールを使おう！')
       end
     end
   end
