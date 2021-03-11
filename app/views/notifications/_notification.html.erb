@@ -2,7 +2,7 @@
 <% visited = notification.visited %>
 <div class="notifications__messages">
   <% if visitor.profile_image? %>
-  <%= visitor.profile_image.url %>
+  <%= image_tag visitor.profile_image.url ,class: 'visitor-img' %>
   <% else %>
   <div class="user-default-img"></div>
   <% end %>
